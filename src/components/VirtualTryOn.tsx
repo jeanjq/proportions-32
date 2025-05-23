@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -17,16 +16,18 @@ export interface UserMeasurements {
   gender: 'women' | 'men';
 }
 
+const initialMeasurements: UserMeasurements = {
+  height: 0,
+  weight: 0,
+  bellyShape: null,
+  hipShape: null,
+  gender: 'women'
+};
+
 export const VirtualTryOn = () => {
   const [isStarted, setIsStarted] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
-  const [measurements, setMeasurements] = useState<UserMeasurements>({
-    height: 0,
-    weight: 0,
-    bellyShape: null,
-    hipShape: null,
-    gender: 'women'
-  });
+  const [measurements, setMeasurements] = useState<UserMeasurements>(initialMeasurements);
 
   const totalSteps = 4;
   const progress = (currentStep / totalSteps) * 100;
@@ -48,6 +49,12 @@ export const VirtualTryOn = () => {
     if (currentStep > 1) {
       setCurrentStep(prev => prev - 1);
     }
+  };
+
+  const handleRestart = () => {
+    setMeasurements(initialMeasurements);
+    setCurrentStep(1);
+    setIsStarted(false);
   };
 
   const isStepComplete = () => {
@@ -93,7 +100,7 @@ export const VirtualTryOn = () => {
   }
 
   if (allStepsComplete) {
-    return <AvatarDisplay measurements={measurements} onRestart={() => setIsStarted(false)} />;
+    return <AvatarDisplay measurements={measurements} onRestart={handleRestart} />;
   }
 
   return (
