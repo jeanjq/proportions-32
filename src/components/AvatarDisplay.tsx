@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { UserMeasurements } from './VirtualTryOn';
 import { Sparkles } from 'lucide-react';
 import { calculateSize, findClosestAvatar, getAvatarPath } from '@/utils/avatarMatching';
@@ -124,9 +123,6 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
           {/* Avatar Display */}
           <Card className="p-6 shadow-2xl border-0 bg-white/90 backdrop-blur-sm">
             <div className="text-center">
-              <Badge className="mb-4 bg-gradient-to-r from-coral-500 to-peach-500 text-white border-0">
-                Size {selectedSize} • Perfect Fit!
-              </Badge>
               
               <AvatarImage 
                 currentAvatarPath={currentAvatarPath}
