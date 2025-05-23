@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -5,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { UserMeasurements } from './VirtualTryOn';
 import { RotateCcw, User, Sparkles, AlertCircle, RefreshCw } from 'lucide-react';
 import { calculateSize, findClosestAvatar, getAvatarPath } from '@/utils/avatarMatching';
-import { fetchAvatarData } from '@/data/importCsvData';
+import { fetchAvatarData, exampleAvatarData } from '@/data/importCsvData';
 import { toast } from "@/components/ui/use-toast";
 
 interface AvatarDisplayProps {
