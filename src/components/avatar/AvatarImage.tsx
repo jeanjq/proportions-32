@@ -1,7 +1,8 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { AlertCircle, RefreshCw } from 'lucide-react';
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface AvatarImageProps {
   currentAvatarPath: string;
@@ -20,6 +21,12 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
   onImageError,
   onRotate
 }) => {
+  const [isLoading, setIsLoading] = useState(true);
+  
+  const handleImageLoad = () => {
+    setIsLoading(false);
+  };
+  
   return (
     <div className="relative bg-gray-50 rounded-2xl p-8 mb-6 min-h-[400px] flex flex-col items-center justify-center">
       {error && !avatarFileName ? (
@@ -35,13 +42,17 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
         </div>
       ) : (
         <>
+          {isLoading && (
+            <Skeleton className="w-full h-[350px] rounded-md" />
+          )}
           <img 
             src={currentAvatarPath} 
             alt="Avatar preview" 
-            className="max-h-[350px] max-w-full object-contain"
+            className={`max-h-[350px] max-w-full object-contain ${isLoading ? 'hidden' : 'block'}`}
             onError={onImageError}
+            onLoad={handleImageLoad}
           />
-          {!imageLoadFailed && (
+          {!isLoading && !imageLoadFailed && (
             <Button 
               onClick={onRotate}
               className="mt-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full"

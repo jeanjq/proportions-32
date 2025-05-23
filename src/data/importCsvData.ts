@@ -1,8 +1,9 @@
+
 import { AvatarData } from "../utils/avatarMatching";
 
-// Firebase storage URLs - using HTTPS instead of gs:// protocol
-export const FIREBASE_STORAGE_BASE_URL = "https://storage.googleapis.com/proportions-b1093.appspot.com";
-export const JSON_DATA_URL = `${FIREBASE_STORAGE_BASE_URL}/csvjson%20(1).json`;
+// Firebase storage URLs using the v0 API format
+export const FIREBASE_STORAGE_BASE_URL = "https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o";
+export const JSON_DATA_URL = `${FIREBASE_STORAGE_BASE_URL}/csvjson%20(1).json?alt=media`;
 
 // Function to fetch the avatar data from the Firebase JSON
 export async function fetchAvatarData(): Promise<AvatarData[]> {

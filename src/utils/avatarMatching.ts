@@ -1,4 +1,3 @@
-
 // Define types for the CSV data structure
 export interface AvatarData {
   fileName: string;
@@ -73,7 +72,7 @@ export function calculateSize(height: number, weight: number): string {
 }
 
 /**
- * Get the path to the avatar image
+ * Get the path to the avatar image using Firebase Storage v0 API format
  */
 export function getAvatarPath(fileName: string | null, size: string, gender: 'women' | 'men'): string {
   if (!fileName) {
@@ -83,14 +82,14 @@ export function getAvatarPath(fileName: string | null, size: string, gender: 'wo
   // Format the gender string for URL (capitalize first letter)
   const formattedGender = gender === 'women' ? 'Women' : 'Men';
   
-  // Replace any spaces with %20 for URL compatibility
-  const formattedFileName = fileName.replace(/ /g, '%20');
+  // Create the path that will go after /o/ in the Firebase Storage URL
+  // and encode it properly for the URL
+  const storagePath = encodeURIComponent(`${formattedGender}/${size}/${fileName}.png`);
   
-  // Check if we need to add a suffix
-  const imageFileName = formattedFileName.endsWith('_0') ? formattedFileName : `${formattedFileName}_0`;
+  // Format the full Firebase Storage URL with the alt=media parameter
+  const avatarUrl = `${FIREBASE_STORAGE_BASE_URL}/${storagePath}?alt=media`;
   
-  console.log(`Creating avatar path: ${FIREBASE_STORAGE_BASE_URL}/${formattedGender}/${size}/${imageFileName}`);
+  console.log(`Creating avatar path: ${avatarUrl}`);
   
-  // Return the correct HTTPS URL format for Firebase Storage
-  return `${FIREBASE_STORAGE_BASE_URL}/${formattedGender}/${size}/${imageFileName}`;
+  return avatarUrl;
 }
