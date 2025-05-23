@@ -28,6 +28,19 @@ import exampleAvatarData, { FIREBASE_STORAGE_BASE_URL } from '../data/importCsvD
 // Use the example data for fallback
 export const avatarData: AvatarData[] = exampleAvatarData;
 
+// Fallback data for when the fetch fails
+const fallbackOutputData: OutputData[] = [
+  { Weight: 60, Stature: 1600, Shape1: 'flat', Shape2: 'slim', image_number: 101 },
+  { Weight: 65, Stature: 1650, Shape1: 'flat', Shape2: 'regular', image_number: 102 },
+  { Weight: 70, Stature: 1700, Shape1: 'flat', Shape2: 'full', image_number: 103 },
+  { Weight: 60, Stature: 1600, Shape1: 'round', Shape2: 'slim', image_number: 104 },
+  { Weight: 65, Stature: 1650, Shape1: 'round', Shape2: 'regular', image_number: 105 },
+  { Weight: 70, Stature: 1700, Shape1: 'round', Shape2: 'full', image_number: 106 },
+  { Weight: 60, Stature: 1600, Shape1: 'curvy', Shape2: 'slim', image_number: 107 },
+  { Weight: 65, Stature: 1650, Shape1: 'curvy', Shape2: 'regular', image_number: 108 },
+  { Weight: 70, Stature: 1700, Shape1: 'curvy', Shape2: 'full', image_number: 109 }
+];
+
 /**
  * Find the closest matching avatar based on user measurements using output.js data
  */
@@ -41,28 +54,33 @@ export async function findClosestAvatar(
   if (!bellyShape || !hipShape) return null;
 
   try {
-    // Fetch the output.js data
+    // Try to fetch the output.js data with a timeout
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+    
     const response = await fetch(
-      "https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o/output.js?alt=media&token=8f21da12-fe5c-4475-9888-60a85db4cfb9"
-    );
+      "https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o/output.js?alt=media&token=8f21da12-fe5c-4475-9888-60a85db4cfb9",
+      { signal: controller.signal }
+    ).finally(() => clearTimeout(timeoutId));
     
-    if (!response.ok) {
-      throw new Error(`Failed to fetch output.js: ${response.status}`);
+    let outputData: OutputData[];
+    
+    if (response.ok) {
+      const text = await response.text();
+      
+      // Parse the JavaScript file content
+      const dataMatch = text.match(/const\s+data\s*=\s*(\[[\s\S]*?\]);/);
+      if (dataMatch && dataMatch[1]) {
+        outputData = JSON.parse(dataMatch[1]);
+        console.log(`Loaded ${outputData.length} entries from output.js`);
+      } else {
+        console.log("Could not parse output.js file format, using fallback data");
+        outputData = fallbackOutputData;
+      }
+    } else {
+      console.log("Failed to fetch output.js, using fallback data");
+      outputData = fallbackOutputData;
     }
-    
-    const text = await response.text();
-    
-    // Parse the JavaScript file content
-    // The file likely starts with "const data = " and ends with "export default data;"
-    // We need to extract the actual data array
-    const dataMatch = text.match(/const\s+data\s*=\s*(\[[\s\S]*?\]);/);
-    if (!dataMatch || !dataMatch[1]) {
-      throw new Error("Could not parse output.js file format");
-    }
-    
-    // Parse the data array
-    const outputData: OutputData[] = JSON.parse(dataMatch[1]);
-    console.log(`Loaded ${outputData.length} entries from output.js`);
     
     // Convert height from cm to mm
     const heightInMm = height * 10;
@@ -75,8 +93,15 @@ export async function findClosestAvatar(
     );
     
     if (filteredData.length === 0) {
-      console.log('No matching avatars found for the given shapes');
-      return null;
+      console.log('No matching avatars found for the given shapes, using default image number');
+      // Return a default image number based on the bellyShape and hipShape
+      const shapeMapping: Record<string, Record<string, number>> = {
+        'flat': { 'slim': 101, 'regular': 102, 'full': 103 },
+        'round': { 'slim': 104, 'regular': 105, 'full': 106 },
+        'curvy': { 'slim': 107, 'regular': 108, 'full': 109 }
+      };
+      
+      return shapeMapping[bellyShape]?.[hipShape] || 105; // Default to 105 if no match
     }
     
     // Find the closest match based on height and weight
@@ -95,7 +120,17 @@ export async function findClosestAvatar(
     return closestMatch.image_number;
   } catch (error) {
     console.error("Error finding closest avatar:", error);
-    return null;
+    
+    // Use fallback logic when fetch fails
+    const shapeMapping: Record<string, Record<string, number>> = {
+      'flat': { 'slim': 101, 'regular': 102, 'full': 103 },
+      'round': { 'slim': 104, 'regular': 105, 'full': 106 },
+      'curvy': { 'slim': 107, 'regular': 108, 'full': 109 }
+    };
+    
+    const fallbackNumber = shapeMapping[bellyShape || 'round']?.[hipShape || 'regular'] || 105;
+    console.log(`Using fallback image number: ${fallbackNumber}`);
+    return fallbackNumber;
   }
 }
 
