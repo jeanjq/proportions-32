@@ -1,13 +1,13 @@
+
 import React, { useState, useEffect } from 'react';
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { UserMeasurements } from './VirtualTryOn';
 import { Sparkles } from 'lucide-react';
 import { calculateSize, findClosestAvatar, getAvatarPath } from '@/utils/avatarMatching';
-import { fetchAvatarData, exampleAvatarData } from '@/data/importCsvData';
 import { toast } from "@/components/ui/use-toast";
 
-// Import our new components
+// Import our components
 import LoadingSpinner from './avatar/LoadingSpinner';
 import AvatarImage from './avatar/AvatarImage';
 import SizeSelector from './avatar/SizeSelector';
@@ -22,98 +22,74 @@ interface AvatarDisplayProps {
 export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRestart }) => {
   const [selectedSize, setSelectedSize] = useState<string>('');
   const [isLoading, setIsLoading] = useState(true);
-  const [avatarFileName, setAvatarFileName] = useState<string | null>(null);
+  const [imageNumber, setImageNumber] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [avatarData, setAvatarData] = useState<any[]>([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [avatarImages, setAvatarImages] = useState<string[]>([]);
   const [imageLoadFailed, setImageLoadFailed] = useState(false);
 
-  // Fetch avatar data from Firebase
+  // Find the closest matching avatar based on measurements
   useEffect(() => {
-    async function loadAvatarData() {
+    async function findMatchingAvatar() {
       setIsLoading(true);
       try {
-        const data = await fetchAvatarData();
-        setAvatarData(data);
-        console.log("Avatar data loaded:", data.length, "items");
-        
         // Calculate the recommended size based on height and weight
         const size = calculateSize(measurements.height, measurements.weight);
         setSelectedSize(size);
         
-        // Find the closest matching avatar
-        if (data && data.length > 0) {
-          const fileName = findClosestAvatar(
-            measurements.height,
-            measurements.weight,
-            measurements.bellyShape,
-            measurements.hipShape,
-            measurements.gender
-          );
-          setAvatarFileName(fileName);
-          
-          if (!fileName) {
-            setError('No matching avatar found. Using example avatar instead.');
-            // Use the first example avatar if no match is found
-            setAvatarFileName(data[0].fileName);
-          } else {
-            setError(null);
-            
-            // Generate avatar image URLs for rotation
-            generateAvatarImageUrls(fileName, size);
-          }
+        // Find the closest matching avatar image number
+        const imageNum = await findClosestAvatar(
+          measurements.height,
+          measurements.weight,
+          measurements.bellyShape,
+          measurements.hipShape,
+          measurements.gender
+        );
+        
+        setImageNumber(imageNum);
+        
+        if (imageNum === null) {
+          setError('No matching avatar found. Please try different measurements.');
+        } else {
+          setError(null);
+          // Generate avatar image URLs for the found image number
+          generateAvatarImageUrls(imageNum, size);
         }
       } catch (err) {
-        console.error('Error loading avatar data:', err);
-        setError('Failed to load avatar data. Using example avatar instead.');
-        // Use example data as fallback
-        const size = calculateSize(measurements.height, measurements.weight);
-        setSelectedSize(size);
-        setAvatarFileName(exampleAvatarData[0].fileName);
+        console.error('Error finding matching avatar:', err);
+        setError('Failed to find matching avatar. Please try again.');
       } finally {
         setIsLoading(false);
       }
     }
     
-    loadAvatarData();
+    findMatchingAvatar();
   }, [measurements]);
 
-  // Generate an array of avatar image URLs for rotation
-  const generateAvatarImageUrls = (baseFileName: string, size: string) => {
-    // Extract the base filename without rotation number
-    const baseFileNameWithoutRotation = baseFileName.replace(/_\d+$/, '');
+  // Generate an array of avatar image URLs for different views
+  const generateAvatarImageUrls = (imgNumber: number, size: string) => {
+    // For now, we'll just use a single image for each size
+    // In a future enhancement, we could generate multiple view angles if available
+    const imageUrl = getAvatarPath(imgNumber, size, measurements.gender);
+    setAvatarImages([imageUrl]);
     
-    // Create an array of image URLs for rotation (0-9)
-    const imagesArray = Array.from({ length: 10 }, (_, i) => {
-      // For each rotation, add the appropriate suffix
-      const fileNameWithRotation = `${baseFileNameWithoutRotation}_${i}`;
-      // Generate the full path using our updated path generator
-      return getAvatarPath(fileNameWithRotation, size, measurements.gender);
-    });
-    
-    setAvatarImages(imagesArray);
-    console.log("Generated image URLs:", imagesArray);
+    console.log("Generated image URL:", imageUrl);
     
     // Reset the image load failed state when new URLs are generated
     setImageLoadFailed(false);
+    setCurrentImageIndex(0);
   };
 
   // Update the images array when size changes
   useEffect(() => {
-    if (avatarFileName) {
+    if (imageNumber !== null) {
       // Generate new avatar image URLs for the selected size
-      generateAvatarImageUrls(avatarFileName, selectedSize);
+      generateAvatarImageUrls(imageNumber, selectedSize);
     }
-  }, [selectedSize, avatarFileName, measurements.gender]);
+  }, [selectedSize, imageNumber, measurements.gender]);
 
   // Get the current avatar path
-  const currentAvatarPath = avatarImages[currentImageIndex] || getAvatarPath(avatarFileName, selectedSize, measurements.gender);
-
-  // Function to rotate to next image
-  const rotateImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % avatarImages.length);
-  };
+  const currentAvatarPath = avatarImages[currentImageIndex] || '';
 
   // Function to handle image load error
   const handleImageError = () => {
@@ -156,9 +132,9 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
                 currentAvatarPath={currentAvatarPath}
                 imageLoadFailed={imageLoadFailed}
                 error={error}
-                avatarFileName={avatarFileName}
+                avatarFileName={imageNumber ? `Image ${imageNumber}` : null}
                 onImageError={handleImageError}
-                onRotate={rotateImage}
+                onRotate={() => {}} // Rotation disabled for now
               />
 
               <SizeSelector 

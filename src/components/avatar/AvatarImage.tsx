@@ -29,7 +29,7 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
   
   return (
     <div className="relative bg-gray-50 rounded-2xl p-8 mb-6 min-h-[400px] flex flex-col items-center justify-center">
-      {error && !avatarFileName ? (
+      {error ? (
         <div className="text-center text-red-500">
           <AlertCircle className="w-12 h-12 mx-auto mb-2" />
           <p>{error}</p>
@@ -39,6 +39,11 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
           <AlertCircle className="w-12 h-12 mx-auto mb-2" />
           <p>Could not load the image. Please try a different size.</p>
           <p className="text-xs mt-2 text-gray-500 max-w-full break-all">{currentAvatarPath.substring(0, 100)}...</p>
+        </div>
+      ) : !currentAvatarPath ? (
+        <div className="text-center text-orange-500">
+          <AlertCircle className="w-12 h-12 mx-auto mb-2" />
+          <p>No image available for this combination.</p>
         </div>
       ) : (
         <>
@@ -52,7 +57,7 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
             onError={onImageError}
             onLoad={handleImageLoad}
           />
-          {!isLoading && !imageLoadFailed && (
+          {!isLoading && !imageLoadFailed && onRotate && (
             <Button 
               onClick={onRotate}
               className="mt-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full"
