@@ -1,3 +1,4 @@
+
 // Define types for the CSV data structure
 export interface AvatarData {
   fileName: string;
@@ -82,9 +83,22 @@ export function getAvatarPath(fileName: string | null, size: string, gender: 'wo
   // Format the gender string for URL (capitalize first letter)
   const formattedGender = gender === 'women' ? 'Women' : 'Men';
   
+  // Special case handling for S size which uses different filenames
+  let finalFileName;
+  if (size === 'S') {
+    // For S size, we use Default_Modelist_X instead of the regular filename
+    // Extract the rotation number from the original filename if it exists
+    const rotationMatch = fileName.match(/_(\d+)$/);
+    const rotationNumber = rotationMatch ? rotationMatch[1] : '0';
+    finalFileName = `Default_Modelist_${rotationNumber}`;
+  } else {
+    // For other sizes, use the provided filename
+    finalFileName = fileName;
+  }
+  
   // Create the path that will go after /o/ in the Firebase Storage URL
   // and encode it properly for the URL
-  const storagePath = encodeURIComponent(`${formattedGender}/${size}/${fileName}.png`);
+  const storagePath = encodeURIComponent(`${formattedGender}/${size}/${finalFileName}.png`);
   
   // Format the full Firebase Storage URL with the alt=media parameter
   const avatarUrl = `${FIREBASE_STORAGE_BASE_URL}/${storagePath}?alt=media`;

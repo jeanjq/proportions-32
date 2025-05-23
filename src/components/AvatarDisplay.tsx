@@ -61,13 +61,8 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
           } else {
             setError(null);
             
-            // Create an array of image URLs for rotation (0-9)
-            const baseFileName = fileName.replace(/_\d+$/, '');
-            const imagesArray = Array.from({ length: 10 }, (_, i) => 
-              getAvatarPath(`${baseFileName}_${i}`, size, measurements.gender)
-            );
-            setAvatarImages(imagesArray);
-            console.log("Generated image URLs:", imagesArray);
+            // Generate avatar image URLs for rotation
+            generateAvatarImageUrls(fileName, size);
           }
         }
       } catch (err) {
@@ -85,18 +80,31 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
     loadAvatarData();
   }, [measurements]);
 
+  // Generate an array of avatar image URLs for rotation
+  const generateAvatarImageUrls = (baseFileName: string, size: string) => {
+    // Extract the base filename without rotation number
+    const baseFileNameWithoutRotation = baseFileName.replace(/_\d+$/, '');
+    
+    // Create an array of image URLs for rotation (0-9)
+    const imagesArray = Array.from({ length: 10 }, (_, i) => {
+      // For each rotation, add the appropriate suffix
+      const fileNameWithRotation = `${baseFileNameWithoutRotation}_${i}`;
+      // Generate the full path using our updated path generator
+      return getAvatarPath(fileNameWithRotation, size, measurements.gender);
+    });
+    
+    setAvatarImages(imagesArray);
+    console.log("Generated image URLs:", imagesArray);
+    
+    // Reset the image load failed state when new URLs are generated
+    setImageLoadFailed(false);
+  };
+
   // Update the images array when size changes
   useEffect(() => {
     if (avatarFileName) {
-      const baseFileName = avatarFileName.replace(/_\d+$/, '');
-      const imagesArray = Array.from({ length: 10 }, (_, i) => 
-        getAvatarPath(`${baseFileName}_${i}`, selectedSize, measurements.gender)
-      );
-      setAvatarImages(imagesArray);
-      console.log("Size changed, updated image URLs:", imagesArray);
-      
-      // Reset the image load failed state when size changes
-      setImageLoadFailed(false);
+      // Generate new avatar image URLs for the selected size
+      generateAvatarImageUrls(avatarFileName, selectedSize);
     }
   }, [selectedSize, avatarFileName, measurements.gender]);
 

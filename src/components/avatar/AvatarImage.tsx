@@ -38,7 +38,7 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
         <div className="text-center text-orange-500">
           <AlertCircle className="w-12 h-12 mx-auto mb-2" />
           <p>Could not load the image. Please try a different size.</p>
-          <p className="text-xs mt-2 text-gray-500">{currentAvatarPath}</p>
+          <p className="text-xs mt-2 text-gray-500 max-w-full break-all">{currentAvatarPath.substring(0, 100)}...</p>
         </div>
       ) : (
         <>
