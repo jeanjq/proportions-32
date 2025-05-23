@@ -1,31 +1,39 @@
-
 import { AvatarData } from "../utils/avatarMatching";
 
-/**
- * This file is a placeholder for importing and processing your CSV data.
- * In a real implementation, you would:
- * 1. Convert your CSV to JSON
- * 2. Import the JSON file
- * 3. Process the data as needed
- * 
- * Example:
- * import rawAvatarData from './avatar-data.json';
- * 
- * export const processedAvatarData: AvatarData[] = rawAvatarData.map(item => ({
- *   fileName: item["File Name"],
- *   stature: parseFloat(item["Stature"]),
- *   weight: parseFloat(item["Weight"]),
- *   waistCirc: parseFloat(item["WaistCirc"]),
- *   chestCirc: parseFloat(item["ChestCirc"]),
- *   hipCirc: parseFloat(item["HipCirc"]),
- *   crotchHeight: parseFloat(item["CrotchHeight"]),
- *   underBustCirc: parseFloat(item["UnderBustCirc"]),
- *   bellyShape: item["Shape1"],
- *   hipShape: item["Shape2"],
- * }));
- */
+// Firebase storage URLs
+export const FIREBASE_STORAGE_BASE_URL = "https://storage.googleapis.com/proportions-b1093.firebasestorage.app";
+export const JSON_DATA_URL = `${FIREBASE_STORAGE_BASE_URL}/csvjson%20(1).json`;
 
-// For demonstration, add a few example entries
+// Function to fetch the avatar data from the Firebase JSON
+export async function fetchAvatarData(): Promise<AvatarData[]> {
+  try {
+    const response = await fetch(JSON_DATA_URL);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch data: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    
+    // Process the data to match our AvatarData interface
+    return data.map((item: any) => ({
+      fileName: item["File Name"] || "",
+      stature: parseFloat(item["Stature"]) || 0,
+      weight: parseFloat(item["Weight"]) || 0,
+      waistCirc: parseFloat(item["WaistCirc"]) || 0,
+      chestCirc: parseFloat(item["ChestCirc"]) || 0,
+      hipCirc: parseFloat(item["HipCirc"]) || 0,
+      crotchHeight: parseFloat(item["CrotchHeight"]) || 0,
+      underBustCirc: parseFloat(item["UnderBustCirc"]) || 0,
+      bellyShape: item["Shape1"] || "flat",
+      hipShape: item["Shape2"] || "regular",
+    }));
+  } catch (error) {
+    console.error("Error fetching or processing avatar data:", error);
+    return exampleAvatarData; // Fall back to example data
+  }
+}
+
+// For demonstration, keep the example entries
 export const exampleAvatarData: AvatarData[] = [
   {
     fileName: "avatar_1.png",
@@ -66,5 +74,4 @@ export const exampleAvatarData: AvatarData[] = [
 ];
 
 // Export the example data for testing purposes
-// In a real implementation, you would export your processed data from the CSV
 export default exampleAvatarData;

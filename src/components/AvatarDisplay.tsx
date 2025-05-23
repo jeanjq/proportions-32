@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { UserMeasurements } from './VirtualTryOn';
-import { RotateCcw, User, Sparkles, AlertCircle } from 'lucide-react';
+import { RotateCcw, User, Sparkles, AlertCircle, RefreshCw } from 'lucide-react';
 import { calculateSize, findClosestAvatar, getAvatarPath } from '@/utils/avatarMatching';
+import { fetchAvatarData } from '@/data/importCsvData';
 
 interface AvatarDisplayProps {
   measurements: UserMeasurements;
@@ -17,39 +18,75 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
   const [isLoading, setIsLoading] = useState(true);
   const [avatarFileName, setAvatarFileName] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [avatarData, setAvatarData] = useState<any[]>([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [avatarImages, setAvatarImages] = useState<string[]>([]);
 
+  // Fetch avatar data from Firebase
   useEffect(() => {
-    // Calculate the recommended size based on height and weight
-    const size = calculateSize(measurements.height, measurements.weight);
-    setSelectedSize(size);
-    
-    // Find the closest matching avatar
-    try {
-      const fileName = findClosestAvatar(
-        measurements.height,
-        measurements.weight,
-        measurements.bellyShape,
-        measurements.hipShape,
-        measurements.gender
-      );
-      setAvatarFileName(fileName);
-      
-      if (!fileName) {
-        setError('No matching avatar found. Please try different measurements.');
-      } else {
-        setError(null);
+    async function loadAvatarData() {
+      setIsLoading(true);
+      try {
+        const data = await fetchAvatarData();
+        setAvatarData(data);
+        
+        // Calculate the recommended size based on height and weight
+        const size = calculateSize(measurements.height, measurements.weight);
+        setSelectedSize(size);
+        
+        // Find the closest matching avatar
+        if (data && data.length > 0) {
+          const fileName = findClosestAvatar(
+            measurements.height,
+            measurements.weight,
+            measurements.bellyShape,
+            measurements.hipShape,
+            measurements.gender
+          );
+          setAvatarFileName(fileName);
+          
+          if (!fileName) {
+            setError('No matching avatar found. Please try different measurements.');
+          } else {
+            setError(null);
+            
+            // Create an array of image URLs for rotation (0-828)
+            const baseFileName = fileName.replace(/_\d+$/, '');
+            const imagesArray = Array.from({ length: 10 }, (_, i) => 
+              getAvatarPath(`${baseFileName}_${i}`, size, measurements.gender)
+            );
+            setAvatarImages(imagesArray);
+          }
+        }
+      } catch (err) {
+        console.error('Error loading avatar data:', err);
+        setError('Failed to load avatar data. Please try again later.');
+      } finally {
+        setIsLoading(false);
       }
-    } catch (err) {
-      console.error('Error finding avatar:', err);
-      setError('There was an issue finding your avatar. Please try again.');
     }
     
-    // Simulate loading time for avatar generation
-    setTimeout(() => setIsLoading(false), 1500);
+    loadAvatarData();
   }, [measurements]);
 
+  // Update the images array when size changes
+  useEffect(() => {
+    if (avatarFileName) {
+      const baseFileName = avatarFileName.replace(/_\d+$/, '');
+      const imagesArray = Array.from({ length: 10 }, (_, i) => 
+        getAvatarPath(`${baseFileName}_${i}`, selectedSize, measurements.gender)
+      );
+      setAvatarImages(imagesArray);
+    }
+  }, [selectedSize, avatarFileName, measurements.gender]);
+
   // Get the current avatar path
-  const avatarPath = getAvatarPath(avatarFileName, selectedSize, measurements.gender);
+  const currentAvatarPath = avatarImages[currentImageIndex] || getAvatarPath(avatarFileName, selectedSize, measurements.gender);
+
+  // Function to rotate to next image
+  const rotateImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % avatarImages.length);
+  };
 
   const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
 
@@ -85,22 +122,30 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
                 Size {selectedSize} • Perfect Fit!
               </Badge>
               
-              <div className="relative bg-gray-50 rounded-2xl p-8 mb-6 min-h-[400px] flex items-center justify-center">
+              <div className="relative bg-gray-50 rounded-2xl p-8 mb-6 min-h-[400px] flex flex-col items-center justify-center">
                 {error ? (
                   <div className="text-center text-red-500">
                     <AlertCircle className="w-12 h-12 mx-auto mb-2" />
                     <p>{error}</p>
                   </div>
                 ) : (
-                  <img 
-                    src={avatarPath} 
-                    alt={`Size ${selectedSize} avatar`} 
-                    className="max-h-[350px] max-w-full object-contain"
-                    onError={() => {
-                      console.log(`Failed to load avatar at path: ${avatarPath}`);
-                      setError('Avatar image could not be loaded.');
-                    }}
-                  />
+                  <>
+                    <img 
+                      src={currentAvatarPath} 
+                      alt={`Size ${selectedSize} avatar`} 
+                      className="max-h-[350px] max-w-full object-contain"
+                      onError={() => {
+                        console.log(`Failed to load avatar at path: ${currentAvatarPath}`);
+                        setError('Avatar image could not be loaded.');
+                      }}
+                    />
+                    <Button 
+                      onClick={rotateImage}
+                      className="mt-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full"
+                    >
+                      <RefreshCw className="w-4 h-4 mr-2" /> Rotate View
+                    </Button>
+                  </>
                 )}
               </div>
 

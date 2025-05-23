@@ -13,8 +13,8 @@ export interface AvatarData {
   hipShape: 'slim' | 'regular' | 'full';
 }
 
-// Import our example data
-import exampleAvatarData from '../data/importCsvData';
+// Import our example data and Firebase storage URL
+import exampleAvatarData, { FIREBASE_STORAGE_BASE_URL } from '../data/importCsvData';
 
 // Use the example data for now
 // In a real implementation, you'd replace this with your CSV data
@@ -80,5 +80,21 @@ export function getAvatarPath(fileName: string | null, size: string, gender: 'wo
     return '/placeholder-avatar.png'; // Fallback image
   }
   
-  return `/${size}/${gender}/${fileName}`;
+  // Format the gender string for URL (capitalize first letter)
+  const formattedGender = gender === 'women' ? 'Women' : 'Men';
+  
+  // Return the Firebase Storage URL with the appropriate path
+  // Example: gs://proportions-b1093.firebasestorage.app/Women/M/YANGGE RPET MM _9810046199_B_0.png
+  // Converted to: https://storage.googleapis.com/proportions-b1093.firebasestorage.app/Women/M/YANGGE RPET MM _9810046199_B_0.png
+  
+  // Replace any spaces with %20 for URL compatibility
+  const formattedFileName = fileName.replace(/ /g, '%20');
+  
+  // Extract the base name and add the _0 suffix if it doesn't already have it
+  let imageFileName = formattedFileName;
+  if (!imageFileName.endsWith('_0') && !imageFileName.match(/_\d+$/)) {
+    imageFileName = `${imageFileName}_0`;
+  }
+  
+  return `${FIREBASE_STORAGE_BASE_URL}/${formattedGender}/${size}/${imageFileName}`;
 }
