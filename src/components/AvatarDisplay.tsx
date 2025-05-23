@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -127,7 +126,7 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
     });
   };
 
-  const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
+  const sizes = ['S', 'M', 'L', 'XL'];
 
   if (isLoading) {
     return <LoadingSpinner />;
