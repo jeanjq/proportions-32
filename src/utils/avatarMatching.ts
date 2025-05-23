@@ -83,18 +83,14 @@ export function getAvatarPath(fileName: string | null, size: string, gender: 'wo
   // Format the gender string for URL (capitalize first letter)
   const formattedGender = gender === 'women' ? 'Women' : 'Men';
   
-  // Return the Firebase Storage URL with the appropriate path
-  // Example: gs://proportions-b1093.firebasestorage.app/Women/M/YANGGE RPET MM _9810046199_B_0.png
-  // Converted to: https://storage.googleapis.com/proportions-b1093.firebasestorage.app/Women/M/YANGGE RPET MM _9810046199_B_0.png
-  
   // Replace any spaces with %20 for URL compatibility
   const formattedFileName = fileName.replace(/ /g, '%20');
   
-  // Extract the base name and add the _0 suffix if it doesn't already have it
-  let imageFileName = formattedFileName;
-  if (!imageFileName.endsWith('_0') && !imageFileName.match(/_\d+$/)) {
-    imageFileName = `${imageFileName}_0`;
-  }
+  // Check if we need to add a suffix
+  const imageFileName = formattedFileName.endsWith('_0') ? formattedFileName : `${formattedFileName}_0`;
   
+  console.log(`Creating avatar path: ${FIREBASE_STORAGE_BASE_URL}/${formattedGender}/${size}/${imageFileName}`);
+  
+  // Return the correct HTTPS URL format for Firebase Storage
   return `${FIREBASE_STORAGE_BASE_URL}/${formattedGender}/${size}/${imageFileName}`;
 }

@@ -1,18 +1,21 @@
 import { AvatarData } from "../utils/avatarMatching";
 
-// Firebase storage URLs
-export const FIREBASE_STORAGE_BASE_URL = "https://storage.googleapis.com/proportions-b1093.firebasestorage.app";
+// Firebase storage URLs - using HTTPS instead of gs:// protocol
+export const FIREBASE_STORAGE_BASE_URL = "https://storage.googleapis.com/proportions-b1093.appspot.com";
 export const JSON_DATA_URL = `${FIREBASE_STORAGE_BASE_URL}/csvjson%20(1).json`;
 
 // Function to fetch the avatar data from the Firebase JSON
 export async function fetchAvatarData(): Promise<AvatarData[]> {
   try {
+    console.log("Attempting to fetch data from:", JSON_DATA_URL);
     const response = await fetch(JSON_DATA_URL);
     if (!response.ok) {
+      console.error(`Failed to fetch data: ${response.status} ${response.statusText}`);
       throw new Error(`Failed to fetch data: ${response.status}`);
     }
     
     const data = await response.json();
+    console.log("Data fetched successfully, sample:", data.slice(0, 2));
     
     // Process the data to match our AvatarData interface
     return data.map((item: any) => ({
@@ -36,7 +39,7 @@ export async function fetchAvatarData(): Promise<AvatarData[]> {
 // For demonstration, keep the example entries
 export const exampleAvatarData: AvatarData[] = [
   {
-    fileName: "avatar_1.png",
+    fileName: "YANGGE RPET MM _9810046199_B_0",
     stature: 165,
     weight: 60,
     waistCirc: 70,
@@ -48,7 +51,7 @@ export const exampleAvatarData: AvatarData[] = [
     hipShape: "regular"
   },
   {
-    fileName: "avatar_2.png",
+    fileName: "Default_Modelist_0",
     stature: 170,
     weight: 75,
     waistCirc: 80,
@@ -60,7 +63,7 @@ export const exampleAvatarData: AvatarData[] = [
     hipShape: "full"
   },
   {
-    fileName: "avatar_3.png",
+    fileName: "YANGGE RPET MM _9810046199_B_0",
     stature: 160,
     weight: 55,
     waistCirc: 65,

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -7,6 +6,7 @@ import { UserMeasurements } from './VirtualTryOn';
 import { RotateCcw, User, Sparkles, AlertCircle, RefreshCw } from 'lucide-react';
 import { calculateSize, findClosestAvatar, getAvatarPath } from '@/utils/avatarMatching';
 import { fetchAvatarData } from '@/data/importCsvData';
+import { toast } from "@/components/ui/use-toast";
 
 interface AvatarDisplayProps {
   measurements: UserMeasurements;
@@ -21,6 +21,7 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
   const [avatarData, setAvatarData] = useState<any[]>([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [avatarImages, setAvatarImages] = useState<string[]>([]);
+  const [imageLoadFailed, setImageLoadFailed] = useState(false);
 
   // Fetch avatar data from Firebase
   useEffect(() => {
@@ -29,6 +30,7 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
       try {
         const data = await fetchAvatarData();
         setAvatarData(data);
+        console.log("Avatar data loaded:", data.length, "items");
         
         // Calculate the recommended size based on height and weight
         const size = calculateSize(measurements.height, measurements.weight);
@@ -46,21 +48,28 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
           setAvatarFileName(fileName);
           
           if (!fileName) {
-            setError('No matching avatar found. Please try different measurements.');
+            setError('No matching avatar found. Using example avatar instead.');
+            // Use the first example avatar if no match is found
+            setAvatarFileName(data[0].fileName);
           } else {
             setError(null);
             
-            // Create an array of image URLs for rotation (0-828)
+            // Create an array of image URLs for rotation (0-9)
             const baseFileName = fileName.replace(/_\d+$/, '');
             const imagesArray = Array.from({ length: 10 }, (_, i) => 
               getAvatarPath(`${baseFileName}_${i}`, size, measurements.gender)
             );
             setAvatarImages(imagesArray);
+            console.log("Generated image URLs:", imagesArray);
           }
         }
       } catch (err) {
         console.error('Error loading avatar data:', err);
-        setError('Failed to load avatar data. Please try again later.');
+        setError('Failed to load avatar data. Using example avatar instead.');
+        // Use example data as fallback
+        const size = calculateSize(measurements.height, measurements.weight);
+        setSelectedSize(size);
+        setAvatarFileName(exampleAvatarData[0].fileName);
       } finally {
         setIsLoading(false);
       }
@@ -77,6 +86,10 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
         getAvatarPath(`${baseFileName}_${i}`, selectedSize, measurements.gender)
       );
       setAvatarImages(imagesArray);
+      console.log("Size changed, updated image URLs:", imagesArray);
+      
+      // Reset the image load failed state when size changes
+      setImageLoadFailed(false);
     }
   }, [selectedSize, avatarFileName, measurements.gender]);
 
@@ -86,6 +99,17 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
   // Function to rotate to next image
   const rotateImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % avatarImages.length);
+  };
+
+  // Function to handle image load error
+  const handleImageError = () => {
+    console.log(`Failed to load avatar at path: ${currentAvatarPath}`);
+    setImageLoadFailed(true);
+    toast({
+      title: "Image Load Error",
+      description: "Could not load the avatar image. Please try a different size or refresh the page.",
+      variant: "destructive"
+    });
   };
 
   const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
@@ -123,10 +147,16 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
               </Badge>
               
               <div className="relative bg-gray-50 rounded-2xl p-8 mb-6 min-h-[400px] flex flex-col items-center justify-center">
-                {error ? (
+                {error && !avatarFileName ? (
                   <div className="text-center text-red-500">
                     <AlertCircle className="w-12 h-12 mx-auto mb-2" />
                     <p>{error}</p>
+                  </div>
+                ) : imageLoadFailed ? (
+                  <div className="text-center text-orange-500">
+                    <AlertCircle className="w-12 h-12 mx-auto mb-2" />
+                    <p>Could not load the image. Please try a different size.</p>
+                    <p className="text-xs mt-2 text-gray-500">{currentAvatarPath}</p>
                   </div>
                 ) : (
                   <>
@@ -134,17 +164,16 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
                       src={currentAvatarPath} 
                       alt={`Size ${selectedSize} avatar`} 
                       className="max-h-[350px] max-w-full object-contain"
-                      onError={() => {
-                        console.log(`Failed to load avatar at path: ${currentAvatarPath}`);
-                        setError('Avatar image could not be loaded.');
-                      }}
+                      onError={handleImageError}
                     />
-                    <Button 
-                      onClick={rotateImage}
-                      className="mt-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full"
-                    >
-                      <RefreshCw className="w-4 h-4 mr-2" /> Rotate View
-                    </Button>
+                    {!imageLoadFailed && (
+                      <Button 
+                        onClick={rotateImage}
+                        className="mt-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full"
+                      >
+                        <RefreshCw className="w-4 h-4 mr-2" /> Rotate View
+                      </Button>
+                    )}
                   </>
                 )}
               </div>
