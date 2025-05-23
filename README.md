@@ -1,73 +1,80 @@
-# Welcome to your Lovable project
 
-## Project info
+# FitVerse Avatar Lab
 
-**URL**: https://lovable.dev/projects/b18ce4e7-fed5-4979-a83d-2b2386ed2b8c
+A virtual try-on application that creates personalized avatars based on user measurements and body shape.
 
-## How can I edit this code?
+## Prerequisites
 
-There are several ways of editing your application.
+- [Node.js](https://nodejs.org/) (v18 or later recommended)
+- npm (comes with Node.js)
+- Git (optional, for cloning)
 
-**Use Lovable**
+## Getting Started
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b18ce4e7-fed5-4979-a83d-2b2386ed2b8c) and start prompting.
+### 1. Download the Code
 
-Changes made via Lovable will be committed automatically to this repo.
+Either clone this repository using Git:
 
-**Use your preferred IDE**
+```bash
+git clone <repository-url>
+cd fit-verse-avatar-lab
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Or download it as a ZIP file and extract it to your preferred location.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 2. Install Dependencies
 
-Follow these steps:
+Open a terminal in the project directory and run:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+This will install all required packages listed in package.json.
 
-# Step 3: Install the necessary dependencies.
-npm i
+### 3. Run the Development Server
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Start the local development server:
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+This will launch the application on [http://localhost:8080](http://localhost:8080).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 4. Using the Application
 
-**Use GitHub Codespaces**
+The application allows users to:
+- Enter their height, weight, and body shape information
+- See a personalized avatar with clothing items
+- Rotate the avatar for a 360° view
+- Try different sizes to find the best fit
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Firebase Integration
 
-## What technologies are used for this project?
+This application uses Firebase for storing avatar data. When running locally, it will use the same Firebase instance as the online version.
 
-This project is built with:
+## Building for Production
 
-- Vite
-- TypeScript
+To create an optimized production build:
+
+```bash
+npm run build
+```
+
+The compiled files will be in the `dist` folder, which can be deployed to any static web hosting service.
+
+## Project Structure
+
+- `src/components` - React components
+- `src/data` - Data fetching utilities
+- `src/utils` - Helper functions for avatar matching
+- `src/pages` - Page components
+
+## Technology Stack
+
 - React
-- shadcn-ui
+- TypeScript
 - Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/b18ce4e7-fed5-4979-a83d-2b2386ed2b8c) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- shadcn/ui components
+- Firebase for avatar data storage
