@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { UserMeasurements } from './VirtualTryOn';
-import { RotateCcw, User, Sparkles } from 'lucide-react';
+import { RotateCcw, User, Sparkles, AlertCircle } from 'lucide-react';
+import { calculateSize, findClosestAvatar, getAvatarPath } from '@/utils/avatarMatching';
 
 interface AvatarDisplayProps {
   measurements: UserMeasurements;
@@ -14,31 +15,41 @@ interface AvatarDisplayProps {
 export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRestart }) => {
   const [selectedSize, setSelectedSize] = useState<string>('');
   const [isLoading, setIsLoading] = useState(true);
-
-  // Calculate size based on height and weight
-  const calculateSize = (height: number, weight: number): string => {
-    const bmi = weight / ((height / 100) ** 2);
-    
-    if (bmi < 18.5) return 'S';
-    if (bmi < 24.9) return 'M';
-    if (bmi < 29.9) return 'L';
-    if (bmi < 34.9) return 'XL';
-    return 'XXL';
-  };
+  const [avatarFileName, setAvatarFileName] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    // Calculate the recommended size based on height and weight
     const size = calculateSize(measurements.height, measurements.weight);
     setSelectedSize(size);
     
-    // Simulate loading
+    // Find the closest matching avatar
+    try {
+      const fileName = findClosestAvatar(
+        measurements.height,
+        measurements.weight,
+        measurements.bellyShape,
+        measurements.hipShape,
+        measurements.gender
+      );
+      setAvatarFileName(fileName);
+      
+      if (!fileName) {
+        setError('No matching avatar found. Please try different measurements.');
+      } else {
+        setError(null);
+      }
+    } catch (err) {
+      console.error('Error finding avatar:', err);
+      setError('There was an issue finding your avatar. Please try again.');
+    }
+    
+    // Simulate loading time for avatar generation
     setTimeout(() => setIsLoading(false), 1500);
   }, [measurements]);
 
-  // Mock avatar path generation
-  const getAvatarPath = (size: string) => {
-    const filename = `${measurements.bellyShape}_${measurements.hipShape}_avatar.png`;
-    return `/${size}/${measurements.gender}/${filename}`;
-  };
+  // Get the current avatar path
+  const avatarPath = getAvatarPath(avatarFileName, selectedSize, measurements.gender);
 
   const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
 
@@ -75,16 +86,22 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
               </Badge>
               
               <div className="relative bg-gray-50 rounded-2xl p-8 mb-6 min-h-[400px] flex items-center justify-center">
-                {/* Placeholder avatar - in real implementation, this would be the actual image */}
-                <div className="text-center">
-                  <User className="w-32 h-32 text-gray-300 mx-auto mb-4" />
-                  <p className="text-sm text-gray-500">
-                    Avatar: {getAvatarPath(selectedSize)}
-                  </p>
-                  <p className="text-xs text-gray-400 mt-2">
-                    {measurements.bellyShape} belly • {measurements.hipShape} hips
-                  </p>
-                </div>
+                {error ? (
+                  <div className="text-center text-red-500">
+                    <AlertCircle className="w-12 h-12 mx-auto mb-2" />
+                    <p>{error}</p>
+                  </div>
+                ) : (
+                  <img 
+                    src={avatarPath} 
+                    alt={`Size ${selectedSize} avatar`} 
+                    className="max-h-[350px] max-w-full object-contain"
+                    onError={() => {
+                      console.log(`Failed to load avatar at path: ${avatarPath}`);
+                      setError('Avatar image could not be loaded.');
+                    }}
+                  />
+                )}
               </div>
 
               {/* Size Selector */}
