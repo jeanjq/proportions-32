@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Scale } from 'lucide-react';
 
 interface WeightStepProps {
@@ -10,6 +10,12 @@ interface WeightStepProps {
 }
 
 export const WeightStep: React.FC<WeightStepProps> = ({ value, onChange }) => {
+  // Generate weight options from 40kg to 120kg
+  const weightOptions = [];
+  for (let i = 40; i <= 120; i++) {
+    weightOptions.push(i);
+  }
+
   return (
     <div className="text-center space-y-6">
       <div className="mb-8">
@@ -24,21 +30,18 @@ export const WeightStep: React.FC<WeightStepProps> = ({ value, onChange }) => {
         <Label htmlFor="weight" className="text-base font-medium text-gray-700 block mb-3">
           Weight in kilograms
         </Label>
-        <div className="relative">
-          <Input
-            id="weight"
-            type="number"
-            placeholder="e.g., 65"
-            value={value || ''}
-            onChange={(e) => onChange(Number(e.target.value))}
-            className="text-center text-lg py-4 border-2 border-gray-200 focus:border-coral-400 rounded-full"
-            min="40"
-            max="150"
-          />
-          <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm">
-            kg
-          </span>
-        </div>
+        <Select value={value ? value.toString() : ""} onValueChange={(val) => onChange(Number(val))}>
+          <SelectTrigger className="text-center text-lg py-6 border-2 border-gray-200 focus:border-coral-400 rounded-full">
+            <SelectValue placeholder="Select your weight" />
+          </SelectTrigger>
+          <SelectContent className="max-h-60 bg-white border border-gray-200 shadow-lg">
+            {weightOptions.map((weight) => (
+              <SelectItem key={weight} value={weight.toString()} className="text-center">
+                {weight} kg
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
         <p className="text-xs text-gray-500 mt-2">We keep this private & secure</p>
       </div>
     </div>

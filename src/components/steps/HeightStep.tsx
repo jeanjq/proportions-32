@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Ruler } from 'lucide-react';
 
 interface HeightStepProps {
@@ -10,6 +10,12 @@ interface HeightStepProps {
 }
 
 export const HeightStep: React.FC<HeightStepProps> = ({ value, onChange }) => {
+  // Generate height options from 140cm to 200cm
+  const heightOptions = [];
+  for (let i = 140; i <= 200; i++) {
+    heightOptions.push(i);
+  }
+
   return (
     <div className="text-center space-y-6">
       <div className="mb-8">
@@ -24,22 +30,19 @@ export const HeightStep: React.FC<HeightStepProps> = ({ value, onChange }) => {
         <Label htmlFor="height" className="text-base font-medium text-gray-700 block mb-3">
           Height in centimeters
         </Label>
-        <div className="relative">
-          <Input
-            id="height"
-            type="number"
-            placeholder="e.g., 165"
-            value={value || ''}
-            onChange={(e) => onChange(Number(e.target.value))}
-            className="text-center text-lg py-4 border-2 border-gray-200 focus:border-coral-400 rounded-full"
-            min="120"
-            max="220"
-          />
-          <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm">
-            cm
-          </span>
-        </div>
-        <p className="text-xs text-gray-500 mt-2">Usually between 150-190 cm</p>
+        <Select value={value ? value.toString() : ""} onValueChange={(val) => onChange(Number(val))}>
+          <SelectTrigger className="text-center text-lg py-6 border-2 border-gray-200 focus:border-coral-400 rounded-full">
+            <SelectValue placeholder="Select your height" />
+          </SelectTrigger>
+          <SelectContent className="max-h-60 bg-white border border-gray-200 shadow-lg">
+            {heightOptions.map((height) => (
+              <SelectItem key={height} value={height.toString()} className="text-center">
+                {height} cm
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+        <p className="text-xs text-gray-500 mt-2">Usually between 140-200 cm</p>
       </div>
     </div>
   );
