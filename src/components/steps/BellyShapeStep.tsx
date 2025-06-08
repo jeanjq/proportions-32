@@ -33,7 +33,7 @@ export const BellyShapeStep: React.FC<BellyShapeStepProps> = ({ value, onChange 
     <div className="text-center space-y-8">
       <div className="mb-8">
         <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mx-auto mb-4 flex items-center justify-center">
-          <span className="text-2xl">🤰</span>
+          <span className="text-4xl">🤰</span>
         </div>
         <h2 className="text-2xl font-bold text-gray-800 mb-2">What's your belly shape?</h2>
         <p className="text-gray-600">Choose the shape that best describes you!</p>
