@@ -78,7 +78,7 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
   const fallbackImageUrl = "/placeholder-avatar.png";
   
   return (
-    <div className="relative rounded-2xl p-8 mb-6 min-h-[400px] flex flex-col items-center justify-center">
+    <div className="relative rounded-2xl p-8 mb-6 min-h-[500px] flex flex-col items-center justify-center">
       {error ? (
         <div className="text-center text-red-500">
           <AlertCircle className="w-12 h-12 mx-auto mb-2" />
@@ -91,7 +91,7 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
           <img 
             src={fallbackImageUrl}
             alt="Default avatar" 
-            className="max-h-[350px] max-w-full object-contain mt-4"
+            className="max-h-[450px] max-w-full object-contain mt-4"
           />
         </div>
       ) : !currentAvatarPath ? (
@@ -103,7 +103,7 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
         <>
           {isLoading && (
             <div className="w-full space-y-4">
-              <Skeleton className="w-full h-[280px] rounded-md" />
+              <Skeleton className="w-full h-[380px] rounded-md" />
               <div className="space-y-2">
                 <p className="text-sm text-center text-gray-500">Loading your perfect fit...</p>
                 <Progress value={loadingProgress} className="h-2 w-full" />
@@ -113,7 +113,7 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
           <img 
             src={currentAvatarPath} 
             alt="Avatar preview" 
-            className={`max-h-[350px] max-w-full object-contain transition-opacity duration-700 ease-in-out ${isLoading ? 'opacity-0 hidden' : 'opacity-100 animate-scale-in'}`}
+            className={`max-h-[450px] max-w-full object-contain transition-opacity duration-700 ease-in-out ${isLoading ? 'opacity-0 hidden' : 'opacity-100 animate-scale-in'}`}
             onError={handleImageError}
             onLoad={handleImageLoad}
           />
