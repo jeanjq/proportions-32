@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -150,7 +149,7 @@ export const VirtualTryOn = () => {
   if (!isStarted) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-pink-50 via-orange-50 to-yellow-50 flex items-center justify-center p-4">
-        <Card className="max-w-lg w-full p-8 text-center bg-white/20 backdrop-blur-md border border-white/30 shadow-2xl">
+        <Card className="max-w-lg w-full p-8 text-center bg-white/10 backdrop-blur-md border border-white/30 shadow-2xl">
           <div className="mb-6">
             <div className="w-20 h-20 bg-lime-400/30 backdrop-blur-md rounded-full mx-auto mb-4 flex items-center justify-center border border-lime-300/40 shadow-lg">
               <Sparkles className="w-10 h-10 text-white" />
@@ -185,7 +184,7 @@ export const VirtualTryOn = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-orange-50 to-yellow-50 flex items-center justify-center p-4">
-      <Card className="max-w-2xl w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-2xl overflow-hidden">
+      <Card className="max-w-2xl w-full bg-white/10 backdrop-blur-md border border-white/30 shadow-2xl overflow-hidden">
         {/* Progress Header */}
         <div className="bg-white/20 backdrop-blur-md p-6 text-black border-b border-white/20">
           <div className="flex items-center justify-between mb-4">
@@ -213,7 +212,7 @@ export const VirtualTryOn = () => {
         </div>
 
         {/* Step Content */}
-        <div className="p-8 bg-white/10 backdrop-blur-sm">
+        <div className="p-8 bg-white/5 backdrop-blur-sm">
           {currentStepType === 'gender' && (
             <GenderStep 
               value={measurements.gender}
