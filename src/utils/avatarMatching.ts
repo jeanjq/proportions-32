@@ -1,3 +1,4 @@
+
 // Define types for the CSV data structure
 export interface AvatarData {
   fileName: string;
@@ -10,6 +11,7 @@ export interface AvatarData {
   underBustCirc: number;
   bellyShape: 'flat' | 'round' | 'curvy';
   hipShape: 'slim' | 'regular' | 'full';
+  shoulderWidth?: '1' | '2' | '3'; // Add shoulder width support
   recommendedSize?: string; // Add recommended size from CSV
 }
 
@@ -43,15 +45,16 @@ const fallbackOutputData: OutputData[] = [
 
 /**
  * Find the closest matching avatar and return both image number and recommended size
+ * Updated to handle shoulder width for men and hip shape for women
  */
 export async function findClosestAvatarWithSize(
   height: number,
   weight: number,
   bellyShape: 'flat' | 'round' | 'curvy' | null,
-  hipShape: 'slim' | 'regular' | 'full' | null,
+  hipShapeOrShoulderWidth: 'slim' | 'regular' | 'full' | '1' | '2' | '3' | null,
   gender: 'male' | 'female'
 ): Promise<{ imageNumber: number | null; recommendedSize: string }> {
-  if (!bellyShape || !hipShape) return { imageNumber: null, recommendedSize: calculateSize(height, weight) };
+  if (!bellyShape || !hipShapeOrShoulderWidth) return { imageNumber: null, recommendedSize: calculateSize(height, weight) };
 
   try {
     // Fetch gender-specific data from the new CSV files
@@ -61,22 +64,27 @@ export async function findClosestAvatarWithSize(
     if (genderData.length === 0) {
       console.log('No data found, using fallback logic');
       return { 
-        imageNumber: getFallbackImageNumber(bellyShape, hipShape), 
+        imageNumber: getFallbackImageNumber(bellyShape, hipShapeOrShoulderWidth, gender), 
         recommendedSize: calculateSize(height, weight) 
       };
     }
     
-    // Filter by belly shape and hip shape first (exact match required)
-    const filteredData = genderData.filter(
-      (entry) => 
-        entry.bellyShape === bellyShape && 
-        entry.hipShape === hipShape
-    );
+    // Filter by belly shape and second shape parameter based on gender
+    const filteredData = genderData.filter((entry) => {
+      if (gender === 'male') {
+        // For men, match belly shape and shoulder width (map to hip shape for CSV compatibility)
+        const shoulderToHip = mapShoulderWidthToHipShape(hipShapeOrShoulderWidth as '1' | '2' | '3');
+        return entry.bellyShape === bellyShape && entry.hipShape === shoulderToHip;
+      } else {
+        // For women, match belly shape and hip shape directly
+        return entry.bellyShape === bellyShape && entry.hipShape === hipShapeOrShoulderWidth;
+      }
+    });
     
     if (filteredData.length === 0) {
       console.log('No matching avatars found for the given shapes, using fallback');
       return { 
-        imageNumber: getFallbackImageNumber(bellyShape, hipShape), 
+        imageNumber: getFallbackImageNumber(bellyShape, hipShapeOrShoulderWidth, gender), 
         recommendedSize: calculateSize(height, weight) 
       };
     }
@@ -103,9 +111,21 @@ export async function findClosestAvatarWithSize(
   } catch (error) {
     console.error("Error finding closest avatar:", error);
     return { 
-      imageNumber: getFallbackImageNumber(bellyShape, hipShape), 
+      imageNumber: getFallbackImageNumber(bellyShape, hipShapeOrShoulderWidth, gender), 
       recommendedSize: calculateSize(height, weight) 
     };
+  }
+}
+
+/**
+ * Map shoulder width values to hip shape values for CSV compatibility
+ */
+function mapShoulderWidthToHipShape(shoulderWidth: '1' | '2' | '3'): 'slim' | 'regular' | 'full' {
+  switch (shoulderWidth) {
+    case '1': return 'slim';
+    case '2': return 'regular';
+    case '3': return 'full';
+    default: return 'regular';
   }
 }
 
@@ -133,18 +153,30 @@ function extractImageNumber(fileName: string): number {
 }
 
 /**
- * Get fallback image number based on shapes
+ * Get fallback image number based on shapes and gender
  */
-function getFallbackImageNumber(bellyShape: string, hipShape: string): number {
-  const shapeMapping: Record<string, Record<string, number>> = {
-    'flat': { 'slim': 101, 'regular': 102, 'full': 103 },
-    'round': { 'slim': 104, 'regular': 105, 'full': 106 },
-    'curvy': { 'slim': 107, 'regular': 108, 'full': 109 }
-  };
-  
-  const fallbackNumber = shapeMapping[bellyShape]?.[hipShape] || 105;
-  console.log(`Using fallback image number: ${fallbackNumber}`);
-  return fallbackNumber;
+function getFallbackImageNumber(bellyShape: string, secondShape: string, gender: 'male' | 'female'): number {
+  if (gender === 'male') {
+    // For men, map shoulder width to fallback numbers
+    const shoulderMapping: Record<string, Record<string, number>> = {
+      'flat': { '1': 101, '2': 102, '3': 103 },
+      'round': { '1': 104, '2': 105, '3': 106 },
+      'curvy': { '1': 107, '2': 108, '3': 109 }
+    };
+    const fallbackNumber = shoulderMapping[bellyShape]?.[secondShape] || 105;
+    console.log(`Using fallback image number for male: ${fallbackNumber}`);
+    return fallbackNumber;
+  } else {
+    // For women, use hip shape mapping
+    const shapeMapping: Record<string, Record<string, number>> = {
+      'flat': { 'slim': 101, 'regular': 102, 'full': 103 },
+      'round': { 'slim': 104, 'regular': 105, 'full': 106 },
+      'curvy': { 'slim': 107, 'regular': 108, 'full': 109 }
+    };
+    const fallbackNumber = shapeMapping[bellyShape]?.[secondShape] || 105;
+    console.log(`Using fallback image number for female: ${fallbackNumber}`);
+    return fallbackNumber;
+  }
 }
 
 /**

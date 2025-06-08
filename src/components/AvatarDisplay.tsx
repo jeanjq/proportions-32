@@ -44,12 +44,17 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
         // Map gender for avatar matching
         const genderForMatching = getGenderForMatching(measurements.gender!);
         
+        // Get the correct second shape parameter based on gender
+        const secondShapeParam = genderForMatching === 'male' 
+          ? measurements.shoulderWidth 
+          : measurements.hipShape;
+        
         // Find the closest matching avatar image number and get recommended size from CSV
         const result = await findClosestAvatarWithSize(
           measurements.height,
           measurements.weight,
           measurements.bellyShape,
-          measurements.hipShape,
+          secondShapeParam,
           genderForMatching
         );
         
