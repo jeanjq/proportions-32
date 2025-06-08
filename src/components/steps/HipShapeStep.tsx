@@ -33,7 +33,7 @@ export const HipShapeStep: React.FC<HipShapeStepProps> = ({ value, onChange }) =
     <div className="text-center space-y-8">
       <div className="mb-8">
         <div className="w-20 h-20 bg-gradient-to-r from-coral-400/80 to-peach-400/80 backdrop-blur-sm rounded-full mx-auto mb-4 flex items-center justify-center border border-white/20 shadow-lg">
-          <span className="text-3xl">✨</span>
+          <span className="text-3xl text-white">✨</span>
         </div>
         <h2 className="text-3xl font-bold text-gray-800 mb-2">What about your hip shape?</h2>
         <p className="text-gray-600">Last question! Just one more click! 🎉</p>
