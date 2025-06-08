@@ -14,14 +14,14 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
 }) => {
   return (
     <div className="space-y-3">
-      <Button className="w-full py-4 bg-lime-400/30 hover:bg-lime-400/40 backdrop-blur-md border border-lime-300/40 text-gray-800 rounded-full font-medium text-lg shadow-lg">
+      <Button className="w-full py-4 bg-orange-400/30 hover:bg-orange-400/40 backdrop-blur-md border border-orange-300/40 text-gray-800 rounded-full font-medium text-lg shadow-lg">
         Add Size {selectedSize} to Cart 🛒
       </Button>
       
       <Button 
         variant="outline" 
         onClick={onRestart}
-        className="w-full py-3 border-white/20 bg-white/10 backdrop-blur-md text-gray-700 hover:bg-lime-100/20 hover:border-lime-200/40 rounded-full shadow-lg"
+        className="w-full py-3 border-white/20 bg-white/10 backdrop-blur-md text-gray-700 hover:bg-orange-100/20 hover:border-orange-200/40 rounded-full shadow-lg"
       >
         <RotateCcw className="w-4 h-4 mr-2" />
         Try Again
