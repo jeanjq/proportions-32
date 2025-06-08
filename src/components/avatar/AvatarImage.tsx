@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { AlertCircle, RefreshCw } from 'lucide-react';
@@ -117,7 +116,7 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
             onError={handleImageError}
             onLoad={handleImageLoad}
           />
-          {!isLoading && !imageLoadFailed && onRotate && (
+          {!isLoading && !imageLoadFailed && (
             <Button 
               onClick={onRotate}
               className="mt-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full"

@@ -1,4 +1,3 @@
-
 // Define types for the CSV data structure
 export interface AvatarData {
   fileName: string;
@@ -29,6 +28,10 @@ import exampleAvatarData, { FIREBASE_STORAGE_BASE_URL, fetchGenderSpecificData }
 
 // Use the example data for fallback
 export const avatarData: AvatarData[] = exampleAvatarData;
+
+// Available view angles for rotation
+export const AVAILABLE_VIEWS = ['Front', 'Back'] as const;
+export type ViewAngle = typeof AVAILABLE_VIEWS[number];
 
 // Fallback data for when the fetch fails
 const fallbackOutputData: OutputData[] = [
@@ -195,7 +198,7 @@ export function calculateSize(height: number, weight: number): string {
 /**
  * Get the path to the avatar image using Firebase Storage with the adidas naming format
  */
-export function getAvatarPath(imageNumber: number | null, size: string, gender: 'male' | 'female'): string {
+export function getAvatarPath(imageNumber: number | null, size: string, gender: 'male' | 'female', view: ViewAngle = 'Front'): string {
   if (imageNumber === null) {
     return '/placeholder-avatar.png'; // Fallback image
   }
@@ -206,12 +209,9 @@ export function getAvatarPath(imageNumber: number | null, size: string, gender: 
   // Use the adidas naming convention
   const filename = `adidas_${imageNumber}`;
   
-  // Determine the view folder (using 'Front' as default, can be expanded later)
-  const viewFolder = 'Front';
-  
   // Create the path that will go after /o/ in the Firebase Storage URL
   // Format: Gender/View/Size/filename.png
-  const storagePath = encodeURIComponent(`${formattedGender}/${viewFolder}/${size}/${filename}.png`);
+  const storagePath = encodeURIComponent(`${formattedGender}/${view}/${size}/${filename}.png`);
   
   // Format the full Firebase Storage URL
   const avatarUrl = `${FIREBASE_STORAGE_BASE_URL}/${storagePath}?alt=media`;
@@ -219,4 +219,13 @@ export function getAvatarPath(imageNumber: number | null, size: string, gender: 
   console.log(`Creating avatar path: ${avatarUrl}`);
   
   return avatarUrl;
+}
+
+/**
+ * Get all available views for a specific avatar
+ */
+export function getAvatarViews(imageNumber: number | null, size: string, gender: 'male' | 'female'): string[] {
+  if (imageNumber === null) return ['/placeholder-avatar.png'];
+  
+  return AVAILABLE_VIEWS.map(view => getAvatarPath(imageNumber, size, gender, view));
 }

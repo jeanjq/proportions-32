@@ -85,16 +85,17 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
     // Map gender for avatar path generation
     const genderForMatching = getGenderForMatching(measurements.gender!);
     
-    // For now, we'll just use a single image for each size
-    // In a future enhancement, we could generate multiple view angles if available
-    const imageUrl = getAvatarPath(imgNumber, size, genderForMatching);
-    setAvatarImages([imageUrl]);
-    
-    console.log("Generated image URL:", imageUrl);
-    
-    // Reset the image load failed state when new URLs are generated
-    setImageLoadFailed(false);
-    setCurrentImageIndex(0);
+    // Import the function to get multiple views
+    import('@/utils/avatarMatching').then(({ getAvatarViews }) => {
+      const imageUrls = getAvatarViews(imgNumber, size, genderForMatching);
+      setAvatarImages(imageUrls);
+      
+      console.log("Generated image URLs:", imageUrls);
+      
+      // Reset the image load failed state when new URLs are generated
+      setImageLoadFailed(false);
+      setCurrentImageIndex(0);
+    });
   };
 
   // Update the images array when size changes
@@ -107,6 +108,13 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
 
   // Get the current avatar path
   const currentAvatarPath = avatarImages[currentImageIndex] || '';
+
+  // Function to handle rotation
+  const handleRotate = () => {
+    if (avatarImages.length > 1) {
+      setCurrentImageIndex(prev => (prev + 1) % avatarImages.length);
+    }
+  };
 
   // Function to handle image load error
   const handleImageError = () => {
@@ -148,7 +156,7 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
                 error={error}
                 avatarFileName={imageNumber ? `adidas_${imageNumber}` : null}
                 onImageError={handleImageError}
-                onRotate={() => {}} // Rotation disabled for now
+                onRotate={handleRotate}
               />
 
               <SizeSelector 
