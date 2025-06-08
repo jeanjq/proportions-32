@@ -51,7 +51,6 @@ export const WeightStep: React.FC<WeightStepProps> = ({ value, onChange }) => {
             ))}
           </SelectContent>
         </Select>
-        <p className="text-xs text-gray-500 mt-2">European average: Women 65kg, Men 82kg</p>
       </div>
     </div>
   );

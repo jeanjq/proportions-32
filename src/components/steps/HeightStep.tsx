@@ -51,7 +51,6 @@ export const HeightStep: React.FC<HeightStepProps> = ({ value, onChange }) => {
             ))}
           </SelectContent>
         </Select>
-        <p className="text-xs text-gray-500 mt-2">European average: Women 165cm, Men 178cm</p>
       </div>
     </div>
   );
