@@ -40,7 +40,7 @@ export const WeightStep: React.FC<WeightStepProps> = ({ value, onChange }) => {
           onValueChange={(val) => onChange(Number(val))}
           defaultValue={getDefaultWeight().toString()}
         >
-          <SelectTrigger className="text-center text-lg py-6 border-2 bg-white/10 backdrop-blur-md border-white/20 focus:border-lime-300/60 hover:border-lime-200/40 rounded-full shadow-lg">
+          <SelectTrigger className="text-center text-lg py-6 border-2 bg-white/10 backdrop-blur-md border-white/20 hover:border-lime-200/40 rounded-full shadow-lg focus:ring-0 focus:ring-offset-0 focus:border-lime-300/60">
             <SelectValue placeholder="Select your weight" />
           </SelectTrigger>
           <SelectContent className="max-h-60 bg-white/20 backdrop-blur-md border border-white/30 shadow-lg">
