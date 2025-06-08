@@ -1,21 +1,31 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 interface SizeSelectorProps {
   selectedSize: string;
   onSelectSize: (size: string) => void;
   sizes: string[];
+  recommendedSize?: string;
 }
 
 const SizeSelector: React.FC<SizeSelectorProps> = ({ 
   selectedSize, 
   onSelectSize,
-  sizes 
+  sizes,
+  recommendedSize 
 }) => {
   return (
     <div className="space-y-4">
       <h3 className="font-semibold text-gray-800">Try Different Sizes</h3>
+      {recommendedSize && (
+        <div className="text-center mb-2">
+          <Badge className="bg-gradient-to-r from-coral-500 to-peach-500 text-white border-0">
+            Recommended: {recommendedSize}
+          </Badge>
+        </div>
+      )}
       <div className="flex justify-center gap-2">
         {sizes.map((size) => (
           <Button

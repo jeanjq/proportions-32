@@ -1,9 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card } from "@/components/ui/card";
 import { UserMeasurements } from './VirtualTryOn';
 import { Sparkles } from 'lucide-react';
-import { calculateSize, findClosestAvatar, getAvatarPath } from '@/utils/avatarMatching';
+import { findClosestAvatarWithSize, getAvatarPath } from '@/utils/avatarMatching';
 import { toast } from "@/components/ui/use-toast";
 
 // Import our components
@@ -20,6 +19,7 @@ interface AvatarDisplayProps {
 
 export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRestart }) => {
   const [selectedSize, setSelectedSize] = useState<string>('');
+  const [recommendedSize, setRecommendedSize] = useState<string>('');
   const [isLoading, setIsLoading] = useState(true);
   const [imageNumber, setImageNumber] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -32,12 +32,8 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
     async function findMatchingAvatar() {
       setIsLoading(true);
       try {
-        // Calculate the recommended size based on height and weight
-        const size = calculateSize(measurements.height, measurements.weight);
-        setSelectedSize(size);
-        
-        // Find the closest matching avatar image number
-        const imageNum = await findClosestAvatar(
+        // Find the closest matching avatar image number and get recommended size from CSV
+        const result = await findClosestAvatarWithSize(
           measurements.height,
           measurements.weight,
           measurements.bellyShape,
@@ -45,14 +41,16 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
           measurements.gender!
         );
         
-        setImageNumber(imageNum);
+        setImageNumber(result.imageNumber);
+        setRecommendedSize(result.recommendedSize);
+        setSelectedSize(result.recommendedSize); // Set initial selected size to recommended size
         
-        if (imageNum === null) {
+        if (result.imageNumber === null) {
           setError('No matching avatar found. Please try different measurements.');
         } else {
           setError(null);
-          // Generate avatar image URLs for the found image number
-          generateAvatarImageUrls(imageNum, size);
+          // Generate avatar image URLs for the found image number with recommended size
+          generateAvatarImageUrls(result.imageNumber, result.recommendedSize);
         }
       } catch (err) {
         console.error('Error finding matching avatar:', err);
@@ -136,7 +134,8 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
               <SizeSelector 
                 selectedSize={selectedSize} 
                 onSelectSize={setSelectedSize} 
-                sizes={sizes} 
+                sizes={sizes}
+                recommendedSize={recommendedSize}
               />
             </div>
           </Card>
@@ -147,7 +146,8 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
             
             <MeasurementsDisplay 
               measurements={measurements} 
-              selectedSize={selectedSize} 
+              selectedSize={selectedSize}
+              recommendedSize={recommendedSize}
             />
 
             <ActionButtons 

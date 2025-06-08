@@ -54,6 +54,7 @@ export async function fetchGenderSpecificData(gender: 'male' | 'female'): Promis
       underBustCirc: parseFloat(item["UnderBustCirc"] || item["UnderBust"]) || 0,
       bellyShape: item["Shape1"] || item["BellyShape"] || "flat",
       hipShape: item["Shape2"] || item["HipShape"] || "regular",
+      recommendedSize: item["Size"] || item["Recommended Size"] || item[Object.keys(item)[Object.keys(item).length - 1]] || "M" // Use last column as fallback
     }));
   } catch (error) {
     console.error(`Error fetching or processing ${gender} avatar data:`, error);

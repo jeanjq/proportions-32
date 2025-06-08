@@ -10,6 +10,7 @@ export interface AvatarData {
   underBustCirc: number;
   bellyShape: 'flat' | 'round' | 'curvy';
   hipShape: 'slim' | 'regular' | 'full';
+  recommendedSize?: string; // Add recommended size from CSV
 }
 
 // Define type for the output.js data structure
@@ -41,16 +42,16 @@ const fallbackOutputData: OutputData[] = [
 ];
 
 /**
- * Find the closest matching avatar based on user measurements using gender-specific CSV data
+ * Find the closest matching avatar and return both image number and recommended size
  */
-export async function findClosestAvatar(
+export async function findClosestAvatarWithSize(
   height: number,
   weight: number,
   bellyShape: 'flat' | 'round' | 'curvy' | null,
   hipShape: 'slim' | 'regular' | 'full' | null,
   gender: 'male' | 'female'
-): Promise<number | null> {
-  if (!bellyShape || !hipShape) return null;
+): Promise<{ imageNumber: number | null; recommendedSize: string }> {
+  if (!bellyShape || !hipShape) return { imageNumber: null, recommendedSize: calculateSize(height, weight) };
 
   try {
     // Fetch gender-specific data from the new CSV files
@@ -59,7 +60,10 @@ export async function findClosestAvatar(
     
     if (genderData.length === 0) {
       console.log('No data found, using fallback logic');
-      return getFallbackImageNumber(bellyShape, hipShape);
+      return { 
+        imageNumber: getFallbackImageNumber(bellyShape, hipShape), 
+        recommendedSize: calculateSize(height, weight) 
+      };
     }
     
     // Filter by belly shape and hip shape first (exact match required)
@@ -71,7 +75,10 @@ export async function findClosestAvatar(
     
     if (filteredData.length === 0) {
       console.log('No matching avatars found for the given shapes, using fallback');
-      return getFallbackImageNumber(bellyShape, hipShape);
+      return { 
+        imageNumber: getFallbackImageNumber(bellyShape, hipShape), 
+        recommendedSize: calculateSize(height, weight) 
+      };
     }
     
     // Find the closest match based on height and weight
@@ -86,15 +93,34 @@ export async function findClosestAvatar(
       }
     }
     
-    // Extract image number from fileName (assuming format like "adidas_XXX")
+    // Extract image number from fileName and get recommended size from CSV
     const imageNumber = extractImageNumber(closestMatch.fileName);
-    console.log(`Found closest match with image number: ${imageNumber}`);
-    return imageNumber;
+    const recommendedSize = closestMatch.recommendedSize || calculateSize(height, weight);
+    
+    console.log(`Found closest match with image number: ${imageNumber} and recommended size: ${recommendedSize}`);
+    return { imageNumber, recommendedSize };
     
   } catch (error) {
     console.error("Error finding closest avatar:", error);
-    return getFallbackImageNumber(bellyShape, hipShape);
+    return { 
+      imageNumber: getFallbackImageNumber(bellyShape, hipShape), 
+      recommendedSize: calculateSize(height, weight) 
+    };
   }
+}
+
+/**
+ * Legacy function for backward compatibility - now uses the new function
+ */
+export async function findClosestAvatar(
+  height: number,
+  weight: number,
+  bellyShape: 'flat' | 'round' | 'curvy' | null,
+  hipShape: 'slim' | 'regular' | 'full' | null,
+  gender: 'male' | 'female'
+): Promise<number | null> {
+  const result = await findClosestAvatarWithSize(height, weight, bellyShape, hipShape, gender);
+  return result.imageNumber;
 }
 
 /**
