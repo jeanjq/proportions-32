@@ -148,8 +148,8 @@ export const VirtualTryOn = () => {
 
   if (!isStarted) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-stone-100 flex items-center justify-center p-4">
-        <Card className="max-w-lg w-full p-12 text-center bg-white/80 backdrop-blur-sm border-0 shadow-sm">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 flex items-center justify-center p-4">
+        <Card className="max-w-lg w-full p-12 text-center bg-white border border-slate-200 shadow-sm">
           <div className="mb-8">
             <div className="w-16 h-16 bg-slate-900 rounded-full mx-auto mb-6 flex items-center justify-center">
               <Sparkles className="w-8 h-8 text-white" />
@@ -162,7 +162,7 @@ export const VirtualTryOn = () => {
           
           <Button 
             onClick={() => setIsStarted(true)}
-            className="w-full py-4 text-base font-light bg-slate-900 hover:bg-slate-800 text-white border-0 rounded-none transition-colors duration-200"
+            className="w-full py-4 text-base font-medium bg-slate-900 hover:bg-slate-800 text-white border-0 rounded-lg transition-colors duration-200"
           >
             Begin Fitting
           </Button>
@@ -183,36 +183,36 @@ export const VirtualTryOn = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-stone-100 flex items-center justify-center p-4">
-      <Card className="max-w-2xl w-full bg-white/80 backdrop-blur-sm border-0 shadow-sm overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 flex items-center justify-center p-4">
+      <Card className="max-w-2xl w-full bg-white border border-slate-200 shadow-sm overflow-hidden">
         {/* Progress Header */}
-        <div className="bg-white/60 p-8 border-b border-slate-200/50">
+        <div className="bg-slate-50 p-8 border-b border-slate-200">
           <div className="flex items-center justify-between mb-6">
             <Button
               variant="ghost"
               size="sm"
               onClick={prevStep}
               disabled={currentStep === 1}
-              className="text-slate-700 hover:bg-slate-100/50 disabled:opacity-30 border-0 font-light"
+              className="text-slate-700 hover:bg-slate-200 disabled:opacity-30 border border-slate-300 bg-slate-100 font-medium rounded-lg px-4 py-2"
             >
               <ChevronLeft className="w-4 h-4 mr-1" />
               Back
             </Button>
-            <span className="text-sm font-light text-slate-600 bg-slate-100/50 px-4 py-2 rounded-full">
+            <span className="text-sm font-medium text-slate-600 bg-slate-200 px-4 py-2 rounded-full border border-slate-300">
               {currentStep} / {totalSteps}
             </span>
           </div>
           
-          <div className="w-full bg-slate-200/50 rounded-full h-1">
+          <div className="w-full bg-slate-200 rounded-full h-2 border border-slate-300">
             <div 
-              className="bg-slate-900 h-1 rounded-full transition-all duration-700 ease-out"
+              className="bg-slate-800 h-2 rounded-full transition-all duration-700 ease-out border-r border-slate-900"
               style={{ width: `${progress}%` }}
             />
           </div>
         </div>
 
         {/* Step Content */}
-        <div className="p-12 bg-white/40">
+        <div className="p-12 bg-white">
           {currentStepType === 'gender' && (
             <GenderStep 
               value={measurements.gender}
@@ -267,7 +267,7 @@ export const VirtualTryOn = () => {
             <Button
               onClick={nextStep}
               disabled={!isStepComplete()}
-              className="px-8 py-3 bg-slate-900 hover:bg-slate-800 disabled:opacity-30 disabled:cursor-not-allowed text-white border-0 rounded-none font-light transition-colors duration-200"
+              className="px-8 py-3 bg-slate-900 hover:bg-slate-800 disabled:opacity-30 disabled:cursor-not-allowed text-white border-0 rounded-lg font-medium transition-colors duration-200"
             >
               {currentStep === totalSteps ? 'Complete' : 'Continue'}
             </Button>
