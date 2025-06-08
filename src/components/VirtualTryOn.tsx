@@ -9,6 +9,7 @@ import { WeightStep } from './steps/WeightStep';
 import { BraSizeStep } from './steps/BraSizeStep';
 import { BellyShapeStep } from './steps/BellyShapeStep';
 import { HipShapeStep } from './steps/HipShapeStep';
+import { ShoulderWidthStep } from './steps/ShoulderWidthStep';
 import { AvatarDisplay } from './AvatarDisplay';
 import { ChevronLeft, Sparkles } from 'lucide-react';
 
@@ -20,6 +21,7 @@ export interface UserMeasurements {
   braSize: string | null;
   bellyShape: 'flat' | 'round' | 'curvy' | null;
   hipShape: 'slim' | 'regular' | 'full' | null;
+  shoulderWidth: '1' | '2' | '3' | null;
 }
 
 const initialMeasurements: UserMeasurements = {
@@ -29,7 +31,8 @@ const initialMeasurements: UserMeasurements = {
   weight: 0,
   braSize: null,
   bellyShape: null,
-  hipShape: null
+  hipShape: null,
+  shoulderWidth: null
 };
 
 export const VirtualTryOn = () => {
@@ -65,7 +68,7 @@ export const VirtualTryOn = () => {
     if (needsPhysiqueStep) steps++; // Physique step for non-binary
     steps += 2; // Height and weight
     if (questionnaireType === 'female') steps++; // Bra size for female flow
-    steps += 2; // Belly and hip shape
+    steps += 2; // Belly and (hip shape for female OR shoulder width for male)
     return steps;
   };
 
@@ -81,26 +84,26 @@ export const VirtualTryOn = () => {
 
   const getStepForCurrentFlow = (step: number) => {
     if (needsPhysiqueStep) {
-      // Non-binary flow: Gender -> Physique -> Height -> Weight -> (Bra Size if female features) -> Belly -> Hip
+      // Non-binary flow: Gender -> Physique -> Height -> Weight -> (Bra Size if female features) -> Belly -> (Hip/Shoulder)
       switch (step) {
         case 1: return 'gender';
         case 2: return 'physique';
         case 3: return 'height';
         case 4: return 'weight';
         case 5: return questionnaireType === 'female' ? 'braSize' : 'bellyShape';
-        case 6: return questionnaireType === 'female' ? 'bellyShape' : 'hipShape';
-        case 7: return 'hipShape';
+        case 6: return questionnaireType === 'female' ? 'bellyShape' : (questionnaireType === 'male' ? 'shoulderWidth' : 'hipShape');
+        case 7: return questionnaireType === 'female' ? 'hipShape' : 'shoulderWidth';
         default: return 'gender';
       }
     } else {
-      // Male/Female flow: Gender -> Height -> Weight -> (Bra Size if female) -> Belly -> Hip
+      // Male/Female flow: Gender -> Height -> Weight -> (Bra Size if female) -> Belly -> (Hip/Shoulder)
       switch (step) {
         case 1: return 'gender';
         case 2: return 'height';
         case 3: return 'weight';
         case 4: return questionnaireType === 'female' ? 'braSize' : 'bellyShape';
-        case 5: return questionnaireType === 'female' ? 'bellyShape' : 'hipShape';
-        case 6: return 'hipShape';
+        case 5: return questionnaireType === 'female' ? 'bellyShape' : (questionnaireType === 'male' ? 'shoulderWidth' : 'hipShape');
+        case 6: return questionnaireType === 'female' ? 'hipShape' : 'shoulderWidth';
         default: return 'gender';
       }
     }
@@ -135,6 +138,7 @@ export const VirtualTryOn = () => {
       case 'braSize': return measurements.braSize !== null;
       case 'bellyShape': return measurements.bellyShape !== null;
       case 'hipShape': return measurements.hipShape !== null;
+      case 'shoulderWidth': return measurements.shoulderWidth !== null;
       default: return false;
     }
   };
@@ -144,7 +148,7 @@ export const VirtualTryOn = () => {
                           measurements.weight > 0 && 
                           (questionnaireType === 'male' || measurements.braSize) &&
                           measurements.bellyShape && 
-                          measurements.hipShape &&
+                          (questionnaireType === 'female' ? measurements.hipShape : measurements.shoulderWidth) &&
                           (!needsPhysiqueStep || measurements.physique.length > 0);
 
   if (!isStarted) {
@@ -260,6 +264,13 @@ export const VirtualTryOn = () => {
             <HipShapeStep 
               value={measurements.hipShape}
               onChange={(shape) => updateMeasurement('hipShape', shape)}
+            />
+          )}
+
+          {currentStepType === 'shoulderWidth' && (
+            <ShoulderWidthStep 
+              value={measurements.shoulderWidth}
+              onChange={(width) => updateMeasurement('shoulderWidth', width)}
             />
           )}
 
