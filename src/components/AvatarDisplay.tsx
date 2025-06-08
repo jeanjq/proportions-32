@@ -27,18 +27,30 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
   const [avatarImages, setAvatarImages] = useState<string[]>([]);
   const [imageLoadFailed, setImageLoadFailed] = useState(false);
 
+  // Helper function to map gender for avatar matching
+  const getGenderForMatching = (gender: 'male' | 'female' | 'non-binary'): 'male' | 'female' => {
+    if (gender === 'non-binary') {
+      // Default to female for non-binary users - could be enhanced with physique-based logic
+      return 'female';
+    }
+    return gender;
+  };
+
   // Find the closest matching avatar based on measurements
   useEffect(() => {
     async function findMatchingAvatar() {
       setIsLoading(true);
       try {
+        // Map gender for avatar matching
+        const genderForMatching = getGenderForMatching(measurements.gender!);
+        
         // Find the closest matching avatar image number and get recommended size from CSV
         const result = await findClosestAvatarWithSize(
           measurements.height,
           measurements.weight,
           measurements.bellyShape,
           measurements.hipShape,
-          measurements.gender!
+          genderForMatching
         );
         
         setImageNumber(result.imageNumber);
@@ -65,9 +77,12 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
 
   // Generate an array of avatar image URLs for different views
   const generateAvatarImageUrls = (imgNumber: number, size: string) => {
+    // Map gender for avatar path generation
+    const genderForMatching = getGenderForMatching(measurements.gender!);
+    
     // For now, we'll just use a single image for each size
     // In a future enhancement, we could generate multiple view angles if available
-    const imageUrl = getAvatarPath(imgNumber, size, measurements.gender!);
+    const imageUrl = getAvatarPath(imgNumber, size, genderForMatching);
     setAvatarImages([imageUrl]);
     
     console.log("Generated image URL:", imageUrl);
@@ -99,7 +114,7 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
     });
   };
 
-  const sizes = ['S', 'M', 'L', 'XL'];
+  const sizes = ['XS', 'S', 'M', 'L', 'XL'];
 
   if (isLoading) {
     return <LoadingSpinner />;
