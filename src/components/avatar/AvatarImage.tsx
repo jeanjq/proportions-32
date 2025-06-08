@@ -78,7 +78,7 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
   const fallbackImageUrl = "/placeholder-avatar.png";
   
   return (
-    <div className="relative bg-gray-50 rounded-2xl p-8 mb-6 min-h-[400px] flex flex-col items-center justify-center">
+    <div className="relative rounded-2xl p-8 mb-6 min-h-[400px] flex flex-col items-center justify-center">
       {error ? (
         <div className="text-center text-red-500">
           <AlertCircle className="w-12 h-12 mx-auto mb-2" />
