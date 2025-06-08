@@ -1,46 +1,76 @@
 
 import { AvatarData } from "../utils/avatarMatching";
 
-// Firebase storage URLs using the v0 API format
+// Firebase storage URLs for the new CSV files
 export const FIREBASE_STORAGE_BASE_URL = "https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o";
-export const JSON_DATA_URL = `${FIREBASE_STORAGE_BASE_URL}/csvjson%20(1).json?alt=media`;
+export const MALE_CSV_URL = "https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o/Male%20(2).csv?alt=media&token=9ee2e53e-a258-45d8-aea5-39eb91cf4521";
+export const FEMALE_CSV_URL = "https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o/Female%20(2).csv?alt=media&token=44dfd6d2-be91-4920-97f0-cde218d3903e";
 
-// Function to fetch the avatar data from the Firebase JSON
-export async function fetchAvatarData(): Promise<AvatarData[]> {
+// Function to parse CSV data
+function parseCSV(csvText: string): any[] {
+  const lines = csvText.split('\n');
+  const headers = lines[0].split(',').map(h => h.trim());
+  const data = [];
+  
+  for (let i = 1; i < lines.length; i++) {
+    if (lines[i].trim()) {
+      const values = lines[i].split(',').map(v => v.trim());
+      const row: any = {};
+      headers.forEach((header, index) => {
+        row[header] = values[index] || '';
+      });
+      data.push(row);
+    }
+  }
+  
+  return data;
+}
+
+// Function to fetch CSV data for a specific gender
+export async function fetchGenderSpecificData(gender: 'male' | 'female'): Promise<AvatarData[]> {
   try {
-    console.log("Attempting to fetch data from:", JSON_DATA_URL);
-    const response = await fetch(JSON_DATA_URL);
+    const csvUrl = gender === 'male' ? MALE_CSV_URL : FEMALE_CSV_URL;
+    console.log(`Fetching ${gender} data from:`, csvUrl);
+    
+    const response = await fetch(csvUrl);
     if (!response.ok) {
-      console.error(`Failed to fetch data: ${response.status} ${response.statusText}`);
-      throw new Error(`Failed to fetch data: ${response.status}`);
+      console.error(`Failed to fetch ${gender} data: ${response.status} ${response.statusText}`);
+      throw new Error(`Failed to fetch ${gender} data: ${response.status}`);
     }
     
-    const data = await response.json();
-    console.log("Data fetched successfully, sample:", data.slice(0, 2));
+    const csvText = await response.text();
+    const parsedData = parseCSV(csvText);
+    console.log(`${gender} data fetched successfully, sample:`, parsedData.slice(0, 2));
     
     // Process the data to match our AvatarData interface
-    return data.map((item: any) => ({
-      fileName: item["File Name"] || "",
-      stature: parseFloat(item["Stature"]) || 0,
+    return parsedData.map((item: any) => ({
+      fileName: item["File Name"] || item["image_number"] || "",
+      stature: parseFloat(item["Stature"] || item["Height"]) || 0,
       weight: parseFloat(item["Weight"]) || 0,
-      waistCirc: parseFloat(item["WaistCirc"]) || 0,
-      chestCirc: parseFloat(item["ChestCirc"]) || 0,
-      hipCirc: parseFloat(item["HipCirc"]) || 0,
-      crotchHeight: parseFloat(item["CrotchHeight"]) || 0,
-      underBustCirc: parseFloat(item["UnderBustCirc"]) || 0,
-      bellyShape: item["Shape1"] || "flat",
-      hipShape: item["Shape2"] || "regular",
+      waistCirc: parseFloat(item["WaistCirc"] || item["Waist"]) || 0,
+      chestCirc: parseFloat(item["ChestCirc"] || item["Chest"]) || 0,
+      hipCirc: parseFloat(item["HipCirc"] || item["Hip"]) || 0,
+      crotchHeight: parseFloat(item["CrotchHeight"] || item["Crotch"]) || 0,
+      underBustCirc: parseFloat(item["UnderBustCirc"] || item["UnderBust"]) || 0,
+      bellyShape: item["Shape1"] || item["BellyShape"] || "flat",
+      hipShape: item["Shape2"] || item["HipShape"] || "regular",
     }));
   } catch (error) {
-    console.error("Error fetching or processing avatar data:", error);
+    console.error(`Error fetching or processing ${gender} avatar data:`, error);
     return exampleAvatarData; // Fall back to example data
   }
+}
+
+// Legacy function for backward compatibility
+export async function fetchAvatarData(): Promise<AvatarData[]> {
+  // Default to female data for backward compatibility
+  return fetchGenderSpecificData('female');
 }
 
 // For demonstration, keep the example entries
 export const exampleAvatarData: AvatarData[] = [
   {
-    fileName: "YANGGE RPET MM _9810046199_B_0",
+    fileName: "adidas_428",
     stature: 165,
     weight: 60,
     waistCirc: 70,
@@ -52,7 +82,7 @@ export const exampleAvatarData: AvatarData[] = [
     hipShape: "regular"
   },
   {
-    fileName: "Default_Modelist_0",
+    fileName: "adidas_105",
     stature: 170,
     weight: 75,
     waistCirc: 80,
@@ -64,7 +94,7 @@ export const exampleAvatarData: AvatarData[] = [
     hipShape: "full"
   },
   {
-    fileName: "YANGGE RPET MM _9810046199_B_0",
+    fileName: "adidas_201",
     stature: 160,
     weight: 55,
     waistCirc: 65,
