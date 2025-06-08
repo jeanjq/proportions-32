@@ -148,26 +148,26 @@ export const VirtualTryOn = () => {
 
   if (!isStarted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-pink-50 via-orange-50 to-yellow-50 flex items-center justify-center p-4">
-        <Card className="max-w-lg w-full p-8 text-center bg-white/30 backdrop-blur-md border border-white/40 shadow-2xl">
-          <div className="mb-6">
-            <div className="w-20 h-20 bg-gradient-to-br from-lime-400/60 to-lime-500/60 backdrop-blur-md rounded-full mx-auto mb-4 flex items-center justify-center border border-lime-300/50 shadow-lg">
-              <Sparkles className="w-10 h-10 text-white drop-shadow-sm" />
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-stone-100 flex items-center justify-center p-4">
+        <Card className="max-w-lg w-full p-12 text-center bg-white/80 backdrop-blur-sm border-0 shadow-sm">
+          <div className="mb-8">
+            <div className="w-16 h-16 bg-slate-900 rounded-full mx-auto mb-6 flex items-center justify-center">
+              <Sparkles className="w-8 h-8 text-white" />
             </div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2 drop-shadow-sm">Try It On!</h1>
-            <p className="text-gray-700 leading-relaxed font-medium">
-              Let's find your perfect fit! Answer a few quick questions and see how this item looks on your unique body shape.
+            <h1 className="text-3xl font-light text-slate-900 mb-4 tracking-wide">Virtual Fitting</h1>
+            <p className="text-slate-600 leading-relaxed font-light text-lg">
+              Find your perfect fit through our simple measurement guide
             </p>
           </div>
           
           <Button 
             onClick={() => setIsStarted(true)}
-            className="w-full py-6 text-lg font-semibold bg-gradient-to-r from-lime-400/60 to-lime-500/60 hover:from-lime-400/70 hover:to-lime-500/70 border border-lime-300/50 backdrop-blur-md rounded-full shadow-lg transform transition-all duration-200 hover:scale-105 text-gray-900 drop-shadow-sm"
+            className="w-full py-4 text-base font-light bg-slate-900 hover:bg-slate-800 text-white border-0 rounded-none transition-colors duration-200"
           >
-            Start Your Virtual Try-On ✨
+            Begin Fitting
           </Button>
           
-          <p className="text-sm text-gray-600 mt-4 font-medium">Takes less than 30 seconds!</p>
+          <p className="text-sm text-slate-500 mt-6 font-light">Takes less than one minute</p>
         </Card>
       </div>
     );
@@ -183,36 +183,36 @@ export const VirtualTryOn = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-orange-50 to-yellow-50 flex items-center justify-center p-4">
-      <Card className="max-w-2xl w-full bg-white/25 backdrop-blur-md border border-white/40 shadow-2xl overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-stone-100 flex items-center justify-center p-4">
+      <Card className="max-w-2xl w-full bg-white/80 backdrop-blur-sm border-0 shadow-sm overflow-hidden">
         {/* Progress Header */}
-        <div className="bg-white/40 backdrop-blur-md p-6 text-gray-900 border-b border-white/30 shadow-sm">
-          <div className="flex items-center justify-between mb-4">
+        <div className="bg-white/60 p-8 border-b border-slate-200/50">
+          <div className="flex items-center justify-between mb-6">
             <Button
               variant="ghost"
               size="sm"
               onClick={prevStep}
               disabled={currentStep === 1}
-              className="text-gray-900 hover:bg-white/30 disabled:opacity-50 border border-white/30 backdrop-blur-sm font-medium"
+              className="text-slate-700 hover:bg-slate-100/50 disabled:opacity-30 border-0 font-light"
             >
               <ChevronLeft className="w-4 h-4 mr-1" />
               Back
             </Button>
-            <span className="text-sm font-semibold bg-white/30 px-3 py-1 rounded-full border border-white/30">
-              Step {currentStep} of {totalSteps}
+            <span className="text-sm font-light text-slate-600 bg-slate-100/50 px-4 py-2 rounded-full">
+              {currentStep} / {totalSteps}
             </span>
           </div>
           
-          <div className="w-full bg-white/30 backdrop-blur-sm rounded-full h-3 border border-white/40 shadow-inner">
+          <div className="w-full bg-slate-200/50 rounded-full h-1">
             <div 
-              className="bg-gradient-to-r from-lime-400 to-lime-500 h-3 rounded-full transition-all duration-500 ease-out shadow-sm"
+              className="bg-slate-900 h-1 rounded-full transition-all duration-700 ease-out"
               style={{ width: `${progress}%` }}
             />
           </div>
         </div>
 
         {/* Step Content */}
-        <div className="p-8 bg-white/15 backdrop-blur-sm">
+        <div className="p-12 bg-white/40">
           {currentStepType === 'gender' && (
             <GenderStep 
               value={measurements.gender}
@@ -263,14 +263,13 @@ export const VirtualTryOn = () => {
           )}
 
           {/* Navigation */}
-          <div className="flex justify-between mt-8">
-            <div className="flex-1" />
+          <div className="flex justify-end mt-12">
             <Button
               onClick={nextStep}
               disabled={!isStepComplete()}
-              className="px-8 py-3 bg-gradient-to-r from-lime-400/60 to-lime-500/60 hover:from-lime-400/70 hover:to-lime-500/70 disabled:opacity-50 disabled:cursor-not-allowed border border-lime-300/50 backdrop-blur-md rounded-full font-semibold transform transition-all duration-200 hover:scale-105 text-gray-900 shadow-lg drop-shadow-sm"
+              className="px-8 py-3 bg-slate-900 hover:bg-slate-800 disabled:opacity-30 disabled:cursor-not-allowed text-white border-0 rounded-none font-light transition-colors duration-200"
             >
-              {currentStep === totalSteps ? 'See My Avatar! 🎉' : 'Continue'}
+              {currentStep === totalSteps ? 'Complete' : 'Continue'}
             </Button>
           </div>
         </div>
