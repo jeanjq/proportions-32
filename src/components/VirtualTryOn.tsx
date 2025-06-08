@@ -152,7 +152,7 @@ export const VirtualTryOn = () => {
       <div className="min-h-screen bg-gradient-to-br from-pink-50 via-orange-50 to-yellow-50 flex items-center justify-center p-4">
         <Card className="max-w-lg w-full p-8 text-center bg-white/20 backdrop-blur-md border border-white/30 shadow-2xl">
           <div className="mb-6">
-            <div className="w-20 h-20 bg-gradient-to-r from-coral-400/80 to-peach-400/80 backdrop-blur-sm rounded-full mx-auto mb-4 flex items-center justify-center border border-white/20">
+            <div className="w-20 h-20 bg-lime-400/30 backdrop-blur-md rounded-full mx-auto mb-4 flex items-center justify-center border border-lime-300/40 shadow-lg">
               <Sparkles className="w-10 h-10 text-white" />
             </div>
             <h1 className="text-3xl font-bold text-gray-800 mb-2">Try It On!</h1>
@@ -163,7 +163,7 @@ export const VirtualTryOn = () => {
           
           <Button 
             onClick={() => setIsStarted(true)}
-            className="w-full py-6 text-lg font-medium bg-gradient-to-r from-coral-500/90 to-peach-500/90 hover:from-coral-600/90 hover:to-peach-600/90 border border-white/20 backdrop-blur-sm rounded-full shadow-lg transform transition-all duration-200 hover:scale-105"
+            className="w-full py-6 text-lg font-medium bg-lime-400/30 hover:bg-lime-400/40 border border-lime-300/40 backdrop-blur-md rounded-full shadow-lg transform transition-all duration-200 hover:scale-105 text-gray-800"
           >
             Start Your Virtual Try-On ✨
           </Button>
@@ -187,14 +187,14 @@ export const VirtualTryOn = () => {
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-orange-50 to-yellow-50 flex items-center justify-center p-4">
       <Card className="max-w-2xl w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-2xl overflow-hidden">
         {/* Progress Header */}
-        <div className="bg-gradient-to-r from-coral-500/90 to-peach-500/90 backdrop-blur-sm p-6 text-white border-b border-white/20">
+        <div className="bg-gray-500/20 backdrop-blur-md p-6 text-gray-800 border-b border-white/20">
           <div className="flex items-center justify-between mb-4">
             <Button
               variant="ghost"
               size="sm"
               onClick={prevStep}
               disabled={currentStep === 1}
-              className="text-white hover:bg-white/20 disabled:opacity-50 border border-white/20 backdrop-blur-sm"
+              className="text-gray-700 hover:bg-white/20 disabled:opacity-50 border border-white/20 backdrop-blur-sm"
             >
               <ChevronLeft className="w-4 h-4 mr-1" />
               Back
@@ -206,7 +206,7 @@ export const VirtualTryOn = () => {
           
           <div className="w-full bg-white/20 backdrop-blur-sm rounded-full h-2 border border-white/30">
             <div 
-              className="bg-white h-2 rounded-full transition-all duration-500 ease-out"
+              className="bg-lime-400 h-2 rounded-full transition-all duration-500 ease-out"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -269,7 +269,7 @@ export const VirtualTryOn = () => {
             <Button
               onClick={nextStep}
               disabled={!isStepComplete()}
-              className="px-8 py-3 bg-gradient-to-r from-coral-500/90 to-peach-500/90 hover:from-coral-600/90 hover:to-peach-600/90 disabled:opacity-50 disabled:cursor-not-allowed border border-white/20 backdrop-blur-sm rounded-full font-medium transform transition-all duration-200 hover:scale-105"
+              className="px-8 py-3 bg-gray-500/20 hover:bg-gray-500/30 disabled:opacity-50 disabled:cursor-not-allowed border border-white/20 backdrop-blur-md rounded-full font-medium transform transition-all duration-200 hover:scale-105 text-gray-800"
             >
               {currentStep === totalSteps ? 'See My Avatar! 🎉' : 'Continue'}
             </Button>
