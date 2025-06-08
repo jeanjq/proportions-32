@@ -4,21 +4,26 @@ import { cn } from "@/lib/utils";
 import { User } from 'lucide-react';
 
 interface GenderStepProps {
-  value: 'male' | 'female' | null;
-  onChange: (gender: 'male' | 'female') => void;
+  value: 'male' | 'female' | 'non-binary' | null;
+  onChange: (gender: 'male' | 'female' | 'non-binary') => void;
 }
 
 export const GenderStep: React.FC<GenderStepProps> = ({ value, onChange }) => {
   const genders = [
+    {
+      id: 'female' as const,
+      label: 'Female',
+      icon: '👩'
+    },
     {
       id: 'male' as const,
       label: 'Male',
       icon: '👨'
     },
     {
-      id: 'female' as const,
-      label: 'Female',
-      icon: '👩'
+      id: 'non-binary' as const,
+      label: 'Non-binary / Other',
+      icon: '🧑'
     }
   ];
 
@@ -32,7 +37,7 @@ export const GenderStep: React.FC<GenderStepProps> = ({ value, onChange }) => {
         <p className="text-gray-600">This helps us provide the most accurate fit recommendations.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-md mx-auto">
+      <div className="grid grid-cols-1 gap-4 max-w-md mx-auto">
         {genders.map((gender) => (
           <button
             key={gender.id}
