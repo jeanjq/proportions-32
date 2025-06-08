@@ -42,7 +42,7 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
           measurements.weight,
           measurements.bellyShape,
           measurements.hipShape,
-          measurements.gender
+          measurements.gender!
         );
         
         setImageNumber(imageNum);
@@ -69,7 +69,7 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
   const generateAvatarImageUrls = (imgNumber: number, size: string) => {
     // For now, we'll just use a single image for each size
     // In a future enhancement, we could generate multiple view angles if available
-    const imageUrl = getAvatarPath(imgNumber, size, measurements.gender);
+    const imageUrl = getAvatarPath(imgNumber, size, measurements.gender!);
     setAvatarImages([imageUrl]);
     
     console.log("Generated image URL:", imageUrl);
@@ -128,7 +128,7 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
                 currentAvatarPath={currentAvatarPath}
                 imageLoadFailed={imageLoadFailed}
                 error={error}
-                avatarFileName={imageNumber ? `Image ${imageNumber}` : null}
+                avatarFileName={imageNumber ? `adidas_${imageNumber}` : null}
                 onImageError={handleImageError}
                 onRotate={() => {}} // Rotation disabled for now
               />

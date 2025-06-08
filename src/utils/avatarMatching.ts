@@ -49,7 +49,7 @@ export async function findClosestAvatar(
   weight: number,
   bellyShape: 'flat' | 'round' | 'curvy' | null,
   hipShape: 'slim' | 'regular' | 'full' | null,
-  gender: 'women' | 'men'
+  gender: 'male' | 'female'
 ): Promise<number | null> {
   if (!bellyShape || !hipShape) return null;
 
@@ -148,27 +148,25 @@ export function calculateSize(height: number, weight: number): string {
 }
 
 /**
- * Get the path to the avatar image using Firebase Storage with the new format
+ * Get the path to the avatar image using Firebase Storage with the new adidas naming format
  */
-export function getAvatarPath(imageNumber: number | null, size: string, gender: 'women' | 'men'): string {
+export function getAvatarPath(imageNumber: number | null, size: string, gender: 'male' | 'female'): string {
   if (imageNumber === null) {
     return '/placeholder-avatar.png'; // Fallback image
   }
   
   // Format the gender string for URL (capitalize first letter)
-  const formattedGender = gender === 'women' ? 'Women' : 'Men';
+  const formattedGender = gender === 'female' ? 'Women' : 'Men';
   
-  // Generate the appropriate filename based on size
-  let filename;
-  if (size === 'S') {
-    filename = `Default_Modelist_${imageNumber}`;
-  } else { // M, L, XL
-    filename = `YANGGE RPET MM _9810046199_B_${imageNumber}`;
-  }
+  // Use the new adidas naming convention
+  const filename = `adidas_${imageNumber}`;
+  
+  // Determine the view folder (using 'Front' as default, can be expanded later)
+  const viewFolder = 'Front';
   
   // Create the path that will go after /o/ in the Firebase Storage URL
-  // and encode it properly for the URL
-  const storagePath = encodeURIComponent(`${formattedGender}/${size}/${filename}.png`);
+  // Format: Gender/View/Size/filename.png
+  const storagePath = encodeURIComponent(`${formattedGender}/${viewFolder}/${size}/${filename}.png`);
   
   // Format the full Firebase Storage URL
   const avatarUrl = `${FIREBASE_STORAGE_BASE_URL}/${storagePath}?alt=media`;

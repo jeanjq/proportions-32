@@ -1,27 +1,32 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { GenderStep } from './steps/GenderStep';
 import { HeightStep } from './steps/HeightStep';
 import { WeightStep } from './steps/WeightStep';
+import { BraSizeStep } from './steps/BraSizeStep';
 import { BellyShapeStep } from './steps/BellyShapeStep';
 import { HipShapeStep } from './steps/HipShapeStep';
 import { AvatarDisplay } from './AvatarDisplay';
 import { ChevronLeft, Sparkles } from 'lucide-react';
 
 export interface UserMeasurements {
+  gender: 'male' | 'female' | null;
   height: number;
   weight: number;
+  braSize: string | null;
   bellyShape: 'flat' | 'round' | 'curvy' | null;
   hipShape: 'slim' | 'regular' | 'full' | null;
-  gender: 'women' | 'men';
 }
 
 const initialMeasurements: UserMeasurements = {
+  gender: null,
   height: 0,
   weight: 0,
+  braSize: null,
   bellyShape: null,
-  hipShape: null,
-  gender: 'women'
+  hipShape: null
 };
 
 export const VirtualTryOn = () => {
@@ -29,7 +34,7 @@ export const VirtualTryOn = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [measurements, setMeasurements] = useState<UserMeasurements>(initialMeasurements);
 
-  const totalSteps = 4;
+  const totalSteps = measurements.gender === 'female' ? 6 : 5;
   const progress = (currentStep / totalSteps) * 100;
 
   const updateMeasurement = (key: keyof UserMeasurements, value: any) => {
@@ -40,13 +45,19 @@ export const VirtualTryOn = () => {
   };
 
   const nextStep = () => {
-    if (currentStep < totalSteps) {
+    // Skip bra size step for male users
+    if (currentStep === 3 && measurements.gender === 'male') {
+      setCurrentStep(5); // Skip to belly shape step
+    } else if (currentStep < totalSteps) {
       setCurrentStep(prev => prev + 1);
     }
   };
 
   const prevStep = () => {
-    if (currentStep > 1) {
+    // Handle going back from belly shape step for male users
+    if (currentStep === 5 && measurements.gender === 'male') {
+      setCurrentStep(3); // Go back to weight step
+    } else if (currentStep > 1) {
       setCurrentStep(prev => prev - 1);
     }
   };
@@ -59,16 +70,20 @@ export const VirtualTryOn = () => {
 
   const isStepComplete = () => {
     switch (currentStep) {
-      case 1: return measurements.height > 0;
-      case 2: return measurements.weight > 0;
-      case 3: return measurements.bellyShape !== null;
-      case 4: return measurements.hipShape !== null;
+      case 1: return measurements.gender !== null;
+      case 2: return measurements.height > 0;
+      case 3: return measurements.weight > 0;
+      case 4: return measurements.braSize !== null; // Only for female users
+      case 5: return measurements.bellyShape !== null;
+      case 6: return measurements.hipShape !== null;
       default: return false;
     }
   };
 
-  const allStepsComplete = measurements.height > 0 && 
+  const allStepsComplete = measurements.gender && 
+                          measurements.height > 0 && 
                           measurements.weight > 0 && 
+                          (measurements.gender === 'male' || measurements.braSize) &&
                           measurements.bellyShape && 
                           measurements.hipShape;
 
@@ -135,27 +150,41 @@ export const VirtualTryOn = () => {
         {/* Step Content */}
         <div className="p-8">
           {currentStep === 1 && (
+            <GenderStep 
+              value={measurements.gender}
+              onChange={(gender) => updateMeasurement('gender', gender)}
+            />
+          )}
+          
+          {currentStep === 2 && (
             <HeightStep 
               value={measurements.height}
               onChange={(height) => updateMeasurement('height', height)}
             />
           )}
           
-          {currentStep === 2 && (
+          {currentStep === 3 && (
             <WeightStep 
               value={measurements.weight}
               onChange={(weight) => updateMeasurement('weight', weight)}
             />
           )}
           
-          {currentStep === 3 && (
+          {currentStep === 4 && measurements.gender === 'female' && (
+            <BraSizeStep 
+              value={measurements.braSize}
+              onChange={(braSize) => updateMeasurement('braSize', braSize)}
+            />
+          )}
+          
+          {currentStep === 5 && (
             <BellyShapeStep 
               value={measurements.bellyShape}
               onChange={(shape) => updateMeasurement('bellyShape', shape)}
             />
           )}
           
-          {currentStep === 4 && (
+          {currentStep === 6 && (
             <HipShapeStep 
               value={measurements.hipShape}
               onChange={(shape) => updateMeasurement('hipShape', shape)}
