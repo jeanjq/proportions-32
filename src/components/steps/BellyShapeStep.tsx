@@ -32,7 +32,7 @@ export const BellyShapeStep: React.FC<BellyShapeStepProps> = ({ value, onChange 
   return (
     <div className="text-center space-y-8">
       <div className="mb-8">
-        <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mx-auto mb-4 flex items-center justify-center">
+        <div className="w-16 h-16 bg-gray-300/30 backdrop-blur-sm rounded-full mx-auto mb-4 flex items-center justify-center">
           <span className="text-4xl">🤰</span>
         </div>
         <h2 className="text-2xl font-bold text-gray-800 mb-2">What's your belly shape?</h2>
@@ -45,10 +45,10 @@ export const BellyShapeStep: React.FC<BellyShapeStepProps> = ({ value, onChange 
             key={shape.id}
             onClick={() => onChange(shape.id)}
             className={cn(
-              "p-6 rounded-2xl border-2 transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-coral-200",
+              "p-6 rounded-2xl border-2 transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-gray-200",
               value === shape.id
-                ? "border-coral-400 bg-coral-50 shadow-lg"
-                : "border-gray-200 hover:border-coral-300 hover:bg-coral-25"
+                ? "border-gray-400 bg-gray-200/40 backdrop-blur-sm shadow-lg"
+                : "border-gray-200 hover:border-gray-300 hover:bg-gray-100/30 backdrop-blur-sm"
             )}
           >
             <div className="text-4xl mb-3">{shape.icon}</div>
