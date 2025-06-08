@@ -187,7 +187,7 @@ export const VirtualTryOn = () => {
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-orange-50 to-yellow-50 flex items-center justify-center p-4">
       <Card className="max-w-2xl w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-2xl overflow-hidden">
         {/* Progress Header */}
-        <div className="bg-gray-500/20 backdrop-blur-md p-6 text-gray-800 border-b border-white/20">
+        <div className="bg-gray-300/30 backdrop-blur-md p-6 text-gray-800 border-b border-white/20">
           <div className="flex items-center justify-between mb-4">
             <Button
               variant="ghost"
@@ -269,7 +269,7 @@ export const VirtualTryOn = () => {
             <Button
               onClick={nextStep}
               disabled={!isStepComplete()}
-              className="px-8 py-3 bg-gray-500/20 hover:bg-gray-500/30 disabled:opacity-50 disabled:cursor-not-allowed border border-white/20 backdrop-blur-md rounded-full font-medium transform transition-all duration-200 hover:scale-105 text-gray-800"
+              className="px-8 py-3 bg-gray-300/30 hover:bg-gray-300/40 disabled:opacity-50 disabled:cursor-not-allowed border border-white/20 backdrop-blur-md rounded-full font-medium transform transition-all duration-200 hover:scale-105 text-gray-800"
             >
               {currentStep === totalSteps ? 'See My Avatar! 🎉' : 'Continue'}
             </Button>
