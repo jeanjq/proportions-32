@@ -47,7 +47,7 @@ export const PhysiqueStep: React.FC<PhysiqueStepProps> = ({ value, onChange }) =
   return (
     <div className="text-center space-y-8">
       <div className="mb-8">
-        <div className="w-16 h-16 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full mx-auto mb-4 flex items-center justify-center">
+        <div className="w-16 h-16 bg-lime-400/30 backdrop-blur-md border border-lime-300/40 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
           <User className="w-8 h-8 text-white" />
         </div>
         <h2 className="text-2xl font-bold text-gray-800 mb-2">Which body features describe you best?</h2>
@@ -60,10 +60,10 @@ export const PhysiqueStep: React.FC<PhysiqueStepProps> = ({ value, onChange }) =
             key={physique.id}
             onClick={() => toggleFeature(physique.id)}
             className={cn(
-              "p-4 rounded-2xl border-2 transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-coral-200 text-left",
+              "p-4 rounded-2xl border transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-lime-200/40 backdrop-blur-md shadow-lg hover:shadow-xl text-left",
               value.includes(physique.id)
-                ? "border-coral-400 bg-coral-50 shadow-lg"
-                : "border-gray-200 hover:border-coral-300 hover:bg-coral-25"
+                ? "border-lime-300/60 bg-lime-200/30 shadow-xl ring-2 ring-lime-300/50"
+                : "border-white/20 bg-white/10 hover:border-lime-200/40 hover:bg-lime-100/20"
             )}
           >
             <h3 className="font-semibold text-gray-800 mb-1">{physique.label}</h3>

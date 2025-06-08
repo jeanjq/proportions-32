@@ -21,7 +21,7 @@ const SizeSelector: React.FC<SizeSelectorProps> = ({
       <h3 className="font-semibold text-gray-800">Try Different Sizes</h3>
       {recommendedSize && (
         <div className="text-center mb-2">
-          <Badge className="bg-gradient-to-r from-coral-500/90 to-peach-500/90 backdrop-blur-sm text-white border border-white/20">
+          <Badge className="bg-lime-400/30 backdrop-blur-md text-gray-800 border border-lime-300/40">
             Recommended: {recommendedSize}
           </Badge>
         </div>
@@ -33,8 +33,8 @@ const SizeSelector: React.FC<SizeSelectorProps> = ({
             variant={selectedSize === size ? "default" : "outline"}
             onClick={() => onSelectSize(size)}
             className={selectedSize === size 
-              ? "bg-gradient-to-r from-coral-500/90 to-peach-500/90 backdrop-blur-sm border border-white/20" 
-              : "border-coral-200/50 bg-white/20 backdrop-blur-sm text-coral-600 hover:bg-coral-50/50"
+              ? "bg-lime-400/30 backdrop-blur-md border border-lime-300/40 text-gray-800 hover:bg-lime-400/40" 
+              : "border-white/20 bg-white/10 backdrop-blur-md text-gray-700 hover:bg-lime-100/20 hover:border-lime-200/40"
             }
           >
             {size}
