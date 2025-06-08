@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -148,26 +149,26 @@ export const VirtualTryOn = () => {
 
   if (!isStarted) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 flex items-center justify-center p-4">
-        <Card className="max-w-lg w-full p-12 text-center bg-white border border-slate-200 shadow-sm">
+      <div className="min-h-screen bg-gradient-to-br from-pink-50 via-orange-50 to-yellow-50 flex items-center justify-center p-4">
+        <Card className="max-w-lg w-full p-12 text-center bg-white/20 backdrop-blur-md border border-white/30 shadow-2xl">
           <div className="mb-8">
-            <div className="w-16 h-16 bg-slate-900 rounded-full mx-auto mb-6 flex items-center justify-center">
-              <Sparkles className="w-8 h-8 text-white" />
+            <div className="w-20 h-20 bg-gradient-to-r from-coral-400/80 to-peach-400/80 backdrop-blur-sm rounded-full mx-auto mb-6 flex items-center justify-center border border-white/20">
+              <Sparkles className="w-10 h-10 text-white" />
             </div>
-            <h1 className="text-3xl font-light text-slate-900 mb-4 tracking-wide">Virtual Fitting</h1>
-            <p className="text-slate-600 leading-relaxed font-light text-lg">
+            <h1 className="text-3xl font-bold text-gray-800 mb-4 tracking-wide">Virtual Fitting</h1>
+            <p className="text-gray-600 leading-relaxed font-medium text-lg">
               Find your perfect fit through our simple measurement guide
             </p>
           </div>
           
           <Button 
             onClick={() => setIsStarted(true)}
-            className="w-full py-4 text-base font-medium bg-slate-900 hover:bg-slate-800 text-white border-0 rounded-lg transition-colors duration-200"
+            className="w-full py-4 text-base font-medium bg-gradient-to-r from-coral-500/90 to-peach-500/90 hover:from-coral-600/90 hover:to-peach-600/90 text-white border-0 rounded-full shadow-lg transition-all duration-200"
           >
             Begin Fitting
           </Button>
           
-          <p className="text-sm text-slate-500 mt-6 font-light">Takes less than one minute</p>
+          <p className="text-sm text-gray-500 mt-6 font-medium">Takes less than one minute</p>
         </Card>
       </div>
     );
@@ -183,36 +184,36 @@ export const VirtualTryOn = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 flex items-center justify-center p-4">
-      <Card className="max-w-2xl w-full bg-white border border-slate-200 shadow-sm overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-orange-50 to-yellow-50 flex items-center justify-center p-4">
+      <Card className="max-w-2xl w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-2xl overflow-hidden">
         {/* Progress Header */}
-        <div className="bg-slate-50 p-8 border-b border-slate-200">
+        <div className="bg-white/10 backdrop-blur-md p-8 border-b border-white/20">
           <div className="flex items-center justify-between mb-6">
             <Button
               variant="ghost"
               size="sm"
               onClick={prevStep}
               disabled={currentStep === 1}
-              className="text-slate-700 hover:bg-slate-200 disabled:opacity-30 border border-slate-300 bg-slate-100 font-medium rounded-lg px-4 py-2"
+              className="text-gray-700 hover:bg-white/20 disabled:opacity-30 border border-white/20 bg-white/10 backdrop-blur-md font-medium rounded-full px-4 py-2 shadow-lg"
             >
               <ChevronLeft className="w-4 h-4 mr-1" />
               Back
             </Button>
-            <span className="text-sm font-medium text-slate-600 bg-slate-200 px-4 py-2 rounded-full border border-slate-300">
+            <span className="text-sm font-medium text-gray-600 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 shadow-lg">
               {currentStep} / {totalSteps}
             </span>
           </div>
           
-          <div className="w-full bg-slate-200 rounded-full h-2 border border-slate-300">
+          <div className="w-full bg-white/20 backdrop-blur-md rounded-full h-3 border border-white/30 shadow-inner">
             <div 
-              className="bg-slate-800 h-2 rounded-full transition-all duration-700 ease-out border-r border-slate-900"
+              className="bg-gradient-to-r from-coral-500/90 to-peach-500/90 h-3 rounded-full transition-all duration-700 ease-out shadow-lg"
               style={{ width: `${progress}%` }}
             />
           </div>
         </div>
 
         {/* Step Content */}
-        <div className="p-12 bg-white">
+        <div className="p-12 bg-white/10 backdrop-blur-md">
           {currentStepType === 'gender' && (
             <GenderStep 
               value={measurements.gender}
@@ -267,7 +268,7 @@ export const VirtualTryOn = () => {
             <Button
               onClick={nextStep}
               disabled={!isStepComplete()}
-              className="px-8 py-3 bg-slate-900 hover:bg-slate-800 disabled:opacity-30 disabled:cursor-not-allowed text-white border-0 rounded-lg font-medium transition-colors duration-200"
+              className="px-8 py-3 bg-gradient-to-r from-coral-500/90 to-peach-500/90 hover:from-coral-600/90 hover:to-peach-600/90 disabled:opacity-30 disabled:cursor-not-allowed text-white border-0 rounded-full font-medium shadow-lg transition-all duration-200"
             >
               {currentStep === totalSteps ? 'Complete' : 'Continue'}
             </Button>
