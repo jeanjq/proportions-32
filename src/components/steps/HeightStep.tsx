@@ -16,6 +16,11 @@ export const HeightStep: React.FC<HeightStepProps> = ({ value, onChange }) => {
     heightOptions.push(i);
   }
 
+  // Average heights: European women ~165cm, European men ~178cm
+  const getDefaultHeight = () => {
+    return 170; // A middle ground between average male and female heights
+  };
+
   return (
     <div className="text-center space-y-6">
       <div className="mb-8">
@@ -30,7 +35,11 @@ export const HeightStep: React.FC<HeightStepProps> = ({ value, onChange }) => {
         <Label htmlFor="height" className="text-base font-medium text-gray-700 block mb-3">
           Height in centimeters
         </Label>
-        <Select value={value ? value.toString() : ""} onValueChange={(val) => onChange(Number(val))}>
+        <Select 
+          value={value ? value.toString() : ""} 
+          onValueChange={(val) => onChange(Number(val))}
+          defaultValue={getDefaultHeight().toString()}
+        >
           <SelectTrigger className="text-center text-lg py-6 border-2 border-gray-200 focus:border-coral-400 rounded-full">
             <SelectValue placeholder="Select your height" />
           </SelectTrigger>
@@ -38,11 +47,13 @@ export const HeightStep: React.FC<HeightStepProps> = ({ value, onChange }) => {
             {heightOptions.map((height) => (
               <SelectItem key={height} value={height.toString()} className="text-center">
                 {height} cm
+                {height === 165 && <span className="text-xs text-gray-500 ml-2">(avg. women)</span>}
+                {height === 178 && <span className="text-xs text-gray-500 ml-2">(avg. men)</span>}
               </SelectItem>
             ))}
           </SelectContent>
         </Select>
-        <p className="text-xs text-gray-500 mt-2">Usually between 140-200 cm</p>
+        <p className="text-xs text-gray-500 mt-2">European average: Women 165cm, Men 178cm</p>
       </div>
     </div>
   );

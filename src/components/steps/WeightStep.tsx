@@ -16,6 +16,11 @@ export const WeightStep: React.FC<WeightStepProps> = ({ value, onChange }) => {
     weightOptions.push(i);
   }
 
+  // Average weights: European women ~65kg, European men ~82kg
+  const getDefaultWeight = () => {
+    return 70; // A middle ground between average male and female weights
+  };
+
   return (
     <div className="text-center space-y-6">
       <div className="mb-8">
@@ -30,7 +35,11 @@ export const WeightStep: React.FC<WeightStepProps> = ({ value, onChange }) => {
         <Label htmlFor="weight" className="text-base font-medium text-gray-700 block mb-3">
           Weight in kilograms
         </Label>
-        <Select value={value ? value.toString() : ""} onValueChange={(val) => onChange(Number(val))}>
+        <Select 
+          value={value ? value.toString() : ""} 
+          onValueChange={(val) => onChange(Number(val))}
+          defaultValue={getDefaultWeight().toString()}
+        >
           <SelectTrigger className="text-center text-lg py-6 border-2 border-gray-200 focus:border-coral-400 rounded-full">
             <SelectValue placeholder="Select your weight" />
           </SelectTrigger>
@@ -38,11 +47,13 @@ export const WeightStep: React.FC<WeightStepProps> = ({ value, onChange }) => {
             {weightOptions.map((weight) => (
               <SelectItem key={weight} value={weight.toString()} className="text-center">
                 {weight} kg
+                {weight === 65 && <span className="text-xs text-gray-500 ml-2">(avg. women)</span>}
+                {weight === 82 && <span className="text-xs text-gray-500 ml-2">(avg. men)</span>}
               </SelectItem>
             ))}
           </SelectContent>
         </Select>
-        <p className="text-xs text-gray-500 mt-2">We keep this private & secure</p>
+        <p className="text-xs text-gray-500 mt-2">European average: Women 65kg, Men 82kg</p>
       </div>
     </div>
   );
