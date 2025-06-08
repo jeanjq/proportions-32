@@ -32,8 +32,8 @@ export const BellyShapeStep: React.FC<BellyShapeStepProps> = ({ value, onChange 
   return (
     <div className="text-center space-y-8">
       <div className="mb-8">
-        <div className="w-16 h-16 bg-gray-300/30 backdrop-blur-sm rounded-full mx-auto mb-4 flex items-center justify-center">
-          <span className="text-4xl">🤰</span>
+        <div className="w-16 h-16 bg-white/20 backdrop-blur-md border border-white/30 rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
+          <span className="text-6xl">🤰</span>
         </div>
         <h2 className="text-2xl font-bold text-gray-800 mb-2">What's your belly shape?</h2>
         <p className="text-gray-600">Choose the shape that best describes you!</p>
@@ -45,10 +45,10 @@ export const BellyShapeStep: React.FC<BellyShapeStepProps> = ({ value, onChange 
             key={shape.id}
             onClick={() => onChange(shape.id)}
             className={cn(
-              "p-6 rounded-2xl border-2 transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-gray-200",
+              "p-6 rounded-2xl border transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-white/20 backdrop-blur-md shadow-lg hover:shadow-xl",
               value === shape.id
-                ? "border-gray-400 bg-gray-200/40 backdrop-blur-sm shadow-lg"
-                : "border-gray-200 hover:border-gray-300 hover:bg-gray-100/30 backdrop-blur-sm"
+                ? "border-white/40 bg-white/30 shadow-xl ring-2 ring-white/30"
+                : "border-white/20 bg-white/10 hover:border-white/30 hover:bg-white/20"
             )}
           >
             <div className="text-4xl mb-3">{shape.icon}</div>
