@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -90,9 +89,9 @@ export const VirtualTryOn = () => {
   if (!isStarted) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-pink-50 via-orange-50 to-yellow-50 flex items-center justify-center p-4">
-        <Card className="max-w-lg w-full p-8 text-center shadow-2xl border-0 bg-white/80 backdrop-blur-sm">
+        <Card className="max-w-lg w-full p-8 text-center bg-white/20 backdrop-blur-md border border-white/30 shadow-2xl">
           <div className="mb-6">
-            <div className="w-20 h-20 bg-gradient-to-r from-coral-400 to-peach-400 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <div className="w-20 h-20 bg-gradient-to-r from-coral-400/80 to-peach-400/80 backdrop-blur-sm rounded-full mx-auto mb-4 flex items-center justify-center border border-white/20">
               <Sparkles className="w-10 h-10 text-white" />
             </div>
             <h1 className="text-3xl font-bold text-gray-800 mb-2">Try It On!</h1>
@@ -103,7 +102,7 @@ export const VirtualTryOn = () => {
           
           <Button 
             onClick={() => setIsStarted(true)}
-            className="w-full py-6 text-lg font-medium bg-gradient-to-r from-coral-500 to-peach-500 hover:from-coral-600 hover:to-peach-600 border-0 rounded-full shadow-lg transform transition-all duration-200 hover:scale-105"
+            className="w-full py-6 text-lg font-medium bg-gradient-to-r from-coral-500/90 to-peach-500/90 hover:from-coral-600/90 hover:to-peach-600/90 border border-white/20 backdrop-blur-sm rounded-full shadow-lg transform transition-all duration-200 hover:scale-105"
           >
             Start Your Virtual Try-On ✨
           </Button>
@@ -120,16 +119,16 @@ export const VirtualTryOn = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-orange-50 to-yellow-50 flex items-center justify-center p-4">
-      <Card className="max-w-2xl w-full shadow-2xl border-0 bg-white/90 backdrop-blur-sm overflow-hidden">
+      <Card className="max-w-2xl w-full bg-white/20 backdrop-blur-md border border-white/30 shadow-2xl overflow-hidden">
         {/* Progress Header */}
-        <div className="bg-gradient-to-r from-coral-500 to-peach-500 p-6 text-white">
+        <div className="bg-gradient-to-r from-coral-500/90 to-peach-500/90 backdrop-blur-sm p-6 text-white border-b border-white/20">
           <div className="flex items-center justify-between mb-4">
             <Button
               variant="ghost"
               size="sm"
               onClick={prevStep}
               disabled={currentStep === 1}
-              className="text-white hover:bg-white/20 disabled:opacity-50"
+              className="text-white hover:bg-white/20 disabled:opacity-50 border border-white/20 backdrop-blur-sm"
             >
               <ChevronLeft className="w-4 h-4 mr-1" />
               Back
@@ -139,7 +138,7 @@ export const VirtualTryOn = () => {
             </span>
           </div>
           
-          <div className="w-full bg-white/20 rounded-full h-2">
+          <div className="w-full bg-white/20 backdrop-blur-sm rounded-full h-2 border border-white/30">
             <div 
               className="bg-white h-2 rounded-full transition-all duration-500 ease-out"
               style={{ width: `${progress}%` }}
@@ -148,7 +147,7 @@ export const VirtualTryOn = () => {
         </div>
 
         {/* Step Content */}
-        <div className="p-8">
+        <div className="p-8 bg-white/10 backdrop-blur-sm">
           {currentStep === 1 && (
             <GenderStep 
               value={measurements.gender}
@@ -197,7 +196,7 @@ export const VirtualTryOn = () => {
             <Button
               onClick={nextStep}
               disabled={!isStepComplete()}
-              className="px-8 py-3 bg-gradient-to-r from-coral-500 to-peach-500 hover:from-coral-600 hover:to-peach-600 disabled:opacity-50 disabled:cursor-not-allowed border-0 rounded-full font-medium transform transition-all duration-200 hover:scale-105"
+              className="px-8 py-3 bg-gradient-to-r from-coral-500/90 to-peach-500/90 hover:from-coral-600/90 hover:to-peach-600/90 disabled:opacity-50 disabled:cursor-not-allowed border border-white/20 backdrop-blur-sm rounded-full font-medium transform transition-all duration-200 hover:scale-105"
             >
               {currentStep === totalSteps ? 'See My Avatar! 🎉' : 'Continue'}
             </Button>

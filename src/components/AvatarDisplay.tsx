@@ -110,7 +110,7 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="w-20 h-20 bg-gradient-to-r from-coral-400 to-peach-400 rounded-full mx-auto mb-4 flex items-center justify-center">
+          <div className="w-20 h-20 bg-gradient-to-r from-coral-400/80 to-peach-400/80 backdrop-blur-sm rounded-full mx-auto mb-4 flex items-center justify-center border border-white/20">
             <Sparkles className="w-10 h-10 text-white" />
           </div>
           <h1 className="text-3xl font-bold text-gray-800 mb-2">Here's how it looks on you! 🎉</h1>
@@ -119,7 +119,7 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Avatar Display */}
-          <Card className="p-6 shadow-2xl border-0 bg-white/90 backdrop-blur-sm">
+          <Card className="p-6 bg-white/20 backdrop-blur-md border border-white/30 shadow-2xl">
             <div className="text-center">
               
               <AvatarImage 
@@ -141,7 +141,7 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
           </Card>
 
           {/* Details & Actions */}
-          <Card className="p-6 shadow-2xl border-0 bg-white/90 backdrop-blur-sm">
+          <Card className="p-6 bg-white/20 backdrop-blur-md border border-white/30 shadow-2xl">
             <h3 className="text-xl font-bold text-gray-800 mb-6">Your Measurements</h3>
             
             <MeasurementsDisplay 
