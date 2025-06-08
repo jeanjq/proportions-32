@@ -47,8 +47,6 @@ export const WeightStep: React.FC<WeightStepProps> = ({ value, onChange }) => {
             {weightOptions.map((weight) => (
               <SelectItem key={weight} value={weight.toString()} className="text-center">
                 {weight} kg
-                {weight === 65 && <span className="text-xs text-gray-500 ml-2">(avg. women)</span>}
-                {weight === 82 && <span className="text-xs text-gray-500 ml-2">(avg. men)</span>}
               </SelectItem>
             ))}
           </SelectContent>

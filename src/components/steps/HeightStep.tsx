@@ -47,8 +47,6 @@ export const HeightStep: React.FC<HeightStepProps> = ({ value, onChange }) => {
             {heightOptions.map((height) => (
               <SelectItem key={height} value={height.toString()} className="text-center">
                 {height} cm
-                {height === 165 && <span className="text-xs text-gray-500 ml-2">(avg. women)</span>}
-                {height === 178 && <span className="text-xs text-gray-500 ml-2">(avg. men)</span>}
               </SelectItem>
             ))}
           </SelectContent>
