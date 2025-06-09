@@ -29,8 +29,12 @@ const MeasurementsDisplay: React.FC<MeasurementsDisplayProps> = ({
         <span className="font-medium capitalize">{measurements.bellyShape}</span>
       </div>
       <div className="flex justify-between items-center py-2 border-b border-white/20">
-        <span className="text-gray-600">Hip Shape</span>
-        <span className="font-medium capitalize">{measurements.hipShape}</span>
+        <span className="text-gray-600">Shoulder Width</span>
+        <span className="font-medium">
+          {measurements.shoulderWidth === '1' ? 'Small' : 
+           measurements.shoulderWidth === '2' ? 'Medium' : 
+           measurements.shoulderWidth === '3' ? 'Large' : 'Not specified'}
+        </span>
       </div>
       {recommendedSize && (
         <div className="flex justify-between items-center py-2 border-b border-white/20">
