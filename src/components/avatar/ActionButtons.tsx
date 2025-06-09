@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Download } from 'lucide-react';
 
 interface ActionButtonsProps {
   selectedSize: string;
@@ -9,35 +8,6 @@ interface ActionButtonsProps {
 }
 
 const ActionButtons: React.FC<ActionButtonsProps> = ({ selectedSize, onRestart }) => {
-  const handleDownloadMaleJS = async () => {
-    try {
-      const url = "https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o/Male.js?alt=media&token=edc4f39e-bec4-40ea-bb99-a8b0b62ca555";
-      
-      // Fetch the file
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error('Failed to download file');
-      }
-      
-      // Get the content as blob
-      const blob = await response.blob();
-      
-      // Create download link
-      const downloadUrl = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = downloadUrl;
-      link.download = 'Male.js';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(downloadUrl);
-      
-      console.log('Male.js file downloaded successfully');
-    } catch (error) {
-      console.error('Error downloading Male.js file:', error);
-    }
-  };
-
   return (
     <div className="space-y-4">
       <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 shadow-lg">
@@ -59,15 +29,6 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({ selectedSize, onRestart }
             className="w-full border-white/30 bg-white/10 backdrop-blur-md hover:bg-white/20 text-gray-700 rounded-full font-medium shadow-lg transition-all duration-200"
           >
             Try Different Measurements
-          </Button>
-          
-          <Button 
-            variant="outline" 
-            onClick={handleDownloadMaleJS}
-            className="w-full border-white/30 bg-white/10 backdrop-blur-md hover:bg-white/20 text-gray-700 rounded-full font-medium shadow-lg transition-all duration-200 flex items-center gap-2"
-          >
-            <Download className="w-4 h-4" />
-            Download Male.js (Test)
           </Button>
         </div>
       </div>
