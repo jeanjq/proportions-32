@@ -43,19 +43,28 @@ export async function fetchGenderSpecificData(gender: 'male' | 'female'): Promis
     console.log(`${gender} data fetched successfully, sample:`, parsedData.slice(0, 2));
     
     // Process the data to match our AvatarData interface
-    return parsedData.map((item: any) => ({
-      fileName: item["File Name"] || item["image_number"] || "",
-      stature: parseFloat(item["Stature"] || item["Height"]) || 0,
-      weight: parseFloat(item["Weight"]) || 0,
-      waistCirc: parseFloat(item["WaistCirc"] || item["Waist"]) || 0,
-      chestCirc: parseFloat(item["ChestCirc"] || item["Chest"]) || 0,
-      hipCirc: parseFloat(item["HipCirc"] || item["Hip"]) || 0,
-      crotchHeight: parseFloat(item["CrotchHeight"] || item["Crotch"]) || 0,
-      underBustCirc: parseFloat(item["UnderBustCirc"] || item["UnderBust"]) || 0,
-      bellyShape: item["Shape1"] || item["BellyShape"] || "flat",
-      hipShape: item["Shape2"] || item["HipShape"] || "regular",
-      recommendedSize: item["Size"] || item["Recommended Size"] || item[Object.keys(item)[Object.keys(item).length - 1]] || "M" // Use last column as fallback
-    }));
+    return parsedData.map((item: any) => {
+      const processed = {
+        fileName: item["File Name"] || item["image_number"] || "",
+        stature: parseFloat(item["Stature"] || item["Height"]) || 0,
+        weight: parseFloat(item["Weight"]) || 0,
+        waistCirc: parseFloat(item["WaistCirc"] || item["Waist"]) || 0,
+        chestCirc: parseFloat(item["ChestCirc"] || item["Chest"]) || 0,
+        hipCirc: parseFloat(item["HipCirc"] || item["Hip"]) || 0,
+        crotchHeight: parseFloat(item["CrotchHeight"] || item["Crotch"]) || 0,
+        underBustCirc: parseFloat(item["UnderBustCirc"] || item["UnderBust"]) || 0,
+        bellyShape: item["Shape1"] || item["BellyShape"] || "flat",
+        hipShape: item["Shape2"] || item["HipShape"] || "regular",
+        recommendedSize: item["Size"] || item["Recommended Size"] || item[Object.keys(item)[Object.keys(item).length - 1]] || "M"
+      };
+      
+      // For men, also store shoulder width directly from Shape2
+      if (gender === 'male') {
+        processed.shoulderWidth = item["Shape2"] || item["ShoulderWidth"] || "2";
+      }
+      
+      return processed;
+    });
   } catch (error) {
     console.error(`Error fetching or processing ${gender} avatar data:`, error);
     return exampleAvatarData; // Fall back to example data
