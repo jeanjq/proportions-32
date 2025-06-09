@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -16,8 +15,8 @@ import { ChevronLeft, Sparkles } from 'lucide-react';
 export interface UserMeasurements {
   gender: 'male' | 'female' | 'non-binary' | null;
   physique: string[];
-  height: number;
-  weight: number;
+  height: string; // Changed to string for ranges
+  weight: string; // Changed to string for ranges
   braSize: string | null;
   bellyShape: 'flat' | 'round' | 'curvy' | null;
   hipShape: 'slim' | 'regular' | 'full' | null;
@@ -27,8 +26,8 @@ export interface UserMeasurements {
 const initialMeasurements: UserMeasurements = {
   gender: null,
   physique: [],
-  height: 0,
-  weight: 0,
+  height: '',
+  weight: '',
   braSize: null,
   bellyShape: null,
   hipShape: null,
@@ -133,8 +132,8 @@ export const VirtualTryOn = () => {
     switch (currentStepType) {
       case 'gender': return measurements.gender !== null;
       case 'physique': return measurements.physique.length > 0;
-      case 'height': return measurements.height > 0;
-      case 'weight': return measurements.weight > 0;
+      case 'height': return measurements.height !== '';
+      case 'weight': return measurements.weight !== '';
       case 'braSize': return measurements.braSize !== null;
       case 'bellyShape': return measurements.bellyShape !== null;
       case 'hipShape': return measurements.hipShape !== null;
@@ -144,8 +143,8 @@ export const VirtualTryOn = () => {
   };
 
   const allStepsComplete = measurements.gender && 
-                          measurements.height > 0 && 
-                          measurements.weight > 0 && 
+                          measurements.height !== '' && 
+                          measurements.weight !== '' && 
                           (questionnaireType === 'male' || measurements.braSize) &&
                           measurements.bellyShape && 
                           (questionnaireType === 'female' ? measurements.hipShape : measurements.shoulderWidth) &&
@@ -236,6 +235,7 @@ export const VirtualTryOn = () => {
             <HeightStep 
               value={measurements.height}
               onChange={(height) => updateMeasurement('height', height)}
+              gender={questionnaireType as 'male' | 'female'}
             />
           )}
           
@@ -243,6 +243,7 @@ export const VirtualTryOn = () => {
             <WeightStep 
               value={measurements.weight}
               onChange={(weight) => updateMeasurement('weight', weight)}
+              gender={questionnaireType as 'male' | 'female'}
             />
           )}
           

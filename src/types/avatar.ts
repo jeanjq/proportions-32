@@ -13,6 +13,9 @@ export interface AvatarData {
   hipShape: 'slim' | 'regular' | 'full';
   shoulderWidth?: '1' | '2' | '3';
   recommendedSize?: string;
+  // Add optional range data for UI display
+  heightRange?: string;
+  weightRange?: string;
 }
 
 // Define type for the output.js data structure

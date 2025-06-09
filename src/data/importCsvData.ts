@@ -21,6 +21,20 @@ export async function fetchGenderSpecificData(gender: 'male' | 'female'): Promis
   }
 }
 
+// Parse range string (e.g., "140cm - 152cm" or "40kg - 44kg") to get min and max values
+function parseRange(rangeStr: string): { min: number; max: number; midpoint: number } {
+  const match = rangeStr.match(/(\d+)(?:cm|kg)?\s*-\s*(\d+)(?:cm|kg)?/);
+  if (match) {
+    const min = parseInt(match[1]);
+    const max = parseInt(match[2]);
+    const midpoint = Math.round((min + max) / 2);
+    return { min, max, midpoint };
+  }
+  // Fallback for non-range values
+  const singleValue = parseInt(rangeStr.replace(/[^\d]/g, ''));
+  return { min: singleValue, max: singleValue, midpoint: singleValue };
+}
+
 // Process the raw JSON data to match our AvatarData interface
 function processAvatarData(jsonData: any[], gender: 'male' | 'female'): AvatarData[] {
   console.log(`🔄 Processing ${jsonData.length} ${gender} entries...`);
@@ -32,42 +46,27 @@ function processAvatarData(jsonData: any[], gender: 'male' | 'female'): AvatarDa
       console.log(`📋 Raw entry ${index + 1} data:`, entry);
     }
     
-    // Map belly shape numbers to text values
-    const mapBellyShape = (shapeNum: string | number): 'flat' | 'round' | 'curvy' => {
-      const num = typeof shapeNum === 'string' ? shapeNum : String(shapeNum);
-      switch (num) {
-        case '1': return 'flat';
-        case '2': return 'round';
-        case '3': return 'curvy';
-        default: return 'round';
-      }
-    };
-
-    // Map hip shape numbers to text values
-    const mapHipShape = (shapeNum: string | number): 'slim' | 'regular' | 'full' => {
-      const num = typeof shapeNum === 'string' ? shapeNum : String(shapeNum);
-      switch (num) {
-        case '1': return 'slim';
-        case '2': return 'regular';
-        case '3': return 'full';
-        default: return 'regular';
-      }
-    };
+    // Parse height and weight ranges
+    const heightRange = parseRange(entry.stature || '170cm');
+    const weightRange = parseRange(entry.weight || '70kg');
     
     const processed = {
-      fileName: entry['Image number'] ? `adidas_${entry['Image number']}` : `adidas_${index + 1}`,
-      stature: Number(entry['Stature (mm)']) || 1700,
-      weight: Number(entry['Weight (kg)']) || 70,
+      fileName: entry.fileName || `adidas_${index + 1}`,
+      stature: heightRange.midpoint * 10, // Convert cm to mm for compatibility
+      weight: weightRange.midpoint,
       waistCirc: Number(entry['Waist Circ']) || 80,
       chestCirc: Number(entry['Chest Circ']) || 95,
       hipCirc: Number(entry['Hip Circ']) || 90,
       crotchHeight: Number(entry['Crotch Height']) || 80,
       underBustCirc: Number(entry['Under Bust Circ']) || (gender === 'male' ? 0 : 75),
-      bellyShape: mapBellyShape(entry['Shape1 (Belly)'] || '1'),
-      hipShape: gender === 'female' ? mapHipShape(entry['Shape2 (Hip)'] || '2') : undefined,
-      shoulderWidth: gender === 'male' ? String(entry['Shape2 (Chest)'] || '2') as '1' | '2' | '3' : undefined,
-      recommendedSize: entry['Size recommendation'] || 'M'
-    } as AvatarData;
+      bellyShape: entry.bellyShape || 'round',
+      hipShape: gender === 'female' ? (entry.hipShape || 'regular') : undefined,
+      shoulderWidth: gender === 'male' ? (entry.shoulderWidth || '2') : undefined,
+      recommendedSize: entry.recommendedSize || 'M',
+      // Store original range data for UI display
+      heightRange: entry.stature,
+      weightRange: entry.weight
+    } as AvatarData & { heightRange?: string; weightRange?: string };
     
     // Log the first few processed entries
     if (index < 3) {
@@ -81,6 +80,27 @@ function processAvatarData(jsonData: any[], gender: 'male' | 'female'): AvatarDa
   console.log(`📊 Final processed sample:`, processedData.slice(0, 2));
   
   return processedData;
+}
+
+// Function to get available ranges for the questionnaire
+export async function getAvailableRanges(gender: 'male' | 'female'): Promise<{
+  heightRanges: string[];
+  weightRanges: string[];
+}> {
+  try {
+    const jsonData = gender === 'male' ? maleAvatarsData : femaleAvatarsData;
+    
+    // Extract unique ranges
+    const heightRanges = [...new Set(jsonData.map((entry: any) => entry.stature))].filter(Boolean);
+    const weightRanges = [...new Set(jsonData.map((entry: any) => entry.weight))].filter(Boolean);
+    
+    console.log(`📊 Available ranges for ${gender}:`, { heightRanges, weightRanges });
+    
+    return { heightRanges, weightRanges };
+  } catch (error) {
+    console.error(`❌ Error loading ranges for ${gender}:`, error);
+    return { heightRanges: [], weightRanges: [] };
+  }
 }
 
 // Legacy function for backward compatibility
