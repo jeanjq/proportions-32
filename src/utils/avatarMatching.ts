@@ -1,4 +1,3 @@
-
 // Define types for the CSV data structure
 export interface AvatarData {
   fileName: string;
@@ -53,7 +52,7 @@ const fallbackOutputData: OutputData[] = [
 function mapShapeToNumber(shape: 'flat' | 'round' | 'curvy'): string {
   switch (shape) {
     case 'flat': return '1';
-    case 'round': return '2';
+    case 'round': return '2'; 
     case 'curvy': return '3';
     default: return '2';
   }
@@ -66,6 +65,11 @@ function mapHipShapeToNumber(shape: 'slim' | 'regular' | 'full'): string {
     case 'full': return '3';
     default: return '2';
   }
+}
+
+function mapShoulderWidthToNumber(width: '1' | '2' | '3'): string {
+  // The shoulder width values are already numbers from the UI
+  return width;
 }
 
 /**
@@ -114,7 +118,7 @@ export async function findClosestAvatarWithSize(
     const bellyShapeNumber = mapShapeToNumber(bellyShape);
     const secondShapeNumber = gender === 'female' 
       ? mapHipShapeToNumber(hipShapeOrShoulderWidth as 'slim' | 'regular' | 'full')
-      : hipShapeOrShoulderWidth; // For males, it's already a number string
+      : mapShoulderWidthToNumber(hipShapeOrShoulderWidth as '1' | '2' | '3');
     
     console.log('🔢 Mapped values for matching:', {
       bellyShapeNumber,
