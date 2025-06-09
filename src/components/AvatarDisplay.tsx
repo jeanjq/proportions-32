@@ -61,6 +61,8 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
         setImageNumber(result.imageNumber);
         setRecommendedSize(result.recommendedSize);
         setSelectedSize(result.recommendedSize); // Set initial selected size to recommended size
+
+        console.log('result', JSON.stringify(result, null, 2))
         
         if (result.imageNumber === null) {
           setError('No matching avatar found. Please try different measurements.');
