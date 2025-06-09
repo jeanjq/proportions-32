@@ -185,6 +185,8 @@ export async function findClosestAvatarWithSize(
     console.log('🎯 Finding closest match by height and weight...');
     let closestMatch = filteredData[0];
     let smallestDifference = Math.abs(closestMatch.stature - height) + Math.abs(closestMatch.weight - weight);
+
+    console.log(`Weight: ${height} | Match: ${smallestDifference} | smallest difference: ${smallestDifference}`)
     
     console.log(`Initial candidate: ${closestMatch.fileName} with difference: ${smallestDifference}`);
     
