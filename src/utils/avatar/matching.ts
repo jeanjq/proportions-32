@@ -64,6 +64,7 @@ function calculateSimilarityScore(
   targetSecondShape: string,
   gender: 'male' | 'female'
 ): number {
+  debugger;
   let score = 0;
   
   // Parse height and weight ranges from the entry
@@ -115,8 +116,6 @@ function calculateSimilarityScore(
     score += Math.max(0, 10 - (secondDiff * 4)); // Reduce score for different second shapes
   }
 
-  console.log('RAW Score: ', score)
-  
   console.log(`📊 Similarity score for ${entry.fileName}:`, {
     heightInRange: heightCheck.isInRange,
     weightInRange: weightCheck.isInRange,
