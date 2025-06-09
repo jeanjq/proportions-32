@@ -1,3 +1,4 @@
+
 import { AvatarData } from "../utils/avatarMatching";
 import femaleAvatarsData from './femaleAvatars.json';
 
@@ -35,20 +36,20 @@ export async function fetchGenderSpecificData(gender: 'male' | 'female'): Promis
     console.log(`${gender} data loaded successfully, total entries:`, jsonData.length);
     console.log(`Sample ${gender} entries:`, jsonData.slice(0, 3));
     
-    // Process and cast the data to AvatarData[]
+    // Process and cast the data to AvatarData[] using the correct field names from your JS files
     const processedData = jsonData.map((entry: any) => ({
-      fileName: entry.fileName || `adidas_${entry.image_number || 105}`,
-      stature: Number(entry.stature || entry.Stature || 170),
-      weight: Number(entry.weight || entry.Weight || 70),
-      waistCirc: Number(entry.waistCirc || entry['Waist Circ'] || 80),
-      chestCirc: Number(entry.chestCirc || entry['Chest Circ'] || 95),
-      hipCirc: Number(entry.hipCirc || entry['Hip Circ'] || 90),
-      crotchHeight: Number(entry.crotchHeight || entry['Crotch Height'] || 80),
-      underBustCirc: Number(entry.underBustCirc || entry['Under Bust Circ'] || (gender === 'male' ? 0 : 75)),
-      bellyShape: entry.bellyShape || entry.Shape1 || entry['Shape1 (Belly)'] || 'flat',
-      hipShape: gender === 'female' ? (entry.hipShape || entry.Shape2 || entry['Shape2 (Hip)'] || 'regular') : undefined,
-      shoulderWidth: gender === 'male' ? (entry.shoulderWidth || entry.Shape2 || entry['Shape2 (Chest)'] || '2') : undefined,
-      recommendedSize: entry.recommendedSize || entry['Recommended Size'] || 'M'
+      fileName: entry['image number'] ? `adidas_${entry['image number']}` : `adidas_105`,
+      stature: Number(entry['Stature (mm)'] || entry.stature || 170),
+      weight: Number(entry['Weight (kg)'] || entry.weight || 70),
+      waistCirc: Number(entry['Waist Circ'] || entry.waistCirc || 80),
+      chestCirc: Number(entry['Chest Circ'] || entry.chestCirc || 95),
+      hipCirc: Number(entry['Hip Circ'] || entry.hipCirc || 90),
+      crotchHeight: Number(entry['Crotch Height'] || entry.crotchHeight || 80),
+      underBustCirc: Number(entry['Under Bust Circ'] || entry.underBustCirc || (gender === 'male' ? 0 : 75)),
+      bellyShape: entry['Shape1 (Belly)'] || entry.bellyShape || '1',
+      hipShape: gender === 'female' ? (entry['Shape2 (Hip)'] || entry.hipShape || '2') : undefined,
+      shoulderWidth: gender === 'male' ? (entry['Shape2 (Chest)'] || entry.shoulderWidth || '2') : undefined,
+      recommendedSize: entry['Size recommendation'] || entry.recommendedSize || 'M'
     })) as AvatarData[];
     
     return processedData;
