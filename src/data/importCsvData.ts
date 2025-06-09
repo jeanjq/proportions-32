@@ -32,6 +32,28 @@ function processAvatarData(jsonData: any[], gender: 'male' | 'female'): AvatarDa
       console.log(`📋 Raw entry ${index + 1} data:`, entry);
     }
     
+    // Map belly shape numbers to text values
+    const mapBellyShape = (shapeNum: string | number): 'flat' | 'round' | 'curvy' => {
+      const num = typeof shapeNum === 'string' ? shapeNum : String(shapeNum);
+      switch (num) {
+        case '1': return 'flat';
+        case '2': return 'round';
+        case '3': return 'curvy';
+        default: return 'round';
+      }
+    };
+
+    // Map hip shape numbers to text values
+    const mapHipShape = (shapeNum: string | number): 'slim' | 'regular' | 'full' => {
+      const num = typeof shapeNum === 'string' ? shapeNum : String(shapeNum);
+      switch (num) {
+        case '1': return 'slim';
+        case '2': return 'regular';
+        case '3': return 'full';
+        default: return 'regular';
+      }
+    };
+    
     const processed = {
       fileName: entry['Image number'] ? `adidas_${entry['Image number']}` : `adidas_${index + 1}`,
       stature: Number(entry['Stature (mm)']) || 1700,
@@ -41,9 +63,9 @@ function processAvatarData(jsonData: any[], gender: 'male' | 'female'): AvatarDa
       hipCirc: Number(entry['Hip Circ']) || 90,
       crotchHeight: Number(entry['Crotch Height']) || 80,
       underBustCirc: Number(entry['Under Bust Circ']) || (gender === 'male' ? 0 : 75),
-      bellyShape: entry['Shape1 (Belly)'] || '1',
-      hipShape: gender === 'female' ? (entry['Shape2 (Hip)'] || '2') : undefined,
-      shoulderWidth: gender === 'male' ? (entry['Shape2 (Chest)'] || '2') : undefined,
+      bellyShape: mapBellyShape(entry['Shape1 (Belly)'] || '1'),
+      hipShape: gender === 'female' ? mapHipShape(entry['Shape2 (Hip)'] || '2') : undefined,
+      shoulderWidth: gender === 'male' ? String(entry['Shape2 (Chest)'] || '2') as '1' | '2' | '3' : undefined,
       recommendedSize: entry['Size recommendation'] || 'M'
     } as AvatarData;
     
