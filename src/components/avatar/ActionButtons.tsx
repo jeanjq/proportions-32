@@ -11,11 +11,6 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({ selectedSize, onRestart }
   return (
     <div className="space-y-4">
       <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 shadow-lg">
-        <h4 className="font-semibold text-gray-800 mb-3">Perfect Fit Guaranteed</h4>
-        <p className="text-sm text-gray-600 mb-4">
-          Size <span className="font-bold text-coral-600">{selectedSize}</span> is your ideal match based on your measurements.
-        </p>
-        
         <div className="flex flex-col gap-3">
           <Button 
             className="w-full bg-gradient-to-r from-coral-500/90 to-peach-500/90 hover:from-coral-600/90 hover:to-peach-600/90 text-white border-0 rounded-full font-medium shadow-lg transition-all duration-200"
