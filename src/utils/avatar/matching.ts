@@ -19,9 +19,69 @@ const fallbackOutputData: OutputData[] = [
 ];
 
 /**
+ * Calculate similarity score between user measurements and avatar entry
+ */
+function calculateSimilarityScore(
+  entry: AvatarData,
+  targetHeight: number,
+  targetWeight: number,
+  targetBellyShape: string,
+  targetSecondShape: string,
+  gender: 'male' | 'female'
+): number {
+  let score = 0;
+  
+  // Height matching (most important) - score 0-40
+  const heightDiff = Math.abs(entry.stature - targetHeight);
+  const heightScore = Math.max(0, 40 - (heightDiff / 10)); // Penalty increases with height difference
+  score += heightScore;
+  
+  // Weight matching (second most important) - score 0-30
+  const weightDiff = Math.abs(entry.weight - targetWeight);
+  const weightScore = Math.max(0, 30 - weightDiff); // Penalty of 1 point per kg difference
+  score += weightScore;
+  
+  // Belly shape matching - score 0-20
+  if (entry.bellyShape === targetBellyShape) {
+    score += 20;
+  } else {
+    // Partial score for similar shapes
+    const shapeMapping = { 'flat': 1, 'round': 2, 'curvy': 3 };
+    const entryShapeNum = shapeMapping[entry.bellyShape as keyof typeof shapeMapping] || 2;
+    const targetShapeNum = shapeMapping[targetBellyShape as keyof typeof shapeMapping] || 2;
+    const shapeDiff = Math.abs(entryShapeNum - targetShapeNum);
+    score += Math.max(0, 20 - (shapeDiff * 8)); // Reduce score for different shapes
+  }
+  
+  // Second shape matching (hip/shoulder) - score 0-10
+  const entrySecondShape = gender === 'male' ? entry.shoulderWidth : entry.hipShape;
+  if (entrySecondShape === targetSecondShape) {
+    score += 10;
+  } else {
+    // Partial score for similar second shapes
+    const secondShapeMapping = gender === 'male' 
+      ? { '1': 1, '2': 2, '3': 3 }
+      : { 'slim': 1, 'regular': 2, 'full': 3 };
+    const entrySecondNum = secondShapeMapping[entrySecondShape as keyof typeof secondShapeMapping] || 2;
+    const targetSecondNum = secondShapeMapping[targetSecondShape as keyof typeof secondShapeMapping] || 2;
+    const secondDiff = Math.abs(entrySecondNum - targetSecondNum);
+    score += Math.max(0, 10 - (secondDiff * 4)); // Reduce score for different second shapes
+  }
+  
+  console.log(`📊 Similarity score for ${entry.fileName}:`, {
+    heightScore: heightScore.toFixed(1),
+    weightScore: weightScore.toFixed(1),
+    bellyMatch: entry.bellyShape === targetBellyShape,
+    secondShapeMatch: entrySecondShape === targetSecondShape,
+    totalScore: score.toFixed(1)
+  });
+  
+  return score;
+}
+
+/**
  * Find the closest matching avatar and return both image number and recommended size
- * Updated to handle shoulder width for men and hip shape for women
- * Prioritizes height matching first, then weight matching
+ * Updated with improved matching algorithm that handles partial matches
  */
 export async function findClosestAvatarWithSize(
   height: number,
@@ -46,7 +106,6 @@ export async function findClosestAvatarWithSize(
 
   try {
     console.log(`Fetching ${gender} data from local JSON...`);
-    // Fetch gender-specific data from the JSON files
     const genderData = await fetchGenderSpecificData(gender);
     console.log(`✅ Successfully loaded ${genderData.length} ${gender} entries from JSON`);
     
@@ -58,7 +117,6 @@ export async function findClosestAvatarWithSize(
       };
     }
     
-    // Debug: Show first few entries with detailed structure
     console.log('📊 Sample entries from JSON data:', genderData.slice(0, 5).map(entry => ({
       fileName: entry.fileName,
       stature: entry.stature,
@@ -69,129 +127,101 @@ export async function findClosestAvatarWithSize(
       recommendedSize: entry.recommendedSize
     })));
     
-    let filteredData;
+    // First, try to find exact matches for shapes
+    let exactMatches;
     
     if (gender === 'male') {
-      // For men, filter by belly shape and shoulder width
-      const bellyShapeNumber = mapShapeToNumber(bellyShape);
-      const shoulderWidthNumber = mapShoulderWidthToNumber(hipShapeOrShoulderWidth as '1' | '2' | '3');
-      
-      console.log('🔢 Mapped values for male matching:', {
-        bellyShapeNumber,
-        shoulderWidthNumber,
-        originalBellyShape: bellyShape,
-        originalShoulderWidth: hipShapeOrShoulderWidth
-      });
-      
-      filteredData = genderData.filter((entry) => {
-        const bellyMatch = entry.bellyShape === bellyShape;
-        const shoulderMatch = entry.shoulderWidth === shoulderWidthNumber;
-        const overallMatch = bellyMatch && shoulderMatch;
-        
-        console.log(`🔎 Male entry check:`, {
-          fileName: entry.fileName,
-          entryBelly: entry.bellyShape,
-          targetBelly: bellyShape,
-          bellyMatch,
-          entryShoulder: entry.shoulderWidth,
-          targetShoulder: shoulderWidthNumber,
-          shoulderMatch,
-          overallMatch
-        });
-        
-        return overallMatch;
+      exactMatches = genderData.filter((entry) => {
+        return entry.bellyShape === bellyShape && entry.shoulderWidth === hipShapeOrShoulderWidth;
       });
     } else {
-      // For women, filter by belly shape and hip shape
-      const bellyShapeNumber = mapShapeToNumber(bellyShape);
-      const hipShapeNumber = mapHipShapeToNumber(hipShapeOrShoulderWidth as 'slim' | 'regular' | 'full');
-      
-      console.log('🔢 Mapped values for female matching:', {
-        bellyShapeNumber,
-        hipShapeNumber,
-        originalBellyShape: bellyShape,
-        originalHipShape: hipShapeOrShoulderWidth
-      });
-      
-      filteredData = genderData.filter((entry) => {
-        const bellyMatch = entry.bellyShape === bellyShape;
-        const hipMatch = entry.hipShape === (hipShapeOrShoulderWidth as 'slim' | 'regular' | 'full');
-        const overallMatch = bellyMatch && hipMatch;
-        
-        console.log(`🔎 Female entry check:`, {
-          fileName: entry.fileName,
-          entryBelly: entry.bellyShape,
-          targetBelly: bellyShape,
-          bellyMatch,
-          entryHip: entry.hipShape,
-          targetHip: hipShapeOrShoulderWidth,
-          hipMatch,
-          overallMatch
-        });
-        
-        return overallMatch;
+      exactMatches = genderData.filter((entry) => {
+        return entry.bellyShape === bellyShape && entry.hipShape === hipShapeOrShoulderWidth;
       });
     }
     
-    console.log(`📋 Filtered results: Found ${filteredData.length} matching entries`);
-    console.log('🎯 All matching entries:', filteredData.map(entry => ({
-      fileName: entry.fileName,
-      bellyShape: entry.bellyShape,
-      secondShape: gender === 'male' ? entry.shoulderWidth : entry.hipShape,
-      height: entry.stature,
-      weight: entry.weight
-    })));
+    console.log(`🎯 Found ${exactMatches.length} exact shape matches`);
     
-    if (filteredData.length === 0) {
-      console.log('❌ No matching avatars found for the given shapes, using fallback');
-      return { 
-        imageNumber: getFallbackImageNumber(bellyShape, hipShapeOrShoulderWidth, gender), 
-        recommendedSize: calculateSize(height, weight) 
-      };
+    // If we have exact shape matches, find the best one by height/weight
+    if (exactMatches.length > 0) {
+      console.log('✅ Using exact shape matches for final selection');
+      let bestMatch = exactMatches[0];
+      let smallestHeightDiff = Math.abs(bestMatch.stature - height);
+      let smallestWeightDiff = Math.abs(bestMatch.weight - weight);
+      
+      for (const entry of exactMatches) {
+        const heightDiff = Math.abs(entry.stature - height);
+        const weightDiff = Math.abs(entry.weight - weight);
+        
+        if (heightDiff < smallestHeightDiff || 
+            (heightDiff === smallestHeightDiff && weightDiff < smallestWeightDiff)) {
+          smallestHeightDiff = heightDiff;
+          smallestWeightDiff = weightDiff;
+          bestMatch = entry;
+        }
+      }
+      
+      const imageNumber = extractImageNumber(bestMatch.fileName);
+      const recommendedSize = bestMatch.recommendedSize || calculateSize(height, weight);
+      
+      console.log('✅ EXACT MATCH RESULT:', {
+        closestMatch: bestMatch.fileName,
+        imageNumber,
+        recommendedSize,
+        heightDiff: smallestHeightDiff,
+        weightDiff: smallestWeightDiff
+      });
+      console.log('=== AVATAR MATCHING DEBUG END ===');
+      
+      return { imageNumber, recommendedSize };
     }
     
-    // Find the closest match prioritizing height first, then weight
-    console.log('🎯 Finding closest match prioritizing height first, then weight...');
-    let closestMatch = filteredData[0];
-    let smallestHeightDiff = Math.abs(closestMatch.stature - height);
-    let smallestWeightDiff = Math.abs(closestMatch.weight - weight);
+    // If no exact shape matches, use similarity scoring for all entries
+    console.log('⚠️ No exact shape matches found, using similarity scoring for all entries');
     
-    console.log(`Initial candidate: ${closestMatch.fileName} with height diff: ${smallestHeightDiff}, weight diff: ${smallestWeightDiff}`);
+    let bestMatch = genderData[0];
+    let bestScore = calculateSimilarityScore(
+      bestMatch, 
+      height, 
+      weight, 
+      bellyShape, 
+      hipShapeOrShoulderWidth, 
+      gender
+    );
     
-    for (const entry of filteredData) {
-      const heightDiff = Math.abs(entry.stature - height);
-      const weightDiff = Math.abs(entry.weight - weight);
+    console.log(`Initial best candidate: ${bestMatch.fileName} with score: ${bestScore.toFixed(1)}`);
+    
+    for (let i = 1; i < genderData.length; i++) {
+      const entry = genderData[i];
+      const score = calculateSimilarityScore(
+        entry, 
+        height, 
+        weight, 
+        bellyShape, 
+        hipShapeOrShoulderWidth, 
+        gender
+      );
       
-      console.log(`📏 Evaluating ${entry.fileName}:`, {
-        entryHeight: entry.stature,
-        entryWeight: entry.weight,
-        heightDiff,
-        weightDiff
-      });
-      
-      // Prioritize height matching first
-      if (heightDiff < smallestHeightDiff || 
-          (heightDiff === smallestHeightDiff && weightDiff < smallestWeightDiff)) {
-        smallestHeightDiff = heightDiff;
-        smallestWeightDiff = weightDiff;
-        closestMatch = entry;
-        console.log(`🏆 New best match: ${entry.fileName}`);
+      if (score > bestScore) {
+        bestScore = score;
+        bestMatch = entry;
+        console.log(`🏆 New best match: ${entry.fileName} with score: ${score.toFixed(1)}`);
       }
     }
     
-    // Extract image number from fileName and get recommended size from CSV
-    const imageNumber = extractImageNumber(closestMatch.fileName);
-    const recommendedSize = closestMatch.recommendedSize || calculateSize(height, weight);
+    const imageNumber = extractImageNumber(bestMatch.fileName);
+    const recommendedSize = bestMatch.recommendedSize || calculateSize(height, weight);
     
-    console.log('✅ FINAL RESULT:', {
-      closestMatch: closestMatch.fileName,
+    console.log('✅ SIMILARITY MATCH RESULT:', {
+      closestMatch: bestMatch.fileName,
       imageNumber,
       recommendedSize,
+      finalScore: bestScore.toFixed(1),
       matchDetails: {
-        height: closestMatch.stature,
-        weight: closestMatch.weight,
-        bellyShape: closestMatch.bellyShape,
-        secondShape: gender === 'male' ? closestMatch.shoulderWidth : closestMatch.hipShape
+        height: bestMatch.stature,
+        weight: bestMatch.weight,
+        bellyShape: bestMatch.bellyShape,
+        secondShape: gender === 'male' ? bestMatch.shoulderWidth : bestMatch.hipShape
       }
     });
     console.log('=== AVATAR MATCHING DEBUG END ===');
