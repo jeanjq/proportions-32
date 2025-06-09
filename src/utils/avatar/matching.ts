@@ -114,6 +114,8 @@ function calculateSimilarityScore(
     const secondDiff = Math.abs(entrySecondNum - targetSecondNum);
     score += Math.max(0, 10 - (secondDiff * 4)); // Reduce score for different second shapes
   }
+
+  console.log('RAW Score: ', score)
   
   console.log(`📊 Similarity score for ${entry.fileName}:`, {
     heightInRange: heightCheck.isInRange,
