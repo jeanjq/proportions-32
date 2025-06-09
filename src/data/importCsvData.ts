@@ -44,7 +44,7 @@ export async function fetchGenderSpecificData(gender: 'male' | 'female'): Promis
     
     // Process the data to match our AvatarData interface
     return parsedData.map((item: any) => {
-      const processed: AvatarData = {
+      const processed = {
         fileName: item["File Name"] || item["image_number"] || "",
         stature: parseFloat(item["Stature"] || item["Height"]) || 0,
         weight: parseFloat(item["Weight"]) || 0,
