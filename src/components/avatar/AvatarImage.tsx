@@ -1,7 +1,7 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { AlertCircle, RefreshCw } from 'lucide-react';
-import { Skeleton } from "@/components/ui/skeleton";
 import { useToast } from "@/components/ui/use-toast";
 import { Progress } from "@/components/ui/progress";
 
@@ -102,7 +102,6 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
         <>
           {isLoading && (
             <div className="w-full space-y-4">
-              <Skeleton className="w-full h-[380px] rounded-md" />
               <div className="space-y-2">
                 <p className="text-sm text-center text-gray-500">Loading your perfect fit...</p>
                 <Progress value={loadingProgress} className="h-2 w-full" />
