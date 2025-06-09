@@ -1,3 +1,4 @@
+
 import { ViewAngle, AVAILABLE_VIEWS } from '@/types/avatar';
 
 // Firebase Storage base URL - Updated to correct project
@@ -6,7 +7,7 @@ const FIREBASE_STORAGE_BASE_URL = 'https://firebasestorage.googleapis.com/v0/b/p
 /**
  * Extract image number from filename - FIXED VERSION
  */
-function extractImageNumber(fileName: string): number {
+export function extractImageNumber(fileName: string): number {
   console.log(`🔍 Extracting image number from fileName: "${fileName}"`);
   
   // Handle different filename formats
@@ -30,7 +31,7 @@ function extractImageNumber(fileName: string): number {
 /**
  * Get fallback image number based on shapes and gender
  */
-function getFallbackImageNumber(bellyShape: string, secondShape: string, gender: 'male' | 'female'): number {
+export function getFallbackImageNumber(bellyShape: string, secondShape: string, gender: 'male' | 'female'): number {
   if (gender === 'male') {
     // For men, map shoulder width to fallback numbers
     const shoulderMapping: Record<string, Record<string, number>> = {
