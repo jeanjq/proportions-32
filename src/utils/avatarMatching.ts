@@ -1,3 +1,4 @@
+
 // Define types for the CSV data structure
 export interface AvatarData {
   fileName: string;
@@ -112,8 +113,16 @@ export async function findClosestAvatarWithSize(
       };
     }
     
-    // Debug: Show first few entries
-    console.log('📊 Sample entries from Firebase data:', genderData.slice(0, 3));
+    // Debug: Show first few entries with detailed structure
+    console.log('📊 Sample entries from Firebase data:', genderData.slice(0, 5).map(entry => ({
+      fileName: entry.fileName,
+      stature: entry.stature,
+      weight: entry.weight,
+      bellyShape: entry.bellyShape,
+      hipShape: entry.hipShape,
+      shoulderWidth: entry.shoulderWidth,
+      recommendedSize: entry.recommendedSize
+    })));
     
     let filteredData;
     
@@ -256,12 +265,27 @@ export async function findClosestAvatar(
 }
 
 /**
- * Extract image number from filename
+ * Extract image number from filename - FIXED VERSION
  */
 function extractImageNumber(fileName: string): number {
-  // Handle formats like "adidas_428", "428", etc.
+  console.log(`🔍 Extracting image number from fileName: "${fileName}"`);
+  
+  // Handle different filename formats
+  if (!fileName) {
+    console.log('❌ Empty fileName, using fallback 105');
+    return 105;
+  }
+  
+  // Try to extract number from various formats: "adidas_428", "428", "image_428", etc.
   const match = fileName.match(/(\d+)/);
-  return match ? parseInt(match[1], 10) : 105; // Default fallback
+  if (match) {
+    const imageNumber = parseInt(match[1], 10);
+    console.log(`✅ Extracted image number: ${imageNumber} from "${fileName}"`);
+    return imageNumber;
+  }
+  
+  console.log(`❌ Could not extract image number from "${fileName}", using fallback 105`);
+  return 105; // Default fallback
 }
 
 /**

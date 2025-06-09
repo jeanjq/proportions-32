@@ -1,4 +1,5 @@
 
+
 import { AvatarData } from "../utils/avatarMatching";
 import femaleAvatarsData from './femaleAvatars.json';
 
@@ -10,9 +11,10 @@ export const FEMALE_JS_URL = "https://firebasestorage.googleapis.com/v0/b/propor
 // Function to fetch avatar data for a specific gender
 export async function fetchGenderSpecificData(gender: 'male' | 'female'): Promise<AvatarData[]> {
   try {
-    console.log(`Loading ${gender} data from Firebase JavaScript file`);
+    console.log(`🔄 Loading ${gender} data from Firebase JavaScript file`);
     
     const jsUrl = gender === 'male' ? MALE_JS_URL : FEMALE_JS_URL;
+    console.log(`📡 Fetching from URL: ${jsUrl}`);
     
     // Fetch the JavaScript file
     const response = await fetch(jsUrl);
@@ -22,41 +24,81 @@ export async function fetchGenderSpecificData(gender: 'male' | 'female'): Promis
     
     // Get the JavaScript code as text
     const jsCode = await response.text();
-    console.log(`${gender} JS code loaded, length:`, jsCode.length);
+    console.log(`📝 ${gender} JS code loaded, length:`, jsCode.length);
+    console.log(`📄 First 500 chars of JS file:`, jsCode.substring(0, 500));
     
     // Execute the JavaScript code to get the data
     // The JS file should contain: const data = [...]; (or similar)
     const dataMatch = jsCode.match(/(?:const|var|let)\s+\w+\s*=\s*(\[[\s\S]*\]);?/);
     if (!dataMatch) {
+      console.log(`❌ Could not parse ${gender} data from JavaScript file`);
+      console.log(`🔍 Looking for alternative patterns...`);
+      
+      // Try alternative patterns
+      const altMatch1 = jsCode.match(/(\[[\s\S]*\])/);
+      if (altMatch1) {
+        console.log(`✅ Found alternative pattern 1 for ${gender} data`);
+        const jsonData = JSON.parse(altMatch1[1]);
+        console.log(`📊 Alternative pattern data loaded, entries:`, jsonData.length);
+        return processAvatarData(jsonData, gender);
+      }
+      
       throw new Error(`Could not parse ${gender} data from JavaScript file`);
     }
     
     // Parse the JSON array from the matched code
     const jsonData = JSON.parse(dataMatch[1]);
-    console.log(`${gender} data loaded successfully, total entries:`, jsonData.length);
-    console.log(`Sample ${gender} entries:`, jsonData.slice(0, 3));
+    console.log(`✅ ${gender} data loaded successfully, total entries:`, jsonData.length);
+    console.log(`📊 Sample ${gender} raw entries:`, jsonData.slice(0, 3));
     
-    // Process and cast the data to AvatarData[] using the correct field names from your JS files
-    const processedData = jsonData.map((entry: any) => ({
-      fileName: entry['image number'] ? `adidas_${entry['image number']}` : `adidas_105`,
-      stature: Number(entry['Stature (mm)'] || entry.stature || 170),
-      weight: Number(entry['Weight (kg)'] || entry.weight || 70),
+    return processAvatarData(jsonData, gender);
+    
+  } catch (error) {
+    console.error(`❌ Error loading ${gender} avatar data:`, error);
+    console.log(`🔄 Falling back to example data for ${gender}`);
+    return exampleAvatarData; // Fall back to example data
+  }
+}
+
+// Separate function to process the raw data
+function processAvatarData(jsonData: any[], gender: 'male' | 'female'): AvatarData[] {
+  console.log(`🔄 Processing ${jsonData.length} ${gender} entries...`);
+  
+  // Process and cast the data to AvatarData[] using the correct field names from your JS files
+  const processedData = jsonData.map((entry: any, index: number) => {
+    // Log the first few entries to see the structure
+    if (index < 3) {
+      console.log(`📋 Raw entry ${index + 1} structure:`, Object.keys(entry));
+      console.log(`📋 Raw entry ${index + 1} data:`, entry);
+    }
+    
+    const processed = {
+      fileName: entry['image number'] ? `adidas_${entry['image number']}` : (entry.fileName || `adidas_105`),
+      stature: Number(entry['Stature (mm)'] || entry.stature || entry.Stature || 1700),
+      weight: Number(entry['Weight (kg)'] || entry.weight || entry.Weight || 70),
       waistCirc: Number(entry['Waist Circ'] || entry.waistCirc || 80),
       chestCirc: Number(entry['Chest Circ'] || entry.chestCirc || 95),
       hipCirc: Number(entry['Hip Circ'] || entry.hipCirc || 90),
       crotchHeight: Number(entry['Crotch Height'] || entry.crotchHeight || 80),
       underBustCirc: Number(entry['Under Bust Circ'] || entry.underBustCirc || (gender === 'male' ? 0 : 75)),
-      bellyShape: entry['Shape1 (Belly)'] || entry.bellyShape || '1',
-      hipShape: gender === 'female' ? (entry['Shape2 (Hip)'] || entry.hipShape || '2') : undefined,
-      shoulderWidth: gender === 'male' ? (entry['Shape2 (Chest)'] || entry.shoulderWidth || '2') : undefined,
-      recommendedSize: entry['Size recommendation'] || entry.recommendedSize || 'M'
-    })) as AvatarData[];
+      bellyShape: entry['Shape1 (Belly)'] || entry.bellyShape || entry.Shape1 || '1',
+      hipShape: gender === 'female' ? (entry['Shape2 (Hip)'] || entry.hipShape || entry.Shape2 || '2') : undefined,
+      shoulderWidth: gender === 'male' ? (entry['Shape2 (Chest)'] || entry.shoulderWidth || entry.Shape2 || '2') : undefined,
+      recommendedSize: entry['Size recommendation'] || entry.recommendedSize || entry.size || 'M'
+    } as AvatarData;
     
-    return processedData;
-  } catch (error) {
-    console.error(`Error loading ${gender} avatar data:`, error);
-    return exampleAvatarData; // Fall back to example data
-  }
+    // Log the first few processed entries
+    if (index < 3) {
+      console.log(`✅ Processed entry ${index + 1}:`, processed);
+    }
+    
+    return processed;
+  });
+  
+  console.log(`✅ Successfully processed ${processedData.length} ${gender} entries`);
+  console.log(`📊 Final processed sample:`, processedData.slice(0, 2));
+  
+  return processedData;
 }
 
 // Legacy function for backward compatibility
