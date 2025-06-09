@@ -1,82 +1,29 @@
-
 import { AvatarData } from "../utils/avatarMatching";
+import maleAvatarsData from './maleAvatars.json';
+import femaleAvatarsData from './femaleAvatars.json';
 
-// Firebase storage URLs for the new CSV files
+// Firebase storage URLs for the new CSV files (kept for reference)
 export const FIREBASE_STORAGE_BASE_URL = "https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o";
 export const MALE_CSV_URL = "https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o/Male%20(2).csv?alt=media&token=9ee2e53e-a258-45d8-aea5-39eb91cf4521";
 export const FEMALE_CSV_URL = "https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o/Female%20(2).csv?alt=media&token=44dfd6d2-be91-4920-97f0-cde218d3903e";
 
-// Function to parse CSV data
-function parseCSV(csvText: string): any[] {
-  const lines = csvText.split('\n');
-  const headers = lines[0].split(',').map(h => h.trim());
-  const data = [];
-  
-  console.log('CSV Headers:', headers);
-  
-  for (let i = 1; i < lines.length; i++) {
-    if (lines[i].trim()) {
-      const values = lines[i].split(',').map(v => v.trim());
-      const row: any = {};
-      headers.forEach((header, index) => {
-        row[header] = values[index] || '';
-      });
-      data.push(row);
-    }
-  }
-  
-  console.log('First few CSV rows:', data.slice(0, 3));
-  return data;
-}
-
-// Function to fetch CSV data for a specific gender
+// Function to fetch avatar data for a specific gender from local JSON files
 export async function fetchGenderSpecificData(gender: 'male' | 'female'): Promise<AvatarData[]> {
   try {
-    const csvUrl = gender === 'male' ? MALE_CSV_URL : FEMALE_CSV_URL;
-    console.log(`Fetching ${gender} data from:`, csvUrl);
+    console.log(`Loading ${gender} data from local JSON file`);
     
-    const response = await fetch(csvUrl);
-    if (!response.ok) {
-      console.error(`Failed to fetch ${gender} data: ${response.status} ${response.statusText}`);
-      throw new Error(`Failed to fetch ${gender} data: ${response.status}`);
-    }
+    // Use local JSON data instead of fetching from Firebase
+    const jsonData = gender === 'male' ? maleAvatarsData : femaleAvatarsData;
     
-    const csvText = await response.text();
-    console.log(`Raw CSV text length: ${csvText.length}`);
-    console.log('First 200 chars:', csvText.substring(0, 200));
+    console.log(`${gender} data loaded successfully, total entries:`, jsonData.length);
+    console.log('Sample entries:', jsonData.slice(0, 3));
     
-    const parsedData = parseCSV(csvText);
-    console.log(`${gender} data fetched successfully, total entries:`, parsedData.length);
-    
-    // Process the data to match our AvatarData interface
-    const processedData = parsedData.map((item: any) => {
-      // Create base processed object
-      const processed: AvatarData = {
-        fileName: item["File Name"] || item["image_number"] || item["4"] || "",
-        stature: parseFloat(item["Stature"] || item["Height"] || item["0"]) || 0,
-        weight: parseFloat(item["Weight"] || item["1"]) || 0,
-        waistCirc: parseFloat(item["WaistCirc"] || item["Waist"]) || 0,
-        chestCirc: parseFloat(item["ChestCirc"] || item["Chest"]) || 0,
-        hipCirc: parseFloat(item["HipCirc"] || item["Hip"]) || 0,
-        crotchHeight: parseFloat(item["CrotchHeight"] || item["Crotch"]) || 0,
-        underBustCirc: parseFloat(item["UnderBustCirc"] || item["UnderBust"]) || 0,
-        bellyShape: item["Shape1"] || item["BellyShape"] || item["2"] || "flat",
-        hipShape: item["Shape2"] || item["HipShape"] || item["3"] || "regular",
-        recommendedSize: item["Size"] || item["Recommended Size"] || item["5"] || "M"
-      };
-      
-      // For men, add shoulder width from Shape2/column 3
-      if (gender === 'male') {
-        processed.shoulderWidth = item["Shape2"] || item["3"] || "2";
-      }
-      
-      console.log(`Processed ${gender} entry:`, processed);
-      return processed;
-    });
+    // Cast the data to AvatarData[] since it's already in the correct format
+    const processedData = jsonData as AvatarData[];
     
     return processedData;
   } catch (error) {
-    console.error(`Error fetching or processing ${gender} avatar data:`, error);
+    console.error(`Error loading ${gender} avatar data:`, error);
     return exampleAvatarData; // Fall back to example data
   }
 }
