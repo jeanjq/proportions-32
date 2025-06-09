@@ -308,7 +308,13 @@ export async function findClosestAvatarWithSize(
       console.log({closestMatches})
     }
 
-    const bestMatch = closestMatches[0];
+    const bestMatch = closestMatches[0] ?? undefined;
+    if (!bestMatch) {
+      return { 
+        imageNumber: getFallbackImageNumber(bellyShape, hipShapeOrShoulderWidth, gender), 
+        recommendedSize: calculateSize(height, weight) 
+      }; 
+    }
     const imageNumber = extractImageNumber(bestMatch.fileName);
     const recommendedSize = bestMatch.recommendedSize || calculateSize(height, weight);
 
