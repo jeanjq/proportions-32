@@ -11,7 +11,7 @@ interface WeightStepProps {
 }
 
 export const WeightStep: React.FC<WeightStepProps> = ({ value, onChange, gender = 'female' }) => {
-  const [availableWeights, setAvailableWeights] = useState<string[]>([]);
+  const [availableWeights, setAvailableWeights] = useState<{title: string, value: number}[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -20,7 +20,10 @@ export const WeightStep: React.FC<WeightStepProps> = ({ value, onChange, gender 
         // Generate a comprehensive list of weights from 40kg to 120kg
         const weights: string[] = [];
         for (let i = 40; i <= 120; i++) {
-          weights.push(`${i}kg`);
+          weights.push({
+            title: `${i}kg`,
+            value: i
+          });
         }
         setAvailableWeights(weights);
       } catch (error) {
@@ -28,7 +31,10 @@ export const WeightStep: React.FC<WeightStepProps> = ({ value, onChange, gender 
         // Fallback weights
         const fallbackWeights: string[] = [];
         for (let i = 45; i <= 100; i += 5) {
-          fallbackWeights.push(`${i}kg`);
+          fallbackWeights.push({
+            title: `${i}kg`,
+            value: i
+          });
         }
         setAvailableWeights(fallbackWeights);
       } finally {
@@ -63,8 +69,8 @@ export const WeightStep: React.FC<WeightStepProps> = ({ value, onChange, gender 
           </SelectTrigger>
           <SelectContent className="max-h-60 bg-white/90 backdrop-blur-md border border-white/30 shadow-lg">
             {availableWeights.map((weight) => (
-              <SelectItem key={weight} value={weight} className="text-center hover:bg-coral-100/20">
-                {weight}
+              <SelectItem key={weight.value} value={weight.value} className="text-center hover:bg-coral-100/20">
+                {weight.title}
               </SelectItem>
             ))}
           </SelectContent>
