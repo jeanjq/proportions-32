@@ -75,6 +75,7 @@ function mapShoulderWidthToNumber(width: '1' | '2' | '3'): string {
 /**
  * Find the closest matching avatar and return both image number and recommended size
  * Updated to handle shoulder width for men and hip shape for women
+ * TESTING MODE: For men, ignore shape matching and only use height/weight
  */
 export async function findClosestAvatarWithSize(
   height: number,
@@ -83,7 +84,7 @@ export async function findClosestAvatarWithSize(
   hipShapeOrShoulderWidth: 'slim' | 'regular' | 'full' | '1' | '2' | '3' | null,
   gender: 'male' | 'female'
 ): Promise<{ imageNumber: number | null; recommendedSize: string }> {
-  console.log('=== AVATAR MATCHING DEBUG START ===');
+  console.log('=== AVATAR MATCHING DEBUG START (TEST MODE FOR MEN) ===');
   console.log('Input parameters:', {
     height,
     weight,
@@ -114,42 +115,27 @@ export async function findClosestAvatarWithSize(
     // Debug: Show first few entries
     console.log('📊 Sample entries from Firebase data:', genderData.slice(0, 3));
     
-    // Convert UI values to numbers for matching
-    const bellyShapeNumber = mapShapeToNumber(bellyShape);
-    const secondShapeNumber = gender === 'female' 
-      ? mapHipShapeToNumber(hipShapeOrShoulderWidth as 'slim' | 'regular' | 'full')
-      : mapShoulderWidthToNumber(hipShapeOrShoulderWidth as '1' | '2' | '3');
+    let filteredData;
     
-    console.log('🔢 Mapped values for matching:', {
-      bellyShapeNumber,
-      secondShapeNumber,
-      originalBellyShape: bellyShape,
-      originalSecondShape: hipShapeOrShoulderWidth
-    });
-    
-    // Filter by belly shape and second shape parameter based on gender
-    console.log(`🔍 Filtering data for ${gender}...`);
-    const filteredData = genderData.filter((entry) => {
-      if (gender === 'male') {
-        // For men, match belly shape and shoulder width
-        const bellyMatch = entry.bellyShape === bellyShapeNumber;
-        const shoulderMatch = entry.shoulderWidth === secondShapeNumber;
-        const overallMatch = bellyMatch && shoulderMatch;
-        
-        console.log(`🔎 Male entry check:`, {
-          fileName: entry.fileName,
-          entryBelly: entry.bellyShape,
-          targetBelly: bellyShapeNumber,
-          bellyMatch,
-          entryShoulder: entry.shoulderWidth,
-          targetShoulder: secondShapeNumber,
-          shoulderMatch,
-          overallMatch
-        });
-        
-        return overallMatch;
-      } else {
-        // For women, match belly shape and hip shape
+    if (gender === 'male') {
+      // TEST MODE: For men, ignore shape matching - use all data
+      console.log('🧪 TEST MODE: Ignoring shape matching for men, using all data');
+      filteredData = genderData;
+    } else {
+      // For women, keep the original shape filtering logic
+      const bellyShapeNumber = mapShapeToNumber(bellyShape);
+      const secondShapeNumber = mapHipShapeToNumber(hipShapeOrShoulderWidth as 'slim' | 'regular' | 'full');
+      
+      console.log('🔢 Mapped values for matching:', {
+        bellyShapeNumber,
+        secondShapeNumber,
+        originalBellyShape: bellyShape,
+        originalSecondShape: hipShapeOrShoulderWidth
+      });
+      
+      // Filter by belly shape and hip shape for women
+      console.log(`🔍 Filtering data for ${gender}...`);
+      filteredData = genderData.filter((entry) => {
         const bellyMatch = entry.bellyShape === bellyShapeNumber;
         const hipMatch = entry.hipShape === secondShapeNumber;
         const overallMatch = bellyMatch && hipMatch;
@@ -166,8 +152,8 @@ export async function findClosestAvatarWithSize(
         });
         
         return overallMatch;
-      }
-    });
+      });
+    }
     
     console.log(`📋 Filtered results: Found ${filteredData.length} matching entries`);
     console.log('🎯 All matching entries:', filteredData.map(entry => ({
