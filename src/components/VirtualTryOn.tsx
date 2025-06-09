@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -16,8 +15,8 @@ import { ChevronLeft, Sparkles } from 'lucide-react';
 export interface UserMeasurements {
   gender: 'male' | 'female' | 'non-binary' | null;
   physique: string[];
-  height: string; // Changed to string for ranges
-  weight: string; // Changed to string for ranges
+  height: number; // Changed back to number
+  weight: number; // Changed back to number
   braSize: string | null;
   bellyShape: 'flat' | 'round' | 'curvy' | null;
   hipShape: 'slim' | 'regular' | 'full' | null;
@@ -27,8 +26,8 @@ export interface UserMeasurements {
 const initialMeasurements: UserMeasurements = {
   gender: null,
   physique: [],
-  height: '',
-  weight: '',
+  height: 0, // Changed back to number
+  weight: 0, // Changed back to number
   braSize: null,
   bellyShape: null,
   hipShape: null,
@@ -137,8 +136,8 @@ export const VirtualTryOn = () => {
     switch (currentStepType) {
       case 'gender': return measurements.gender !== null;
       case 'physique': return measurements.physique.length > 0;
-      case 'height': return measurements.height !== '';
-      case 'weight': return measurements.weight !== '';
+      case 'height': return measurements.height !== 0;
+      case 'weight': return measurements.weight !== 0;
       case 'braSize': return measurements.braSize !== null;
       case 'bellyShape': return measurements.bellyShape !== null;
       case 'hipShape': return measurements.hipShape !== null;
@@ -148,8 +147,8 @@ export const VirtualTryOn = () => {
   };
 
   const allStepsComplete = measurements.gender && 
-                          measurements.height !== '' && 
-                          measurements.weight !== '' && 
+                          measurements.height !== 0 && 
+                          measurements.weight !== 0 && 
                           (questionnaireType === 'male' || measurements.braSize) &&
                           measurements.bellyShape && 
                           (questionnaireType === 'female' ? measurements.hipShape : measurements.shoulderWidth) &&
