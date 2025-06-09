@@ -5,13 +5,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Ruler } from 'lucide-react';
 
 interface HeightStepProps {
-  value: string;
-  onChange: (height: string) => void;
+  value: number;
+  onChange: (height: number) => void;
   gender?: 'male' | 'female';
 }
 
 export const HeightStep: React.FC<HeightStepProps> = ({ value, onChange, gender = 'female' }) => {
-  const [availableHeights, setAvailableHeights] = useState<string[]>([]);
+  const [availableHeights, setAvailableHeights] = useState<{title: string, value: number}[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -20,7 +20,10 @@ export const HeightStep: React.FC<HeightStepProps> = ({ value, onChange, gender 
         // Generate a comprehensive list of heights from 140cm to 200cm
         const heights: string[] = [];
         for (let i = 140; i <= 200; i++) {
-          heights.push(`${i}cm`);
+          heights.push({
+            title: `${i}cm`,
+            value: i,
+          });
         }
         setAvailableHeights(heights);
       } catch (error) {
@@ -28,7 +31,10 @@ export const HeightStep: React.FC<HeightStepProps> = ({ value, onChange, gender 
         // Fallback heights
         const fallbackHeights: string[] = [];
         for (let i = 150; i <= 190; i += 5) {
-          fallbackHeights.push(`${i}cm`);
+          fallbackHeights.push({
+            title: `${i}cm`,
+            value: i,
+          });
         }
         setAvailableHeights(fallbackHeights);
       } finally {
@@ -63,8 +69,8 @@ export const HeightStep: React.FC<HeightStepProps> = ({ value, onChange, gender 
           </SelectTrigger>
           <SelectContent className="max-h-60 bg-white/90 backdrop-blur-md border border-white/30 shadow-lg">
             {availableHeights.map((height) => (
-              <SelectItem key={height} value={height} className="text-center hover:bg-coral-100/20">
-                {height}
+              <SelectItem key={height.value} value={height.value} className="text-center hover:bg-coral-100/20">
+                {height.title}
               </SelectItem>
             ))}
           </SelectContent>
