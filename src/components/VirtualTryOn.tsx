@@ -163,7 +163,7 @@ export const VirtualTryOn = () => {
             <div className="w-20 h-20 bg-gradient-to-r from-coral-400/80 to-peach-400/80 backdrop-blur-sm rounded-full mx-auto mb-6 flex items-center justify-center border border-white/20">
               <Sparkles className="w-10 h-10 text-white" />
             </div>
-            <h1 className="text-3xl font-bold text-gray-800 mb-4 tracking-wide">Proportions</h1>
+            <h1 className="text-6xl font-bold text-gray-800 mb-4 tracking-wide">Proportions</h1>
             <p className="text-gray-600 leading-relaxed font-medium text-lg">
               Find your perfect fit through our simple measurement guide
             </p>
