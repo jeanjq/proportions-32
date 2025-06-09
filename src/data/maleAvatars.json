@@ -10,7 +10,7 @@
     "crotchHeight": 80,
     "underBustCirc": 0,
     "bellyShape": "flat",
-    "shoulderWidth": "2",
+    "shoulderWidth": "3",
     "recommendedSize": "L"
   },
   {
@@ -37,6 +37,19 @@
     "underBustCirc": 0,
     "bellyShape": "round",
     "shoulderWidth": "2",
+    "recommendedSize": "L"
+  },
+  {
+    "fileName": "adidas_301",
+    "stature": 180,
+    "weight": 80,
+    "waistCirc": 85,
+    "chestCirc": 105,
+    "hipCirc": 95,
+    "crotchHeight": 82,
+    "underBustCirc": 0,
+    "bellyShape": "flat",
+    "shoulderWidth": "3",
     "recommendedSize": "L"
   }
 ]
