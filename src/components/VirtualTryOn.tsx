@@ -236,6 +236,7 @@ export const VirtualTryOn = () => {
             <HeightStep 
               value={measurements.height}
               onChange={(height) => updateMeasurement('height', height)}
+              gender={measurements.gender}
             />
           )}
           
@@ -243,6 +244,7 @@ export const VirtualTryOn = () => {
             <WeightStep 
               value={measurements.weight}
               onChange={(weight) => updateMeasurement('weight', weight)}
+              gender={measurements.gender}
             />
           )}
           
