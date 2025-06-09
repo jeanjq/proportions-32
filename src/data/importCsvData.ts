@@ -55,18 +55,18 @@ function processAvatarData(jsonData: any[], gender: 'male' | 'female'): AvatarDa
     };
     
     const processed = {
-      fileName: entry['Image number'] ? `adidas_${entry['Image number']}` : `adidas_${index + 1}`,
-      stature: Number(entry['Stature (mm)']) || 1700,
-      weight: Number(entry['Weight (kg)']) || 70,
-      waistCirc: Number(entry['Waist Circ']) || 80,
-      chestCirc: Number(entry['Chest Circ']) || 95,
-      hipCirc: Number(entry['Hip Circ']) || 90,
-      crotchHeight: Number(entry['Crotch Height']) || 80,
-      underBustCirc: Number(entry['Under Bust Circ']) || (gender === 'male' ? 0 : 75),
-      bellyShape: mapBellyShape(entry['Shape1 (Belly)'] || '1'),
-      hipShape: gender === 'female' ? mapHipShape(entry['Shape2 (Hip)'] || '2') : undefined,
-      shoulderWidth: gender === 'male' ? String(entry['Shape2 (Chest)'] || '2') as '1' | '2' | '3' : undefined,
-      recommendedSize: entry['Size recommendation'] || 'M'
+      fileName: entry['Image number'],
+      stature: Number(entry['Stature (mm)']),
+      weight: Number(entry['Weight (kg)']),
+      waistCirc: Number(entry['Waist Circ']),
+      chestCirc: Number(entry['Chest Circ']),
+      hipCirc: Number(entry['Hip Circ']),
+      crotchHeight: Number(entry['Crotch Height']),
+      underBustCirc: Number(entry['Under Bust Circ']),
+      bellyShape: mapBellyShape(entry['Shape1 (Belly)']),
+      hipShape: mapHipShape(entry['Shape2 (Hip)']),
+      shoulderWidth: String(entry['Shape2 (Chest)']),
+      recommendedSize: entry['Size recommendation']
     } as AvatarData;
     
     // Log the first few processed entries

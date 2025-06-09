@@ -83,7 +83,7 @@ function calculateSimilarityScore(
  * Find the closest matching avatar and return both image number and recommended size
  * Updated with improved matching algorithm that handles partial matches
  */
-export async function findClosestAvatarWithSize(
+export async function findClosestAvatarWithSizeOld(
   height: number,
   weight: number,
   bellyShape: 'flat' | 'round' | 'curvy' | null,
@@ -129,7 +129,7 @@ export async function findClosestAvatarWithSize(
     
     // First, try to find exact matches for shapes
     let exactMatches;
-    
+    console.log({genderData})
     if (gender === 'male') {
       exactMatches = genderData.filter((entry) => {
         return entry.bellyShape === bellyShape && entry.shoulderWidth === hipShapeOrShoulderWidth;
@@ -226,6 +226,93 @@ export async function findClosestAvatarWithSize(
     });
     console.log('=== AVATAR MATCHING DEBUG END ===');
     
+    return { imageNumber, recommendedSize };
+    
+  } catch (error) {
+    console.error("❌ Error finding closest avatar:", error);
+    console.log('=== AVATAR MATCHING DEBUG END (ERROR) ===');
+    return { 
+      imageNumber: getFallbackImageNumber(bellyShape, hipShapeOrShoulderWidth, gender), 
+      recommendedSize: calculateSize(height, weight) 
+    };
+  }
+}
+
+export async function findClosestAvatarWithSize(
+  height: number,
+  weight: number,
+  bellyShape: 'flat' | 'round' | 'curvy' | null,
+  hipShapeOrShoulderWidth: 'slim' | 'regular' | 'full' | '1' | '2' | '3' | null,
+  gender: 'male' | 'female'
+): Promise<{ imageNumber: number | null; recommendedSize: string }> {
+  console.log('=== AVATAR MATCHING DEBUG START ===');
+  console.log({bellyShape})
+  if (!bellyShape || !hipShapeOrShoulderWidth) {
+    console.log('Missing required parameters, returning fallback');
+    return { imageNumber: null, recommendedSize: calculateSize(height, weight) };
+  }
+
+  try {
+    console.log(`Fetching ${gender} data from local JSON...`);
+    const genderData = await fetchGenderSpecificData(gender);
+    console.log(`✅ Successfully loaded ${genderData.length} ${gender} entries from JSON`);
+    
+    if (genderData.length === 0) {
+      console.log('❌ No data found, using fallback logic');
+      return { 
+        imageNumber: getFallbackImageNumber(bellyShape, hipShapeOrShoulderWidth, gender), 
+        recommendedSize: calculateSize(height, weight) 
+      };
+    }
+    
+    console.log('📊 Sample entries from JSON data:', genderData.slice(0, 5).map(entry => ({
+      fileName: entry.fileName,
+      stature: entry.stature,
+      weight: entry.weight,
+      bellyShape: entry.bellyShape,
+      hipShape: entry.hipShape,
+      shoulderWidth: entry.shoulderWidth,
+      recommendedSize: entry.recommendedSize
+    })));
+    
+    let closestMatches: AvatarData[] = [];
+    const statures = genderData.map(entry => entry.stature);
+    const closestStature = statures.reduce((prev, curr) =>
+      Math.abs(curr - height) < Math.abs(prev - height) ? curr : prev
+    );
+
+    console.log("✅ Closest stature found:", closestStature);
+
+    closestMatches = genderData.filter(entry => entry.stature === closestStature);
+    const closestWeight = genderData.reduce((prev, curr) =>
+      Math.abs(curr.weight - weight) < Math.abs(prev.weight - weight)
+      ? curr
+      : prev
+    ).weight;
+
+    console.log("✅ Closest weight found:", closestWeight);
+
+    closestMatches = closestMatches.filter(entry => entry.weight === closestWeight);
+    closestMatches = closestMatches.filter(entry => entry.bellyShape === bellyShape);
+    
+    if (gender === 'male') {
+      closestMatches = closestMatches.sort((a, b) => {
+        const aMatch = a.shoulderWidth != null && a.shoulderWidth === hipShapeOrShoulderWidth ? 0 : 1;
+        const bMatch = b.shoulderWidth != null && b.shoulderWidth === hipShapeOrShoulderWidth ? 0 : 1;
+        return aMatch - bMatch;
+      });
+    } else {
+      closestMatches = closestMatches.filter((entry) => {
+        return entry.hipShape === hipShapeOrShoulderWidth;
+      });
+      console.log({closestMatches})
+    }
+
+    const bestMatch = closestMatches[0];
+    const imageNumber = extractImageNumber(bestMatch.fileName);
+    const recommendedSize = bestMatch.recommendedSize || calculateSize(height, weight);
+
+    console.log({bestMatch, imageNumber, recommendedSize})
     return { imageNumber, recommendedSize };
     
   } catch (error) {
