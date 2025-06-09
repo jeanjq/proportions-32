@@ -1,55 +1,7275 @@
 
-[
+ [
   {
-    "fileName": "adidas_452",
-    "stature": 185,
-    "weight": 75,
-    "waistCirc": 80,
-    "chestCirc": 95,
-    "hipCirc": 90,
-    "crotchHeight": 80,
-    "underBustCirc": 0,
-    "bellyShape": "flat",
-    "shoulderWidth": "3",
-    "recommendedSize": "L"
+    Stature (mm): "1600",
+    Weight (kg): "50",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "1",
+    Size recommendation: "XS"
   },
   {
-    "fileName": "adidas_428",
-    "stature": 165,
-    "weight": 60,
-    "waistCirc": 70,
-    "chestCirc": 90,
-    "hipCirc": 95,
-    "crotchHeight": 75,
-    "underBustCirc": 0,
-    "bellyShape": "flat",
-    "shoulderWidth": "1",
-    "recommendedSize": "M"
+    Stature (mm): "1600",
+    Weight (kg): "50",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "2",
+    Size recommendation: "XS"
   },
   {
-    "fileName": "adidas_105",
-    "stature": 170,
-    "weight": 75,
-    "waistCirc": 80,
-    "chestCirc": 100,
-    "hipCirc": 100,
-    "crotchHeight": 80,
-    "underBustCirc": 0,
-    "bellyShape": "round",
-    "shoulderWidth": "2",
-    "recommendedSize": "L"
+    Stature (mm): "1600",
+    Weight (kg): "50",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "3",
+    Size recommendation: "XS"
   },
   {
-    "fileName": "adidas_301",
-    "stature": 180,
-    "weight": 80,
-    "waistCirc": 85,
-    "chestCirc": 105,
-    "hipCirc": 95,
-    "crotchHeight": 82,
-    "underBustCirc": 0,
-    "bellyShape": "flat",
-    "shoulderWidth": "3",
-    "recommendedSize": "L"
+    Stature (mm): "1600",
+    Weight (kg): "50",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "4",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "50",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "5",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "50",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "6",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "50",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "7",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "50",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "8",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "50",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "9",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "55",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "10",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "55",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "11",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "55",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "12",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "55",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "13",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "55",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "14",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "55",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "15",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "55",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "16",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "55",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "17",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "55",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "18",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "60",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "19",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "60",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "20",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "60",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "21",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "60",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "22",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "60",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "23",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "60",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "24",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "60",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "25",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "60",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "26",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "60",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "27",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "65",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "28",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "65",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "29",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "65",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "30",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "65",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "31",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "65",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "32",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "65",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "33",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "65",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "34",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "65",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "35",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "65",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "36",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "37",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "38",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "39",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "40",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "41",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "42",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "43",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "44",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "45",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "46",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "47",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "48",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "49",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "50",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "51",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "52",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "53",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "54",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "55",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "56",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "57",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "58",
+    Size recommendation: "XS"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "59",
+    Size recommendation: "S"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "60",
+    Size recommendation: "S"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "61",
+    Size recommendation: "S"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "62",
+    Size recommendation: "S"
+  },
+  {
+    Stature (mm): "1600",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "63",
+    Size recommendation: "S"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "60",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "64",
+    Size recommendation: "S"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "60",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "65",
+    Size recommendation: "S"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "60",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "66",
+    Size recommendation: "S"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "60",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "67",
+    Size recommendation: "S"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "60",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "68",
+    Size recommendation: "S"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "60",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "69",
+    Size recommendation: "S"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "60",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "70",
+    Size recommendation: "S"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "60",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "71",
+    Size recommendation: "S"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "60",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "72",
+    Size recommendation: "S"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "65",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "73",
+    Size recommendation: "S"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "65",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "74",
+    Size recommendation: "S"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "65",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "75",
+    Size recommendation: "S"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "65",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "76",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "65",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "77",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "65",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "78",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "65",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "79",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "65",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "80",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "65",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "81",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "82",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "83",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "84",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "85",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "86",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "87",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "88",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "89",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "90",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "91",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "92",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "93",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "94",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "95",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "96",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "97",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "98",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "99",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "100",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "101",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "102",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "103",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "104",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "105",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "106",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "107",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "108",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "109",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "110",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "111",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "112",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "113",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "114",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "115",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "116",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "117",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "118",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "119",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "120",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "121",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "122",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "123",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "124",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "125",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "126",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "127",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "128",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "129",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "130",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "131",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "132",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "133",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "134",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "135",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "136",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "137",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "138",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "139",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "140",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "141",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "142",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "143",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1650",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "144",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "60",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "145",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "60",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "146",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "60",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "147",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "60",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "148",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "60",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "149",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "60",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "150",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "60",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "151",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "60",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "152",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "60",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "153",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "65",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "154",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "65",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "155",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "65",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "156",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "65",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "157",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "65",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "158",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "65",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "159",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "65",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "160",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "65",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "161",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "65",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "162",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "163",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "164",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "165",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "166",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "167",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "168",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "169",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "170",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "171",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "172",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "173",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "174",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "175",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "176",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "177",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "178",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "179",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "180",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "181",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "182",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "183",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "184",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "185",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "186",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "187",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "188",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "189",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "190",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "191",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "192",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "193",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "194",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "195",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "196",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "197",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "198",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "199",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "200",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "201",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "202",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "203",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "204",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "205",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "206",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "207",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "208",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "209",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "210",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "211",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "212",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "213",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "214",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "215",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "216",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "217",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "218",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "219",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "220",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "221",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "222",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "223",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "224",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1700",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "225",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "60",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "226",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "60",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "227",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "60",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "228",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "60",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "229",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "60",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "230",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "60",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "231",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "60",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "232",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "60",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "233",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "60",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "234",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "65",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "235",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "65",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "236",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "65",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "237",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "65",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "238",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "65",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "239",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "65",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "240",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "65",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "241",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "65",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "242",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "65",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "243",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "244",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "245",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "246",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "247",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "248",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "249",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "250",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "251",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "252",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "253",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "254",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "255",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "256",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "257",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "258",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "259",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "260",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "261",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "262",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "263",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "264",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "265",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "266",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "267",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "268",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "269",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "270",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "271",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "272",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "273",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "274",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "275",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "276",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "277",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "278",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "279",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "280",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "281",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "282",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "283",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "284",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "285",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "286",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "287",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "288",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "289",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "290",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "291",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "292",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "293",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "294",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "295",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "296",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "297",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "298",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "299",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "300",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "301",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "302",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "303",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "304",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "305",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "306",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "105",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "307",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "105",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "308",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "105",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "309",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "105",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "310",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "105",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "311",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "105",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "312",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "105",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "313",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "105",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "314",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "105",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "315",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "110",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "316",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "110",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "317",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "110",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "318",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "110",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "319",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "110",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "320",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "110",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "321",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "110",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "322",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "110",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "323",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1750",
+    Weight (kg): "110",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "324",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "60",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "325",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "60",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "326",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "60",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "327",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "60",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "328",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "60",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "329",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "60",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "330",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "60",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "331",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "60",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "332",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "60",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "333",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "65",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "334",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "65",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "335",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "65",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "336",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "65",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "337",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "65",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "338",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "65",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "339",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "65",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "340",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "65",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "341",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "65",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "342",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "343",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "344",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "345",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "346",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "347",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "348",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "349",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "350",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "351",
+    Size recommendation: "M"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "352",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "353",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "354",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "355",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "356",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "357",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "358",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "359",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "360",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "361",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "362",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "363",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "364",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "365",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "366",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "367",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "368",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "369",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "370",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "371",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "372",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "373",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "374",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "375",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "376",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "377",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "378",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "379",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "380",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "381",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "382",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "383",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "384",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "385",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "386",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "387",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "388",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "389",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "390",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "391",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "392",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "393",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "394",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "395",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "396",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "397",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "398",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "399",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "400",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "401",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "402",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "403",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "404",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "405",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "105",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "406",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "105",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "407",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "105",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "408",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "105",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "409",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "105",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "410",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "105",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "411",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "105",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "412",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "105",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "413",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "105",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "414",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "110",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "415",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "110",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "416",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "110",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "417",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "110",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "418",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "110",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "419",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "110",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "420",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "110",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "421",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "110",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "422",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "110",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "423",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "115",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "424",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "115",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "425",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "115",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "426",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "115",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "427",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "115",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "428",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "115",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "429",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "115",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "430",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "115",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "431",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "115",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "432",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "120",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "433",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "120",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "434",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "120",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "435",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "120",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "436",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "120",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "437",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "120",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "438",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "120",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "439",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "120",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "440",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1800",
+    Weight (kg): "120",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "441",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "442",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "443",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "444",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "445",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "446",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "447",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "448",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "449",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "450",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "451",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "452",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "453",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "454",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "455",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "456",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "457",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "458",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "459",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "460",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "461",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "462",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "463",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "464",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "465",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "466",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "467",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "468",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "469",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "470",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "471",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "472",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "473",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "474",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "475",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "476",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "477",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "478",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "479",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "480",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "481",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "482",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "483",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "484",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "485",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "486",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "487",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "488",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "489",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "490",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "491",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "492",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "493",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "494",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "495",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "496",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "497",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "498",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "499",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "500",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "501",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "502",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "503",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "504",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "105",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "505",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "105",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "506",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "105",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "507",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "105",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "508",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "105",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "509",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "105",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "510",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "105",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "511",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "105",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "512",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "105",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "513",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "110",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "514",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "110",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "515",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "110",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "516",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "110",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "517",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "110",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "518",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "110",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "519",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "110",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "520",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "110",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "521",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "110",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "522",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "115",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "523",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "115",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "524",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "115",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "525",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "115",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "526",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "115",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "527",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "115",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "528",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "115",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "529",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "115",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "530",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "115",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "531",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "120",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "532",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "120",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "533",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "120",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "534",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "120",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "535",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "120",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "536",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "120",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "537",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "120",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "538",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "120",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "539",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "120",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "540",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "125",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "541",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "125",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "542",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "125",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "543",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "125",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "544",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "125",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "545",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "125",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "546",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "125",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "547",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "125",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "548",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "125",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "549",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "130",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "550",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "130",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "551",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "130",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "552",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "130",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "553",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "130",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "554",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "130",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "555",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "130",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "556",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "130",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "557",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1850",
+    Weight (kg): "130",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "558",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "559",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "560",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "561",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "562",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "563",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "564",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "565",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "566",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "567",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "568",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "569",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "570",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "571",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "572",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "573",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "574",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "575",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "576",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "577",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "578",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "579",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "580",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "581",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "582",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "583",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "584",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "585",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "586",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "587",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "588",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "589",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "590",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "591",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "592",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "593",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "594",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "595",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "596",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "597",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "598",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "599",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "600",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "601",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "602",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "603",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "604",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "605",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "606",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "607",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "608",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "609",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "610",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "611",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "612",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "613",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "614",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "615",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "616",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "617",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "618",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "619",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "620",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "621",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "105",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "622",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "105",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "623",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "105",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "624",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "105",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "625",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "105",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "626",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "105",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "627",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "105",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "628",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "105",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "629",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "105",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "630",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "110",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "631",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "110",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "632",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "110",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "633",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "110",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "634",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "110",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "635",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "110",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "636",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "110",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "637",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "110",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "638",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "110",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "639",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "115",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "640",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "115",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "641",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "115",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "642",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "115",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "643",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "115",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "644",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "115",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "645",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "115",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "646",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "115",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "647",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "115",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "648",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "120",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "649",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "120",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "650",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "120",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "651",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "120",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "652",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "120",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "653",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "120",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "654",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "120",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "655",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "120",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "656",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "120",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "657",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "125",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "658",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "125",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "659",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "125",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "660",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "125",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "661",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "125",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "662",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "125",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "663",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "125",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "664",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "125",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "665",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "125",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "666",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "130",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "667",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "130",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "668",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "130",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "669",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "130",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "670",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "130",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "671",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "130",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "672",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "130",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "673",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "130",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "674",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1900",
+    Weight (kg): "130",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "675",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "676",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "677",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "70",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "678",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "679",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "680",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "70",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "681",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "682",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "683",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "70",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "684",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "685",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "686",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "75",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "687",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "688",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "689",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "75",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "690",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "691",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "692",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "75",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "693",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "694",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "695",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "80",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "696",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "697",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "698",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "80",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "699",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "700",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "701",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "80",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "702",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "703",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "704",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "85",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "705",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "706",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "707",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "85",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "708",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "709",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "710",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "85",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "711",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "712",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "713",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "714",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "715",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "716",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "717",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "718",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "719",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "720",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "721",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "722",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "723",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "724",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "725",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "726",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "727",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "728",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "729",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "730",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "731",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "732",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "733",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "734",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "735",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "736",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "737",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "738",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "105",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "739",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "105",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "740",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "105",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "741",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "105",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "742",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "105",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "743",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "105",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "744",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "105",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "745",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "105",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "746",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "105",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "747",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "110",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "748",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "110",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "749",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "110",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "750",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "110",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "751",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "110",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "752",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "110",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "753",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "110",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "754",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "110",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "755",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "110",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "756",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "115",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "757",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "115",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "758",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "115",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "759",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "115",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "760",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "115",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "761",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "115",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "762",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "115",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "763",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "115",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "764",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "115",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "765",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "120",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "766",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "120",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "767",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "120",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "768",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "120",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "769",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "120",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "770",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "120",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "771",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "120",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "772",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "120",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "773",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "120",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "774",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "125",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "775",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "125",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "776",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "125",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "777",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "125",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "778",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "125",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "779",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "125",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "780",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "125",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "781",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "125",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "782",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "125",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "783",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "130",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "784",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "130",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "785",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "130",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "786",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "130",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "787",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "130",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "788",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "130",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "789",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "130",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "790",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "130",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "791",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "130",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "792",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "135",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "793",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "135",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "794",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "135",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "795",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "135",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "796",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "135",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "797",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "135",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "798",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "135",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "799",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "135",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "800",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "135",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "801",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "140",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "802",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "140",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "803",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "140",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "804",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "140",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "805",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "140",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "806",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "140",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "807",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "140",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "808",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "140",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "809",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "140",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "810",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "145",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "811",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "145",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "812",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "145",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "813",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "145",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "814",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "145",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "815",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "145",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "816",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "145",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "817",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "145",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "818",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "145",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "819",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "150",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "820",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "150",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "821",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "150",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "822",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "150",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "823",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "150",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "824",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "150",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "825",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "150",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "826",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "150",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "827",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "1950",
+    Weight (kg): "150",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "828",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "829",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "830",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "90",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "831",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "832",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "833",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "90",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "834",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "835",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "836",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "90",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "837",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "838",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "839",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "95",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "840",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "841",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "842",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "95",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "843",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "844",
+    Size recommendation: "L"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "845",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "95",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "846",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "847",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "848",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "100",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "849",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "850",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "851",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "100",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "852",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "853",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "854",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "100",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "855",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "105",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "856",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "105",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "857",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "105",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "858",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "105",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "859",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "105",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "860",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "105",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "861",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "105",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "862",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "105",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "863",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "105",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "864",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "110",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "865",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "110",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "866",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "110",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "867",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "110",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "868",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "110",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "869",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "110",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "870",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "110",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "871",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "110",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "872",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "110",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "873",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "115",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "874",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "115",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "875",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "115",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "876",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "115",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "877",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "115",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "878",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "115",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "879",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "115",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "880",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "115",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "881",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "115",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "882",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "120",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "883",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "120",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "884",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "120",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "885",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "120",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "886",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "120",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "887",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "120",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "888",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "120",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "889",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "120",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "890",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "120",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "891",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "125",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "892",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "125",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "893",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "125",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "894",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "125",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "895",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "125",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "896",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "125",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "897",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "125",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "898",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "125",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "899",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "125",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "900",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "130",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "1",
+    Image number: "901",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "130",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "2",
+    Image number: "902",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "130",
+    Shape1 (Belly): "1",
+    Shape2 (Chest): "3",
+    Image number: "903",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "130",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "1",
+    Image number: "904",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "130",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "2",
+    Image number: "905",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "130",
+    Shape1 (Belly): "2",
+    Shape2 (Chest): "3",
+    Image number: "906",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "130",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "1",
+    Image number: "907",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "130",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "2",
+    Image number: "908",
+    Size recommendation: "XL"
+  },
+  {
+    Stature (mm): "2000",
+    Weight (kg): "130",
+    Shape1 (Belly): "3",
+    Shape2 (Chest): "3",
+    Image number: "909",
+    Size recommendation: "XL"
   }
 ]
