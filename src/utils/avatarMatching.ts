@@ -4,7 +4,7 @@ export type { AvatarData, OutputData, ViewAngle } from '@/types/avatar';
 export { AVAILABLE_VIEWS } from '@/types/avatar';
 
 // Re-export matching functions
-export { findClosestAvatarWithSize, findClosestAvatar } from './avatar/matching';
+export { findClosestAvatarWithSize, findClosestAvatar, convertMeasurementToNumber } from './avatar/matching';
 
 // Re-export image utilities
 export { getAvatarPath, getAvatarViews } from './avatar/imageUtils';

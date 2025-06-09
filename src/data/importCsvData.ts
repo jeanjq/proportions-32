@@ -63,7 +63,7 @@ function processAvatarData(jsonData: any[], gender: 'male' | 'female'): AvatarDa
       hipShape: gender === 'female' ? (entry.hipShape || 'regular') : undefined,
       shoulderWidth: gender === 'male' ? (entry.shoulderWidth || '2') : undefined,
       recommendedSize: entry.recommendedSize || 'M',
-      // Store original range data for UI display
+      // Store original range data for matching
       heightRange: entry.stature,
       weightRange: entry.weight
     } as AvatarData & { heightRange?: string; weightRange?: string };
@@ -82,23 +82,31 @@ function processAvatarData(jsonData: any[], gender: 'male' | 'female'): AvatarDa
   return processedData;
 }
 
-// Function to get available ranges for the questionnaire
+// Function to get available ranges for the questionnaire - now returns individual values
 export async function getAvailableRanges(gender: 'male' | 'female'): Promise<{
   heightRanges: string[];
   weightRanges: string[];
 }> {
   try {
-    const jsonData = gender === 'male' ? maleAvatarsData : femaleAvatarsData;
+    // Generate comprehensive individual value lists instead of ranges
+    const heightRanges: string[] = [];
+    for (let i = 140; i <= 200; i++) {
+      heightRanges.push(`${i}cm`);
+    }
     
-    // Extract unique ranges
-    const heightRanges = [...new Set(jsonData.map((entry: any) => entry.stature))].filter(Boolean);
-    const weightRanges = [...new Set(jsonData.map((entry: any) => entry.weight))].filter(Boolean);
+    const weightRanges: string[] = [];
+    for (let i = 40; i <= 120; i++) {
+      weightRanges.push(`${i}kg`);
+    }
     
-    console.log(`📊 Available ranges for ${gender}:`, { heightRanges, weightRanges });
+    console.log(`📊 Available individual values for ${gender}:`, { 
+      heightCount: heightRanges.length, 
+      weightCount: weightRanges.length 
+    });
     
     return { heightRanges, weightRanges };
   } catch (error) {
-    console.error(`❌ Error loading ranges for ${gender}:`, error);
+    console.error(`❌ Error generating ranges for ${gender}:`, error);
     return { heightRanges: [], weightRanges: [] };
   }
 }
