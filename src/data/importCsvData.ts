@@ -1,56 +1,15 @@
 
-
 import { AvatarData } from "../utils/avatarMatching";
 import femaleAvatarsData from './femaleAvatars.json';
-
-// Firebase storage URLs for the new JS files
-export const FIREBASE_STORAGE_BASE_URL = "https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o";
-export const MALE_JS_URL = "https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o/Male.js?alt=media&token=edc4f39e-bec4-40ea-bb99-a8b0b62ca555";
-export const FEMALE_JS_URL = "https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o/Female.js?alt=media&token=0f53fa79-bcc2-4799-bf2e-6dae29d004e7";
-
-const FEMALE_JSON = "femaleAvatars.json"
-print(FEMALE_JSON)
+import maleAvatarsData from './maleAvatars.json';
 
 // Function to fetch avatar data for a specific gender
 export async function fetchGenderSpecificData(gender: 'male' | 'female'): Promise<AvatarData[]> {
   try {
-    console.log(`🔄 Loading ${gender} data from Firebase JavaScript file`);
+    console.log(`🔄 Loading ${gender} data from local JSON file`);
     
-    const jsUrl = gender === 'male' ? MALE_JS_URL : FEMALE_JS_URL;
-    console.log(`📡 Fetching from URL: ${jsUrl}`);
-    
-    // Fetch the JavaScript file
-    const response = await fetch(jsUrl);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch ${gender} data: ${response.status}`);
-    }
-    
-    // Get the JavaScript code as text
-    const jsCode = await response.text();
-    console.log(`📝 ${gender} JS code loaded, length:`, jsCode.length);
-    console.log(`📄 First 500 chars of JS file:`, jsCode.substring(0, 500));
-    
-    // Execute the JavaScript code to get the data
-    // The JS file should contain: const data = [...]; (or similar)
-    const dataMatch = jsCode.match(/(?:const|var|let)\s+\w+\s*=\s*(\[[\s\S]*\]);?/);
-    if (!dataMatch) {
-      console.log(`❌ Could not parse ${gender} data from JavaScript file`);
-      console.log(`🔍 Looking for alternative patterns...`);
-      
-      // Try alternative patterns
-      const altMatch1 = jsCode.match(/(\[[\s\S]*\])/);
-      if (altMatch1) {
-        console.log(`✅ Found alternative pattern 1 for ${gender} data`);
-        const jsonData = JSON.parse(altMatch1[1]);
-        console.log(`📊 Alternative pattern data loaded, entries:`, jsonData.length);
-        return processAvatarData(jsonData, gender);
-      }
-      
-      throw new Error(`Could not parse ${gender} data from JavaScript file`);
-    }
-    
-    // Parse the JSON array from the matched code
-    const jsonData = JSON.parse(dataMatch[1]);
+    // Use the imported JSON data directly
+    const jsonData = gender === 'male' ? maleAvatarsData : femaleAvatarsData;
     console.log(`✅ ${gender} data loaded successfully, total entries:`, jsonData.length);
     console.log(`📊 Sample ${gender} raw entries:`, jsonData.slice(0, 3));
     
@@ -58,16 +17,14 @@ export async function fetchGenderSpecificData(gender: 'male' | 'female'): Promis
     
   } catch (error) {
     console.error(`❌ Error loading ${gender} avatar data:`, error);
-    console.log(`🔄 Falling back to example data for ${gender}`);
-    return exampleAvatarData; // Fall back to example data
+    throw new Error(`Failed to load ${gender} data from local JSON file`);
   }
 }
 
-// Separate function to process the raw data
+// Process the raw JSON data to match our AvatarData interface
 function processAvatarData(jsonData: any[], gender: 'male' | 'female'): AvatarData[] {
   console.log(`🔄 Processing ${jsonData.length} ${gender} entries...`);
   
-  // Process and cast the data to AvatarData[] using the correct field names from your JS files
   const processedData = jsonData.map((entry: any, index: number) => {
     // Log the first few entries to see the structure
     if (index < 3) {
@@ -76,18 +33,18 @@ function processAvatarData(jsonData: any[], gender: 'male' | 'female'): AvatarDa
     }
     
     const processed = {
-      fileName: entry['image number'] ? `adidas_${entry['image number']}` : (entry.fileName || `adidas_105`),
-      stature: Number(entry['Stature (mm)'] || entry.stature || entry.Stature || 1700),
-      weight: Number(entry['Weight (kg)'] || entry.weight || entry.Weight || 70),
-      waistCirc: Number(entry['Waist Circ'] || entry.waistCirc || 80),
-      chestCirc: Number(entry['Chest Circ'] || entry.chestCirc || 95),
-      hipCirc: Number(entry['Hip Circ'] || entry.hipCirc || 90),
-      crotchHeight: Number(entry['Crotch Height'] || entry.crotchHeight || 80),
-      underBustCirc: Number(entry['Under Bust Circ'] || entry.underBustCirc || (gender === 'male' ? 0 : 75)),
-      bellyShape: entry['Shape1 (Belly)'] || entry.bellyShape || entry.Shape1 || '1',
-      hipShape: gender === 'female' ? (entry['Shape2 (Hip)'] || entry.hipShape || entry.Shape2 || '2') : undefined,
-      shoulderWidth: gender === 'male' ? (entry['Shape2 (Chest)'] || entry.shoulderWidth || entry.Shape2 || '2') : undefined,
-      recommendedSize: entry['Size recommendation'] || entry.recommendedSize || entry.size || 'M'
+      fileName: entry['Image number'] ? `adidas_${entry['Image number']}` : `adidas_${index + 1}`,
+      stature: Number(entry['Stature (mm)']) || 1700,
+      weight: Number(entry['Weight (kg)']) || 70,
+      waistCirc: Number(entry['Waist Circ']) || 80,
+      chestCirc: Number(entry['Chest Circ']) || 95,
+      hipCirc: Number(entry['Hip Circ']) || 90,
+      crotchHeight: Number(entry['Crotch Height']) || 80,
+      underBustCirc: Number(entry['Under Bust Circ']) || (gender === 'male' ? 0 : 75),
+      bellyShape: entry['Shape1 (Belly)'] || '1',
+      hipShape: gender === 'female' ? (entry['Shape2 (Hip)'] || '2') : undefined,
+      shoulderWidth: gender === 'male' ? (entry['Shape2 (Chest)'] || '2') : undefined,
+      recommendedSize: entry['Size recommendation'] || 'M'
     } as AvatarData;
     
     // Log the first few processed entries
@@ -110,45 +67,5 @@ export async function fetchAvatarData(): Promise<AvatarData[]> {
   return fetchGenderSpecificData('female');
 }
 
-// For demonstration, keep the example entries
-export const exampleAvatarData: AvatarData[] = [
-  {
-    fileName: "adidas_428",
-    stature: 165,
-    weight: 60,
-    waistCirc: 70,
-    chestCirc: 90,
-    hipCirc: 95,
-    crotchHeight: 75,
-    underBustCirc: 75,
-    bellyShape: "flat",
-    hipShape: "regular"
-  },
-  {
-    fileName: "adidas_105",
-    stature: 170,
-    weight: 75,
-    waistCirc: 80,
-    chestCirc: 100,
-    hipCirc: 100,
-    crotchHeight: 80,
-    underBustCirc: 80,
-    bellyShape: "round",
-    hipShape: "full"
-  },
-  {
-    fileName: "adidas_201",
-    stature: 160,
-    weight: 55,
-    waistCirc: 65,
-    chestCirc: 85,
-    hipCirc: 90,
-    crotchHeight: 70,
-    underBustCirc: 70,
-    bellyShape: "curvy",
-    hipShape: "slim"
-  }
-];
-
-// Export the example data for testing purposes
-export default exampleAvatarData;
+// Export default as female data for compatibility
+export default femaleAvatarsData;
