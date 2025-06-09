@@ -64,9 +64,8 @@ function calculateSimilarityScore(
   targetSecondShape: string,
   gender: 'male' | 'female'
 ): number {
-  debugger;
   let score = 0;
-  
+
   // Parse height and weight ranges from the entry
   const heightCheck = parseRangeAndCheck(entry.heightRange || '170cm', targetHeight);
   const weightCheck = parseRangeAndCheck(entry.weightRange || '70kg', targetWeight);
@@ -115,7 +114,7 @@ function calculateSimilarityScore(
     const secondDiff = Math.abs(entrySecondNum - targetSecondNum);
     score += Math.max(0, 10 - (secondDiff * 4)); // Reduce score for different second shapes
   }
-
+  
   console.log(`📊 Similarity score for ${entry.fileName}:`, {
     heightInRange: heightCheck.isInRange,
     weightInRange: weightCheck.isInRange,
