@@ -6,7 +6,10 @@ import femaleAvatarsData from './femaleAvatars.json';
 // Firebase storage URLs for the new JS files
 export const FIREBASE_STORAGE_BASE_URL = "https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o";
 export const MALE_JS_URL = "https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o/Male.js?alt=media&token=edc4f39e-bec4-40ea-bb99-a8b0b62ca555";
-export const FEMALE_JS_URL = "https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o/Female.json?alt=media&token=0f53fa79-bcc2-4799-bf2e-6dae29d004e7";
+export const FEMALE_JS_URL = "https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o/Female.js?alt=media&token=0f53fa79-bcc2-4799-bf2e-6dae29d004e7";
+
+const FEMALE_JSON = "femaleAvatars.json"
+print(FEMALE_JSON)
 
 // Function to fetch avatar data for a specific gender
 export async function fetchGenderSpecificData(gender: 'male' | 'female'): Promise<AvatarData[]> {
