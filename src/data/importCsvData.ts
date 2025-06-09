@@ -12,6 +12,8 @@ function parseCSV(csvText: string): any[] {
   const headers = lines[0].split(',').map(h => h.trim());
   const data = [];
   
+  console.log('CSV Headers:', headers);
+  
   for (let i = 1; i < lines.length; i++) {
     if (lines[i].trim()) {
       const values = lines[i].split(',').map(v => v.trim());
@@ -23,6 +25,7 @@ function parseCSV(csvText: string): any[] {
     }
   }
   
+  console.log('First few CSV rows:', data.slice(0, 3));
   return data;
 }
 
@@ -39,32 +42,39 @@ export async function fetchGenderSpecificData(gender: 'male' | 'female'): Promis
     }
     
     const csvText = await response.text();
+    console.log(`Raw CSV text length: ${csvText.length}`);
+    console.log('First 200 chars:', csvText.substring(0, 200));
+    
     const parsedData = parseCSV(csvText);
-    console.log(`${gender} data fetched successfully, sample:`, parsedData.slice(0, 2));
+    console.log(`${gender} data fetched successfully, total entries:`, parsedData.length);
     
     // Process the data to match our AvatarData interface
-    return parsedData.map((item: any) => {
-      const processed = {
-        fileName: item["File Name"] || item["image_number"] || "",
-        stature: parseFloat(item["Stature"] || item["Height"]) || 0,
-        weight: parseFloat(item["Weight"]) || 0,
+    const processedData = parsedData.map((item: any) => {
+      // Create base processed object
+      const processed: AvatarData = {
+        fileName: item["File Name"] || item["image_number"] || item["4"] || "",
+        stature: parseFloat(item["Stature"] || item["Height"] || item["0"]) || 0,
+        weight: parseFloat(item["Weight"] || item["1"]) || 0,
         waistCirc: parseFloat(item["WaistCirc"] || item["Waist"]) || 0,
         chestCirc: parseFloat(item["ChestCirc"] || item["Chest"]) || 0,
         hipCirc: parseFloat(item["HipCirc"] || item["Hip"]) || 0,
         crotchHeight: parseFloat(item["CrotchHeight"] || item["Crotch"]) || 0,
         underBustCirc: parseFloat(item["UnderBustCirc"] || item["UnderBust"]) || 0,
-        bellyShape: item["Shape1"] || item["BellyShape"] || "flat",
-        hipShape: item["Shape2"] || item["HipShape"] || "regular",
-        recommendedSize: item["Size"] || item["Recommended Size"] || item[Object.keys(item)[Object.keys(item).length - 1]] || "M"
+        bellyShape: item["Shape1"] || item["BellyShape"] || item["2"] || "flat",
+        hipShape: item["Shape2"] || item["HipShape"] || item["3"] || "regular",
+        recommendedSize: item["Size"] || item["Recommended Size"] || item["5"] || "M"
       };
       
-      // For men, also store shoulder width directly from Shape2
+      // For men, add shoulder width from Shape2/column 3
       if (gender === 'male') {
-        processed.shoulderWidth = item["Shape2"] || item["ShoulderWidth"] || "2";
+        processed.shoulderWidth = item["Shape2"] || item["3"] || "2";
       }
       
+      console.log(`Processed ${gender} entry:`, processed);
       return processed;
     });
+    
+    return processedData;
   } catch (error) {
     console.error(`Error fetching or processing ${gender} avatar data:`, error);
     return exampleAvatarData; // Fall back to example data
