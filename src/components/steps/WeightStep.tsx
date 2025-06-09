@@ -5,8 +5,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Scale } from 'lucide-react';
 
 interface WeightStepProps {
-  value: string;
-  onChange: (weight: string) => void;
+  value: number;
+  onChange: (weight: number) => void;
   gender?: 'male' | 'female';
 }
 
@@ -18,7 +18,7 @@ export const WeightStep: React.FC<WeightStepProps> = ({ value, onChange, gender 
     async function loadWeights() {
       try {
         // Generate a comprehensive list of weights from 40kg to 120kg
-        const weights: string[] = [];
+        const weights: {title: string, value: number}[] = [];
         for (let i = 40; i <= 120; i++) {
           weights.push({
             title: `${i}kg`,
@@ -29,7 +29,7 @@ export const WeightStep: React.FC<WeightStepProps> = ({ value, onChange, gender 
       } catch (error) {
         console.error('Error loading weight options:', error);
         // Fallback weights
-        const fallbackWeights: string[] = [];
+        const fallbackWeights: {title: string, value: number}[] = [];
         for (let i = 45; i <= 100; i += 5) {
           fallbackWeights.push({
             title: `${i}kg`,
