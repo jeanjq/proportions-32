@@ -25,7 +25,7 @@ export interface OutputData {
 }
 
 // Import our example data and Firebase storage URL
-import exampleAvatarData, { FIREBASE_STORAGE_BASE_URL, fetchGenderSpecificData } from '../data/importCsvData';
+import exampleAvatarData, { fetchGenderSpecificData } from '../data/importCsvData';
 
 // Use the example data for fallback
 export const avatarData: AvatarData[] = exampleAvatarData;
