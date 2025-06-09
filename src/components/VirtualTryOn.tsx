@@ -81,6 +81,10 @@ export const VirtualTryOn = () => {
     }));
   };
 
+  useEffect(() => {
+      console.log(`currentStep ${currentStep}: measurements: ${JSON.stringify(measurements, null, 2)}`)
+  }, [measurements])
+
   const getStepForCurrentFlow = (step: number) => {
     if (needsPhysiqueStep) {
       // Non-binary flow: Gender -> Physique -> Height -> Weight -> (Bra Size if female features) -> Belly -> (Hip/Shoulder)
