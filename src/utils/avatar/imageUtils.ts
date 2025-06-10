@@ -82,10 +82,43 @@ export function getAvatarPath(imageNumber: number | null, size: string, gender: 
 }
 
 /**
+ * Get the path to the heatmap image using Firebase Storage
+ */
+export function getHeatmapPath(imageNumber: number | null, size: string, gender: 'male' | 'female'): string {
+  if (imageNumber === null) {
+    return '/placeholder-avatar.png'; // Fallback image
+  }
+  
+  // Format the gender string for URL (capitalize first letter)
+  const formattedGender = gender === 'female' ? 'Women' : 'Men';
+  
+  // Use the adidas naming convention
+  const filename = `adidas_${imageNumber}`;
+  
+  // Create the path that will go after /o/ in the Firebase Storage URL
+  // Format: Gender/Heatmap/Size/filename.png
+  const storagePath = encodeURIComponent(`${formattedGender}/Heatmap/${size}/${filename}.png`);
+  
+  // Format the full Firebase Storage URL
+  const heatmapUrl = `${FIREBASE_STORAGE_BASE_URL}/${storagePath}?alt=media`;
+  
+  console.log(`Creating heatmap path: ${heatmapUrl}`);
+  
+  return heatmapUrl;
+}
+
+/**
  * Get all available views for a specific avatar
  */
 export function getAvatarViews(imageNumber: number | null, size: string, gender: 'male' | 'female'): string[] {
   if (imageNumber === null) return ['/placeholder-avatar.png'];
   
   return AVAILABLE_VIEWS.map(view => getAvatarPath(imageNumber, size, gender, view));
+}
+
+/**
+ * Get heatmap image for a specific avatar
+ */
+export function getHeatmapImage(imageNumber: number | null, size: string, gender: 'male' | 'female'): string {
+  return getHeatmapPath(imageNumber, size, gender);
 }

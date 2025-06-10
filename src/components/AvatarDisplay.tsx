@@ -1,8 +1,9 @@
+
 import React, { useState, useEffect } from 'react';
 import { Card } from "@/components/ui/card";
 import { UserMeasurements } from './VirtualTryOn';
 import { Sparkles } from 'lucide-react';
-import { findClosestAvatarWithSize, getAvatarPath } from '@/utils/avatarMatching';
+import { findClosestAvatarWithSize, getAvatarPath, getHeatmapImage } from '@/utils/avatarMatching';
 import { toast } from "@/components/ui/use-toast";
 
 // Import our components
@@ -26,6 +27,8 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [avatarImages, setAvatarImages] = useState<string[]>([]);
   const [imageLoadFailed, setImageLoadFailed] = useState(false);
+  const [isShowingFitmap, setIsShowingFitmap] = useState(false);
+  const [heatmapImage, setHeatmapImage] = useState<string>('');
 
   // Helper function to map gender for avatar matching
   const getGenderForMatching = (gender: 'male' | 'female' | 'non-binary'): 'male' | 'female' => {
@@ -72,6 +75,8 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
           setError(null);
           // Generate avatar image URLs for the found image number with recommended size
           generateAvatarImageUrls(result.imageNumber, result.recommendedSize);
+          // Generate heatmap image URL
+          generateHeatmapImage(result.imageNumber, result.recommendedSize);
         }
       } catch (err) {
         console.error('Error finding matching avatar:', err);
@@ -102,31 +107,47 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
     });
   };
 
+  // Generate heatmap image URL
+  const generateHeatmapImage = (imgNumber: number, size: string) => {
+    const genderForMatching = getGenderForMatching(measurements.gender!);
+    const heatmapUrl = getHeatmapImage(imgNumber, size, genderForMatching);
+    setHeatmapImage(heatmapUrl);
+    console.log("Generated heatmap URL:", heatmapUrl);
+  };
+
   // Update the images array when size changes
   useEffect(() => {
     if (imageNumber !== null) {
       // Generate new avatar image URLs for the selected size
       generateAvatarImageUrls(imageNumber, selectedSize);
+      // Generate new heatmap image URL for the selected size
+      generateHeatmapImage(imageNumber, selectedSize);
     }
   }, [selectedSize, imageNumber, measurements.gender]);
 
-  // Get the current avatar path
-  const currentAvatarPath = avatarImages[currentImageIndex] || '';
+  // Get the current image path based on mode
+  const currentAvatarPath = isShowingFitmap ? heatmapImage : (avatarImages[currentImageIndex] || '');
 
-  // Function to handle rotation
+  // Function to handle rotation (only for avatar mode)
   const handleRotate = () => {
-    if (avatarImages.length > 1) {
+    if (!isShowingFitmap && avatarImages.length > 1) {
       setCurrentImageIndex(prev => (prev + 1) % avatarImages.length);
     }
   };
 
+  // Function to toggle fitmap mode
+  const handleToggleFitmap = () => {
+    setIsShowingFitmap(prev => !prev);
+    setImageLoadFailed(false); // Reset error state when switching modes
+  };
+
   // Function to handle image load error
   const handleImageError = () => {
-    console.log(`Failed to load avatar at path: ${currentAvatarPath}`);
+    console.log(`Failed to load ${isShowingFitmap ? 'heatmap' : 'avatar'} at path: ${currentAvatarPath}`);
     setImageLoadFailed(true);
     toast({
       title: "Image Load Error",
-      description: "Could not load the avatar image. Please try a different size or refresh the page.",
+      description: `Could not load the ${isShowingFitmap ? 'heatmap' : 'avatar'} image. Please try a different size or refresh the page.`,
       variant: "destructive"
     });
   };
@@ -161,6 +182,8 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
                 avatarFileName={imageNumber ? `adidas_${imageNumber}` : null}
                 onImageError={handleImageError}
                 onRotate={handleRotate}
+                onToggleFitmap={handleToggleFitmap}
+                isShowingFitmap={isShowingFitmap}
               />
 
               <SizeSelector 

@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { AlertCircle, RefreshCw } from 'lucide-react';
+import { AlertCircle, RefreshCw, Map } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
 import { Progress } from "@/components/ui/progress";
 
@@ -12,6 +12,8 @@ interface AvatarImageProps {
   avatarFileName: string | null;
   onImageError: () => void;
   onRotate: () => void;
+  onToggleFitmap: () => void;
+  isShowingFitmap: boolean;
 }
 
 const AvatarImage: React.FC<AvatarImageProps> = ({
@@ -20,7 +22,9 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
   error,
   avatarFileName,
   onImageError,
-  onRotate
+  onRotate,
+  onToggleFitmap,
+  isShowingFitmap
 }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [loadingProgress, setLoadingProgress] = useState(0);
@@ -110,18 +114,29 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
           )}
           <img 
             src={currentAvatarPath} 
-            alt="Avatar preview" 
+            alt={isShowingFitmap ? "Fitmap preview" : "Avatar preview"} 
             className={`max-h-[450px] max-w-full object-contain transition-opacity duration-700 ease-in-out ${isLoading ? 'opacity-0 hidden' : 'opacity-100 animate-scale-in'}`}
             onError={handleImageError}
             onLoad={handleImageLoad}
           />
           {!isLoading && !imageLoadFailed && (
-            <Button 
-              onClick={onRotate}
-              className="mt-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full"
-            >
-              <RefreshCw className="w-4 h-4 mr-2" /> Rotate View
-            </Button>
+            <div className="flex gap-3 mt-4">
+              {!isShowingFitmap && (
+                <Button 
+                  onClick={onRotate}
+                  className="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full"
+                >
+                  <RefreshCw className="w-4 h-4 mr-2" /> Rotate View
+                </Button>
+              )}
+              <Button 
+                onClick={onToggleFitmap}
+                className="bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 text-white rounded-full"
+              >
+                <Map className="w-4 h-4 mr-2" /> 
+                {isShowingFitmap ? 'Show Avatar' : 'Fitmap'}
+              </Button>
+            </div>
           )}
         </>
       )}

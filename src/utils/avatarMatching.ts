@@ -7,7 +7,7 @@ export { AVAILABLE_VIEWS } from '@/types/avatar';
 export { findClosestAvatarWithSize, findClosestAvatar, convertMeasurementToNumber } from './avatar/matching';
 
 // Re-export image utilities
-export { getAvatarPath, getAvatarViews } from './avatar/imageUtils';
+export { getAvatarPath, getAvatarViews, getHeatmapImage } from './avatar/imageUtils';
 
 // Re-export sizing utilities
 export { calculateSize } from './avatar/sizing';
