@@ -210,11 +210,11 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="w-20 h-20 bg-gradient-to-r from-coral-400/80 to-peach-400/80 backdrop-blur-sm rounded-full mx-auto mb-4 flex items-center justify-center border border-white/20">
+          <div className="mb-6 flex items-center justify-center">
             <img 
               src="https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o/logo2.png?alt=media&token=d285ea51-94e3-4229-a5de-0cf7e927b819" 
               alt="Proportions Logo" 
-              className="w-10 h-10 object-contain"
+              className="w-20 h-20 object-contain"
             />
           </div>
           <h1 className="text-3xl font-bold text-gray-800 mb-2">Here's how it looks on you! 🎉</h1>
