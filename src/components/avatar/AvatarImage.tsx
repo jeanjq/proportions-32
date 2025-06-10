@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { AlertCircle, RefreshCw } from 'lucide-react';
@@ -131,7 +130,7 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
                 onClick={onToggleFitmap}
                 className="bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 text-white rounded-full px-6 py-2"
               >
-                {isShowingFitmap ? 'Show Avatar' : 'Fitmap'}
+                {isShowingFitmap ? 'Normal View' : 'Fitmap'}
               </Button>
             </div>
           )}
