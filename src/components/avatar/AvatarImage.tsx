@@ -1,8 +1,8 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { AlertCircle, RefreshCw } from 'lucide-react';
+import { AlertCircle, RefreshCw, LoaderCircle } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
-import { Progress } from "@/components/ui/progress";
 
 interface AvatarImageProps {
   currentAvatarPath: string;
@@ -26,17 +26,14 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
   isShowingFitmap
 }) => {
   const [isLoading, setIsLoading] = useState(true);
-  const [loadingProgress, setLoadingProgress] = useState(0);
   const { toast } = useToast();
   
   const handleImageLoad = () => {
     setIsLoading(false);
-    setLoadingProgress(100);
   };
 
   const handleImageError = () => {
     setIsLoading(false);
-    setLoadingProgress(0);
     onImageError();
     
     // Show a toast when image fails to load
@@ -46,30 +43,6 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
       variant: "destructive",
     });
   };
-  
-  // Simulate loading progress
-  React.useEffect(() => {
-    let interval: number | undefined;
-    
-    if (isLoading) {
-      setLoadingProgress(0);
-      // Simulate progress with small increments
-      interval = window.setInterval(() => {
-        setLoadingProgress(prev => {
-          // Cap at 90% until the actual image loads
-          const next = prev + Math.random() * 15;
-          return next > 90 ? 90 : next;
-        });
-      }, 300);
-    } else {
-      // When loaded, ensure we show 100%
-      setLoadingProgress(100);
-    }
-    
-    return () => {
-      if (interval) clearInterval(interval);
-    };
-  }, [isLoading, currentAvatarPath]);
   
   // Reset loading state when avatar path changes
   React.useEffect(() => {
@@ -104,11 +77,9 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
       ) : (
         <>
           {isLoading && (
-            <div className="w-full space-y-4">
-              <div className="space-y-2">
-                <p className="text-sm text-center text-gray-500">Loading your perfect fit...</p>
-                <Progress value={loadingProgress} className="h-2 w-full" />
-              </div>
+            <div className="flex flex-col items-center space-y-4">
+              <LoaderCircle className="w-12 h-12 animate-spin text-coral-500/80" />
+              <p className="text-sm text-center text-gray-500">Loading your perfect fit...</p>
             </div>
           )}
           <img 
