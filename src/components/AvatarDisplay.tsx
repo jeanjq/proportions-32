@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { Card } from "@/components/ui/card";
 import { UserMeasurements } from './VirtualTryOn';
-import { Sparkles } from 'lucide-react';
 import { findClosestAvatarWithSize, getAvatarPath, getHeatmapImage } from '@/utils/avatarMatching';
 import { toast } from "@/components/ui/use-toast";
 
@@ -212,7 +211,11 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
         {/* Header */}
         <div className="text-center mb-8">
           <div className="w-20 h-20 bg-gradient-to-r from-coral-400/80 to-peach-400/80 backdrop-blur-sm rounded-full mx-auto mb-4 flex items-center justify-center border border-white/20">
-            <Sparkles className="w-10 h-10 text-white" />
+            <img 
+              src="https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o/logo2.png?alt=media&token=d285ea51-94e3-4229-a5de-0cf7e927b819" 
+              alt="Proportions Logo" 
+              className="w-10 h-10 object-contain"
+            />
           </div>
           <h1 className="text-3xl font-bold text-gray-800 mb-2">Here's how it looks on you! 🎉</h1>
           <p className="text-gray-600">Looking amazing! Try different sizes to see the perfect fit.</p>
