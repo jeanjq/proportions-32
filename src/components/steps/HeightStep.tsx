@@ -17,23 +17,23 @@ export const HeightStep: React.FC<HeightStepProps> = ({ value, onChange, gender 
   useEffect(() => {
     async function loadHeights() {
       try {
-        // Generate a comprehensive list of heights from 140cm to 200cm
-        const heights: string[] = [];
-        for (let i = 140; i <= 200; i++) {
+        // Generate a comprehensive list of heights from 140cm to 210cm
+        const heights: {title: string, value: number}[] = [];
+        for (let i = 140; i <= 210; i++) {
           heights.push({
             title: `${i}cm`,
-            value: i,
+            value: i
           });
         }
         setAvailableHeights(heights);
       } catch (error) {
         console.error('Error loading height options:', error);
         // Fallback heights
-        const fallbackHeights: string[] = [];
-        for (let i = 150; i <= 190; i += 5) {
+        const fallbackHeights: {title: string, value: number}[] = [];
+        for (let i = 150; i <= 200; i += 5) {
           fallbackHeights.push({
             title: `${i}cm`,
-            value: i,
+            value: i
           });
         }
         setAvailableHeights(fallbackHeights);
@@ -52,7 +52,7 @@ export const HeightStep: React.FC<HeightStepProps> = ({ value, onChange, gender 
           <Ruler className="w-10 h-10 text-white" />
         </div>
         <h2 className="text-3xl font-bold text-gray-800 mb-2">What's your height?</h2>
-        <p className="text-gray-600">Choose your height in centimeters</p>
+        <p className="text-gray-600">This helps us find clothes that fit your proportions perfectly.</p>
       </div>
 
       <div className="max-w-xs mx-auto">
@@ -60,8 +60,8 @@ export const HeightStep: React.FC<HeightStepProps> = ({ value, onChange, gender 
           Height
         </Label>
         <Select 
-          value={value || ""} 
-          onValueChange={onChange}
+          value={value ? value.toString() : ""} 
+          onValueChange={(val) => onChange(parseInt(val))}
           disabled={isLoading}
         >
           <SelectTrigger className="text-center text-lg py-6 border-2 bg-white/10 backdrop-blur-md border-white/20 hover:border-coral-200/40 rounded-full shadow-lg focus:ring-0 focus:ring-offset-0 focus:border-coral-300/60">
@@ -69,7 +69,7 @@ export const HeightStep: React.FC<HeightStepProps> = ({ value, onChange, gender 
           </SelectTrigger>
           <SelectContent className="max-h-60 bg-white/90 backdrop-blur-md border border-white/30 shadow-lg">
             {availableHeights.map((height) => (
-              <SelectItem key={height.value} value={height.value} className="text-center hover:bg-coral-100/20">
+              <SelectItem key={height.value} value={height.value.toString()} className="text-center hover:bg-coral-100/20">
                 {height.title}
               </SelectItem>
             ))}

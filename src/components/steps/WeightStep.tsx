@@ -60,8 +60,8 @@ export const WeightStep: React.FC<WeightStepProps> = ({ value, onChange, gender 
           Weight
         </Label>
         <Select 
-          value={value || ""} 
-          onValueChange={onChange}
+          value={value ? value.toString() : ""} 
+          onValueChange={(val) => onChange(parseInt(val))}
           disabled={isLoading}
         >
           <SelectTrigger className="text-center text-lg py-6 border-2 bg-white/10 backdrop-blur-md border-white/20 hover:border-coral-200/40 rounded-full shadow-lg focus:ring-0 focus:ring-offset-0 focus:border-coral-300/60">
@@ -69,7 +69,7 @@ export const WeightStep: React.FC<WeightStepProps> = ({ value, onChange, gender 
           </SelectTrigger>
           <SelectContent className="max-h-60 bg-white/90 backdrop-blur-md border border-white/30 shadow-lg">
             {availableWeights.map((weight) => (
-              <SelectItem key={weight.value} value={weight.value} className="text-center hover:bg-coral-100/20">
+              <SelectItem key={weight.value} value={weight.value.toString()} className="text-center hover:bg-coral-100/20">
                 {weight.title}
               </SelectItem>
             ))}

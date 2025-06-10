@@ -10,7 +10,7 @@ import { BellyShapeStep } from './steps/BellyShapeStep';
 import { HipShapeStep } from './steps/HipShapeStep';
 import { ShoulderWidthStep } from './steps/ShoulderWidthStep';
 import { AvatarDisplay } from './AvatarDisplay';
-import { ChevronLeft, Sparkles } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 
 export interface UserMeasurements {
   gender: 'male' | 'female' | 'non-binary' | null;
@@ -160,7 +160,11 @@ export const VirtualTryOn = () => {
         <Card className="max-w-lg w-full p-12 text-center bg-white/20 backdrop-blur-md border border-white/30 shadow-2xl">
           <div className="mb-8">
             <div className="w-20 h-20 bg-gradient-to-r from-coral-400/80 to-peach-400/80 backdrop-blur-sm rounded-full mx-auto mb-6 flex items-center justify-center border border-white/20">
-              <Sparkles className="w-10 h-10 text-white" />
+              <img 
+                src="https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o/logo2.png?alt=media&token=d285ea51-94e3-4229-a5de-0cf7e927b819" 
+                alt="Proportions Logo" 
+                className="w-10 h-10 object-contain"
+              />
             </div>
             <h1 className="text-6xl font-bold text-gray-800 mb-4 tracking-wide">Proportions</h1>
             <p className="text-gray-600 leading-relaxed font-medium text-lg">
