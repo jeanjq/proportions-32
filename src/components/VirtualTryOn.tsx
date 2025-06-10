@@ -168,7 +168,7 @@ export const VirtualTryOn = () => {
                 className="w-22 h-22 object-contain"
               />
             </div>
-            <h1 className="text-6xl font-bold text-gray-800 mb-4 tracking-normal font-rubik">Proportions</h1>
+            <h1 className="text-6xl font-light text-gray-800 mb-4 font-rubik" style={{ letterSpacing: '-0.02em' }}>Proportions</h1>
             <p className="text-gray-600 leading-relaxed font-medium text-lg">
               Find your perfect fit through our simple measurement guide
             </p>
