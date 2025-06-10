@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { AlertCircle, RefreshCw, Map } from 'lucide-react';
@@ -121,14 +120,12 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
           />
           {!isLoading && !imageLoadFailed && (
             <div className="flex gap-3 mt-4">
-              {!isShowingFitmap && (
-                <Button 
-                  onClick={onRotate}
-                  className="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full"
-                >
-                  <RefreshCw className="w-4 h-4 mr-2" /> Rotate View
-                </Button>
-              )}
+              <Button 
+                onClick={onRotate}
+                className="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full"
+              >
+                <RefreshCw className="w-4 h-4 mr-2" /> Rotate View
+              </Button>
               <Button 
                 onClick={onToggleFitmap}
                 className="bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 text-white rounded-full"
