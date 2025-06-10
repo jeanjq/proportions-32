@@ -165,7 +165,7 @@ export const VirtualTryOn = () => {
               <img 
                 src="https://firebasestorage.googleapis.com/v0/b/proportions-b1093.firebasestorage.app/o/logo2.png?alt=media&token=d285ea51-94e3-4229-a5de-0cf7e927b819" 
                 alt="Proportions Logo" 
-                className="w-14 h-14 object-contain"
+                className="w-16 h-16 object-contain"
               />
             </div>
             <h1 className="text-6xl font-normal text-gray-800 mb-4 font-rubik" style={{ letterSpacing: '-0.02em' }}>Proportions</h1>
