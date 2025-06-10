@@ -29,6 +29,7 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
   const [imageLoadFailed, setImageLoadFailed] = useState(false);
   const [isShowingFitmap, setIsShowingFitmap] = useState(false);
   const [heatmapImage, setHeatmapImage] = useState<string>('');
+  const [preloadedImages, setPreloadedImages] = useState<Set<string>>(new Set());
 
   // Helper function to map gender for avatar matching
   const getGenderForMatching = (gender: 'male' | 'female' | 'non-binary'): 'male' | 'female' => {
@@ -37,6 +38,50 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
       return 'female';
     }
     return gender;
+  };
+
+  // Preload image function
+  const preloadImage = (url: string): Promise<void> => {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => {
+        setPreloadedImages(prev => new Set(prev).add(url));
+        resolve();
+      };
+      img.onerror = () => reject();
+      img.src = url;
+    });
+  };
+
+  // Preload all images for all sizes
+  const preloadAllImages = async (imgNumber: number, genderForMatching: 'male' | 'female') => {
+    const sizes = ['XS', 'S', 'M', 'L', 'XL'];
+    const preloadPromises: Promise<void>[] = [];
+
+    console.log('Starting to preload all images...');
+
+    for (const size of sizes) {
+      // Import the function to get multiple views
+      const { getAvatarViews } = await import('@/utils/avatarMatching');
+      const imageUrls = getAvatarViews(imgNumber, size, genderForMatching);
+      const heatmapUrl = getHeatmapImage(imgNumber, size, genderForMatching);
+
+      // Add avatar images to preload queue
+      imageUrls.forEach(url => {
+        preloadPromises.push(preloadImage(url).catch(() => {
+          console.log(`Failed to preload avatar image: ${url}`);
+        }));
+      });
+
+      // Add heatmap image to preload queue
+      preloadPromises.push(preloadImage(heatmapUrl).catch(() => {
+        console.log(`Failed to preload heatmap image: ${heatmapUrl}`);
+      }));
+    }
+
+    // Execute all preloading in parallel
+    await Promise.allSettled(preloadPromises);
+    console.log('Finished preloading images. Preloaded count:', preloadedImages.size);
   };
 
   // Find the closest matching avatar based on measurements
@@ -77,6 +122,9 @@ export const AvatarDisplay: React.FC<AvatarDisplayProps> = ({ measurements, onRe
           generateAvatarImageUrls(result.imageNumber, result.recommendedSize);
           // Generate heatmap image URL
           generateHeatmapImage(result.imageNumber, result.recommendedSize);
+          
+          // Start preloading all images for all sizes
+          preloadAllImages(result.imageNumber, genderForMatching);
         }
       } catch (err) {
         console.error('Error finding matching avatar:', err);
