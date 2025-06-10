@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -168,7 +166,7 @@ export const VirtualTryOn = () => {
                 className="w-20 h-20 object-contain"
               />
             </div>
-            <h1 className="text-6xl font-normal text-gray-800 mb-4 font-rubik" style={{ letterSpacing: '-0.02em' }}>Proportions</h1>
+            <h1 className="text-6xl font-medium text-gray-800 mb-4 font-alexandria" style={{ letterSpacing: '-0.02em' }}>Proportions</h1>
             <p className="text-gray-600 leading-relaxed font-medium text-lg">
               Find your perfect fit through our simple measurement guide
             </p>
