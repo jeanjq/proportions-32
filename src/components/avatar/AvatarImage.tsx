@@ -93,7 +93,12 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
             <div className="flex gap-3 mt-4">
               <Button 
                 onClick={onRotate}
-                className="bg-gray-500 hover:bg-gray-600 text-white rounded-full px-6 py-2"
+                disabled={isShowingFitmap}
+                className={`rounded-full px-6 py-2 ${
+                  isShowingFitmap 
+                    ? "bg-gray-300 text-gray-500 cursor-not-allowed opacity-50" 
+                    : "bg-gray-500 hover:bg-gray-600 text-white"
+                }`}
               >
                 <RefreshCw className="w-4 h-4 mr-2" /> Rotate View
               </Button>
