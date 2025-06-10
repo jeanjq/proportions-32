@@ -82,7 +82,7 @@ export function getAvatarPath(imageNumber: number | null, size: string, gender: 
 }
 
 /**
- * Get the path to the heatmap image using Firebase Storage
+ * Get the path to the fitmap image using Firebase Storage
  */
 export function getHeatmapPath(imageNumber: number | null, size: string, gender: 'male' | 'female'): string {
   if (imageNumber === null) {
@@ -96,13 +96,13 @@ export function getHeatmapPath(imageNumber: number | null, size: string, gender:
   const filename = `adidas_${imageNumber}`;
   
   // Create the path that will go after /o/ in the Firebase Storage URL
-  // Format: Gender/Heatmap/Size/filename.png
-  const storagePath = encodeURIComponent(`${formattedGender}/Heatmap/${size}/${filename}.png`);
+  // Format: Gender/Fitmap/Size/filename.png (changed from Heatmap to Fitmap)
+  const storagePath = encodeURIComponent(`${formattedGender}/Fitmap/${size}/${filename}.png`);
   
   // Format the full Firebase Storage URL
   const heatmapUrl = `${FIREBASE_STORAGE_BASE_URL}/${storagePath}?alt=media`;
   
-  console.log(`Creating heatmap path: ${heatmapUrl}`);
+  console.log(`Creating fitmap path: ${heatmapUrl}`);
   
   return heatmapUrl;
 }
