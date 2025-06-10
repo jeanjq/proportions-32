@@ -1,4 +1,3 @@
-
 import { ViewAngle, AVAILABLE_VIEWS } from '@/types/avatar';
 
 // Firebase Storage base URL - Updated to correct project
@@ -82,7 +81,7 @@ export function getAvatarPath(imageNumber: number | null, size: string, gender: 
 }
 
 /**
- * Get the path to the fitmap image using Firebase Storage
+ * Get the path to the fitmap/heatmap image using Firebase Storage
  */
 export function getHeatmapPath(imageNumber: number | null, size: string, gender: 'male' | 'female'): string {
   if (imageNumber === null) {
@@ -92,17 +91,20 @@ export function getHeatmapPath(imageNumber: number | null, size: string, gender:
   // Format the gender string for URL (capitalize first letter)
   const formattedGender = gender === 'female' ? 'Women' : 'Men';
   
+  // Use different directory names based on gender
+  const directoryName = gender === 'female' ? 'Fitmap' : 'Heatmap';
+  
   // Use the adidas naming convention
   const filename = `adidas_${imageNumber}`;
   
   // Create the path that will go after /o/ in the Firebase Storage URL
-  // Format: Gender/Fitmap/Size/filename.png (changed from Heatmap to Fitmap)
-  const storagePath = encodeURIComponent(`${formattedGender}/Fitmap/${size}/${filename}.png`);
+  // Format: Women/Fitmap/Size/filename.png OR Men/Heatmap/Size/filename.png
+  const storagePath = encodeURIComponent(`${formattedGender}/${directoryName}/${size}/${filename}.png`);
   
   // Format the full Firebase Storage URL
   const heatmapUrl = `${FIREBASE_STORAGE_BASE_URL}/${storagePath}?alt=media`;
   
-  console.log(`Creating fitmap path: ${heatmapUrl}`);
+  console.log(`Creating ${directoryName.toLowerCase()} path: ${heatmapUrl}`);
   
   return heatmapUrl;
 }
