@@ -122,13 +122,16 @@ const AvatarImage: React.FC<AvatarImageProps> = ({
             <div className="flex gap-3 mt-4">
               <Button 
                 onClick={onRotate}
-                className="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full px-6 py-2"
+                className="bg-gray-500 hover:bg-gray-600 text-white rounded-full px-6 py-2"
               >
                 <RefreshCw className="w-4 h-4 mr-2" /> Rotate View
               </Button>
               <Button 
                 onClick={onToggleFitmap}
-                className="bg-gradient-to-r from-red-500 via-orange-500 via-yellow-400 via-blue-500 to-purple-600 text-white rounded-full px-6 py-2"
+                className={isShowingFitmap 
+                  ? "bg-gray-500 hover:bg-gray-600 text-white rounded-full px-6 py-2"
+                  : "bg-gradient-to-r from-red-500 via-orange-500 via-yellow-400 via-blue-500 to-purple-600 text-white rounded-full px-6 py-2"
+                }
               >
                 {isShowingFitmap ? 'Normal View' : 'Fitmap'}
               </Button>
